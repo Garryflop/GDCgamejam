@@ -1,0 +1,39 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="GDCgamejam"
+config/features=PackedStringArray("4.4", "Mobile")
+config/icon="res://Assets/Sprites/Pictures/icon.svg"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/handheld/orientation=4
+window/vsync/vsync_mode=0
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "red",
+"res://Assets/Sprites/": "red",
+"res://Resources/": "orange",
+"res://Scenes/": "green",
+"res://Scenes/Autoloads/": "gray",
+"res://Scripts/": "pink",
+"res://Scripts/Autoloads/": "gray"
+}
+
+[rendering]
+
+renderer/rendering_method="mobile"
