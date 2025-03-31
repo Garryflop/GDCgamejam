@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://celv2gypi3neg"]
+[gd_scene load_steps=2 format=3 uid="uid://celv2gypi3neg"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_s51c5"]
 
 [node name="MainMenu" type="CanvasLayer"]
 
@@ -81,3 +83,8 @@ text = "Quit"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(494, 349)
+scale = Vector2(601.5, 401.5)
+mesh = SubResource("QuadMesh_s51c5")
