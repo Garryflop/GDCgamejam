@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cs35encd3vk67"]
+
+[ext_resource type="Shader" uid="uid://b21bp6fi0x0mh" path="res://Scenes/fake_shading.gdshader" id="1_ekm0x"]
+[ext_resource type="Texture2D" uid="uid://b0r07l2h2ncd5" path="res://Assets/Textures/Concrete.png" id="2_hxnvp"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ekm0x")
+shader_parameter/albedo = ExtResource("2_hxnvp")
+shader_parameter/uv_scale = Vector2(2, 2)
+shader_parameter/jitter = 0.5
+shader_parameter/jitter_z_coordinate = true
+shader_parameter/jitter_depth_independent = true
+shader_parameter/affine_texture_mapping = true
+shader_parameter/alpha_scissor = 1.0
