@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+const LOADING_SCREEN = preload("res://Scenes/Menu/loading_screen.tscn")
 
 @export_file("*.tscn") var game_scene : String
 @export var settings_packed_scene : PackedScene
@@ -48,6 +49,9 @@ func _setup_credits():
 
 
 func _on_play_button_up():
+	var loading_scene = LOADING_SCREEN.instantiate()
+	loading_scene.next_scene = game_scene
+	add_child(loading_scene)
 	pass
 	#AudioManager.play_sound($AudioStreamPlayer.stream)
 	#AudioManager.change_music("Game")
