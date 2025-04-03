@@ -19,10 +19,13 @@ config/icon="res://Assets/Sprites/Pictures/icon.svg"
 [display]
 
 window/size/viewport_width=640
+
 window/size/viewport_height=320
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
+
 window/vsync/vsync_mode=0
+window/vsync/use_vsync=true
 
 [editor_plugins]
 
