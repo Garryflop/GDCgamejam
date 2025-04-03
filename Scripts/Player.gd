@@ -22,7 +22,7 @@ func _physics_process(delta):
 	input_direction.z = -(Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up"))
 	input_direction = input_direction.normalized()
 	if(input_direction.length() > 0):
-		set_collision_layer_value(5, false)
+		set_collision_layer_value(5, true)
 		set_collision_mask_value(4, true)
 		set_collision_mask_value(2, false)
 	else:
@@ -38,6 +38,13 @@ func _physics_process(delta):
 		velocity.y = jump_strength
 	#if move_direction:
 		#player_mesh.rotation.y = lerp_angle(player_mesh.rotation.y, rota, LERP_VALUE)
+	
+	if Input.is_action_just_pressed("pick"):
+		if spring_arm_pivot.picked:
+			spring_arm_pivot.picked = false
+		else:
+			spring_arm_pivot.picked = true
+			spring_arm_pivot.pick()
 	
 	var just_landed := is_on_floor() and snap_vector == Vector3.ZERO
 	var is_jumping := is_on_floor() and false
@@ -63,12 +70,3 @@ func animate(delta):
 			animator.set("parameters/isWalking/blend_amount", lerp(animator.get("parameters/isWalking/blend_amount"), 0.0, delta * ANIMATION_BLEND))
 	else:
 		animator.set("parameters/ground_air_transition/transition_request", "air")
-
-
-func pickButtonPressed() -> void:
-	if spring_arm_pivot.picked:
-		spring_arm_pivot.picked = false
-	else:
-		spring_arm_pivot.picked = true
-		spring_arm_pivot.pick()
-		

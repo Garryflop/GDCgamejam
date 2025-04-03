@@ -5,5 +5,7 @@
 [resource]
 shading_mode = 2
 albedo_texture = ExtResource("1_tlolu")
-uv1_scale = Vector3(0.5, 0.5, 0.5)
+roughness = 0.5
+uv1_scale = Vector3(0.315, 0.315, 0.315)
 uv1_triplanar = true
+uv1_world_triplanar = true

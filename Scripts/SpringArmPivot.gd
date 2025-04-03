@@ -45,7 +45,6 @@ func _physics_process(_delta):
 
 func pick():
 	var ray_query = $SpringArm3D/Camera3D/RayCast3D.get_collider()
-	print(ray_query)
 	if(ray_query is RigidBody3D):
 		pickedObject = ray_query
 		#pickedObject.
