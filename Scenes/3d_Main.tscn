@@ -1,0 +1,174 @@
+[gd_scene load_steps=24 format=3 uid="uid://4n0lyb2xuady"]
+
+[ext_resource type="Script" uid="uid://by2k5050k8i7f" path="res://addons/virtual_joystick/virtual_joystick_instantiator.gd" id="1_2d6nn"]
+[ext_resource type="PackedScene" uid="uid://bohm5kpe4n6ft" path="res://Scenes/player.tscn" id="1_od0df"]
+[ext_resource type="LightmapGIData" uid="uid://ctsgk76nsmlnm" path="res://GI_Baked/3d_Main.lmbake" id="1_ormww"]
+[ext_resource type="Texture2D" uid="uid://cmoncv7ugodom" path="res://Assets/Textures/overcast_soil_puresky_1k.hdr" id="2_hwb23"]
+[ext_resource type="Texture2D" uid="uid://117buwehvn0l" path="res://Assets/Textures/Crosshair.png" id="2_ormww"]
+[ext_resource type="FontFile" uid="uid://pw7ufq020i4s" path="res://Assets/Fonts/EBGaramond-VariableFont_wght.ttf" id="2_s1eon"]
+[ext_resource type="Script" uid="uid://dhh85gn34b0ek" path="res://Scripts/Profiler.gd" id="3_sdraq"]
+[ext_resource type="Texture2D" uid="uid://6jruflh85uyn" path="res://Assets/Textures/bobx.png" id="7_ormww"]
+[ext_resource type="PackedScene" uid="uid://dn542skhcxi1v" path="res://Scenes/world.tscn" id="7_sdraq"]
+[ext_resource type="Script" uid="uid://cmhewbyi1lbu0" path="res://Scripts/Player.gd" id="10_hwb23"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hwb23"]
+panorama = ExtResource("2_hwb23")
+energy_multiplier = 0.26
+
+[sub_resource type="Sky" id="Sky_ewbpn"]
+sky_material = SubResource("PanoramaSkyMaterial_hwb23")
+
+[sub_resource type="Environment" id="Environment_ormww"]
+background_mode = 2
+sky = SubResource("Sky_ewbpn")
+ambient_light_source = 3
+ambient_light_color = Color(0.60933, 0.60933, 0.60933, 1)
+reflected_light_source = 2
+fog_enabled = true
+fog_density = 0.0433
+fog_sky_affect = 0.633
+
+[sub_resource type="Gradient" id="Gradient_s1eon"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sdraq"]
+gradient = SubResource("Gradient_s1eon")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8piwu"]
+gradient = SubResource("Gradient_s1eon")
+fill_from = Vector2(0.384615, 0.269231)
+fill_to = Vector2(0.67094, 0.709402)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sdraq"]
+font = ExtResource("2_s1eon")
+font_size = 35
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ikuck"]
+albedo_texture = ExtResource("7_ormww")
+
+[sub_resource type="BoxMesh" id="BoxMesh_2d6nn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2d6nn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ikuck"]
+radius = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hwb23"]
+shading_mode = 2
+albedo_texture = ExtResource("7_ormww")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_hwb23"]
+radius = 0.25
+height = 0.5
+
+[node name="Node3D" type="Node3D"]
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+quality = 3
+light_data = ExtResource("1_ormww")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ormww")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(-0.963526, 0.263502, -0.0467342, -0.0584827, -0.0369154, 0.997606, 0.261146, 0.963952, 0.0509794, 1.26172, 4.49234, 2.35118)
+light_energy = 0.739
+light_angular_distance = 55.27
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="InputLayout" type="CanvasLayer" parent="."]
+
+[node name="BoxContainer" type="BoxContainer" parent="InputLayout"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="InputLayout/BoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="InputLayout/BoxContainer/CenterContainer"]
+texture = ExtResource("2_ormww")
+
+[node name="Virtual Joystick" type="Control" parent="InputLayout"]
+visible = false
+modulate = Color(1, 1, 1, 0.105882)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -5.0
+offset_top = 313.0
+offset_right = 31.0
+offset_bottom = 353.0
+scale = Vector2(0.575, 0.575)
+script = ExtResource("1_2d6nn")
+metadata/_custom_type_script = "uid://by2k5050k8i7f"
+metadata/_edit_use_anchors_ = true
+
+[node name="GrabButton" type="TouchScreenButton" parent="InputLayout"]
+visible = false
+position = Vector2(447, 222)
+texture_normal = SubResource("GradientTexture2D_sdraq")
+action = "pick"
+
+[node name="JumpButton" type="TouchScreenButton" parent="InputLayout"]
+visible = false
+position = Vector2(526, 220)
+texture_normal = SubResource("GradientTexture2D_8piwu")
+action = "jump"
+
+[node name="Label" type="Label" parent="InputLayout"]
+offset_right = 151.0
+offset_bottom = 83.0
+text = "FPS:"
+label_settings = SubResource("LabelSettings_sdraq")
+script = ExtResource("3_sdraq")
+metadata/_edit_use_anchors_ = true
+
+[node name="WrongBox" type="RigidBody3D" parent="." groups=["rigids"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.474206, 0.557046, 1.34337)
+collision_layer = 2
+collision_mask = 30
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+lock_rotation = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WrongBox"]
+transform = Transform3D(0.461753, 0, 0, 0, 0.461753, 0, 0, 0, 0.461753, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ikuck")
+mesh = SubResource("BoxMesh_2d6nn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WrongBox"]
+transform = Transform3D(0.461753, 0, 0, 0, 0.461753, 0, 0, 0, 0.461753, 0, 0, 0)
+shape = SubResource("BoxShape3D_2d6nn")
+
+[node name="World" parent="." instance=ExtResource("7_sdraq")]
+
+[node name="SharXD" type="RigidBody3D" parent="." groups=["rigids"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2771, 2.21758, 1.9781)
+collision_layer = 2
+collision_mask = 30
+mass = 20.0
+contact_monitor = true
+max_contacts_reported = 10
+linear_damp_mode = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SharXD"]
+shape = SubResource("SphereShape3D_ikuck")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SharXD"]
+material_override = SubResource("StandardMaterial3D_hwb23")
+mesh = SubResource("SphereMesh_hwb23")
+
+[node name="Player" parent="." instance=ExtResource("1_od0df")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04879, 1.26557, 2.02744)
+collision_mask = 23
+script = ExtResource("10_hwb23")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+interior = true
+enable_shadows = true
