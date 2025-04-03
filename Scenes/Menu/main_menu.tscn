@@ -6,7 +6,7 @@
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_bkwd7")
-game_scene = "uid://cyr8344l22you"
+game_scene = "uid://4n0lyb2xuady"
 settings_packed_scene = ExtResource("2_tself")
 credits_packed_scene = ExtResource("3_7jtkx")
 
@@ -59,25 +59,25 @@ alignment = 2
 [node name="Play" type="Button" parent="MenuCont/VBoxContainer/HBoxContainer/Play"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 52
+theme_override_font_sizes/font_size = 32
 text = "Начать"
 
 [node name="Options" type="Button" parent="MenuCont/VBoxContainer/HBoxContainer/Play"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 52
+theme_override_font_sizes/font_size = 32
 text = "Настройки"
 
 [node name="Credits" type="Button" parent="MenuCont/VBoxContainer/HBoxContainer/Play"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 52
+theme_override_font_sizes/font_size = 32
 text = "Авторы"
 
 [node name="Quit" type="Button" parent="MenuCont/VBoxContainer/HBoxContainer/Play"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 52
+theme_override_font_sizes/font_size = 32
 text = "Выйти"
 
 [node name="Other" type="VBoxContainer" parent="MenuCont/VBoxContainer/HBoxContainer"]
@@ -131,9 +131,9 @@ mouse_filter = 2
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-theme_override_font_sizes/font_size = 52
+offset_right = 91.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 32
 text = "BACK"
 
 [connection signal="button_up" from="MenuCont/VBoxContainer/HBoxContainer/Play/Play" to="." method="_on_play_button_up"]

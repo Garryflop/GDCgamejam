@@ -76,3 +76,9 @@ func _on_back_button_up():
 func _ready():
 	_setup_options()
 	_setup_credits()
+
+
+func _on_touch_screen_button_released() -> void:
+	var loading_scene = LOADING_SCREEN.instantiate()
+	loading_scene.next_scene = game_scene
+	add_child(loading_scene)

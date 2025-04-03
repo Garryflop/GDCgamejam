@@ -9,7 +9,7 @@ script = ExtResource("1_i2l00")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 16
 text = "Уровень"
 
 [node name="HSlider" type="HSlider" parent="."]

@@ -1,8 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://4n0lyb2xuady"]
+[gd_scene load_steps=23 format=3 uid="uid://4n0lyb2xuady"]
 
 [ext_resource type="Script" uid="uid://by2k5050k8i7f" path="res://addons/virtual_joystick/virtual_joystick_instantiator.gd" id="1_2d6nn"]
+[ext_resource type="Script" uid="uid://biccghufv318h" path="res://Scripts/3d_main.gd" id="1_ikuck"]
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/player.tscn" id="1_od0df"]
 [ext_resource type="LightmapGIData" uid="uid://ctsgk76nsmlnm" path="res://GI_Baked/3d_Main.lmbake" id="1_ormww"]
+[ext_resource type="PackedScene" uid="uid://c620yqni6f55i" path="res://Scenes/Menu/pause_menu.tscn" id="2_hwb23"]
 [ext_resource type="Texture2D" uid="uid://117buwehvn0l" path="res://Assets/Textures/Crosshair.png" id="2_ormww"]
 [ext_resource type="FontFile" uid="uid://pw7ufq020i4s" path="res://Assets/Fonts/EBGaramond-VariableFont_wght.ttf" id="2_s1eon"]
 [ext_resource type="Script" uid="uid://dhh85gn34b0ek" path="res://Scenes/label.gd" id="3_sdraq"]
@@ -21,6 +23,11 @@ gradient = SubResource("Gradient_s1eon")
 fill_from = Vector2(0.384615, 0.269231)
 fill_to = Vector2(0.67094, 0.709402)
 
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ormww"]
+gradient = SubResource("Gradient_s1eon")
+fill_from = Vector2(0.384615, 0.269231)
+fill_to = Vector2(0.591743, 0.266055)
+
 [sub_resource type="LabelSettings" id="LabelSettings_sdraq"]
 font = ExtResource("2_s1eon")
 font_size = 35
@@ -33,6 +40,7 @@ albedo_texture = ExtResource("7_ormww")
 [sub_resource type="BoxShape3D" id="BoxShape3D_2d6nn"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ikuck"]
+radius = 0.425
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hwb23"]
 shading_mode = 2
@@ -41,8 +49,12 @@ uv1_scale = Vector3(2, 2, 2)
 uv1_triplanar = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_hwb23"]
+radius = 0.425
+height = 0.85
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_ikuck")
+pause_menu_packed = ExtResource("2_hwb23")
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 quality = 3
@@ -96,6 +108,10 @@ position = Vector2(554, 259)
 texture_normal = SubResource("GradientTexture2D_8piwu")
 action = "jump"
 
+[node name="PauseButton" type="TouchScreenButton" parent="InputLayout"]
+position = Vector2(561, 8)
+texture_normal = SubResource("GradientTexture2D_ormww")
+
 [node name="Label" type="Label" parent="InputLayout"]
 offset_right = 151.0
 offset_bottom = 83.0
@@ -143,3 +159,4 @@ material_override = SubResource("StandardMaterial3D_hwb23")
 mesh = SubResource("SphereMesh_hwb23")
 
 [connection signal="pressed" from="InputLayout/GrabButton" to="Player" method="pickButtonPressed"]
+[connection signal="pressed" from="InputLayout/PauseButton" to="." method="_on_pause_button_pressed"]
