@@ -1,16 +1,17 @@
-[gd_scene format=3 uid="uid://celv2gypi3neg"]
+[gd_scene load_steps=4 format=3 uid="uid://celv2gypi3neg"]
+
+[ext_resource type="Script" uid="uid://cwjxyelyrvlwu" path="res://Scripts/Menu/main_menu.gd" id="1_bkwd7"]
+[ext_resource type="PackedScene" uid="uid://br2dhf3v06sig" path="res://Scenes/Menu/options.tscn" id="2_tself"]
+[ext_resource type="PackedScene" uid="uid://dmckiyv2x6q8l" path="res://Scenes/Menu/credits.tscn" id="3_7jtkx"]
 
 [node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_bkwd7")
+game_scene = "uid://cyr8344l22you"
+settings_packed_scene = ExtResource("2_tself")
+credits_packed_scene = ExtResource("3_7jtkx")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1280.0
-offset_bottom = 720.0
-size_flags_horizontal = 3
-
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
-layout_mode = 1
+[node name="MenuCont" type="MarginContainer" parent="."]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -21,63 +22,122 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuCont"]
 layout_mode = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MenuCont/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="MenuCont/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 72
-text = "Game name"
+text = "Project Hiba"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuCont/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuCont/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="FunctionalButtons" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="FunctionalButtons" type="VBoxContainer" parent="MenuCont/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 2
 
-[node name="Play" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Play" type="VBoxContainer" parent="MenuCont/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 2
 
-[node name="Play" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Play"]
+[node name="Play" type="Button" parent="MenuCont/VBoxContainer/HBoxContainer/Play"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Play"
+theme_override_font_sizes/font_size = 52
+text = "Начать"
 
-[node name="Option" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Play"]
+[node name="Options" type="Button" parent="MenuCont/VBoxContainer/HBoxContainer/Play"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Options
-"
+theme_override_font_sizes/font_size = 52
+text = "Настройки"
 
-[node name="Credits" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Play"]
+[node name="Credits" type="Button" parent="MenuCont/VBoxContainer/HBoxContainer/Play"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Credits
-"
+theme_override_font_sizes/font_size = 52
+text = "Авторы"
 
-[node name="Quit" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Play"]
+[node name="Quit" type="Button" parent="MenuCont/VBoxContainer/HBoxContainer/Play"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Quit"
+theme_override_font_sizes/font_size = 52
+text = "Выйти"
 
-[node name="Other" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Other" type="VBoxContainer" parent="MenuCont/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="SettingsCont" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="CreditsCont" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="BackButton" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Control" type="Control" parent="BackButton"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Back" type="Button" parent="BackButton/Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 52
+text = "BACK"
+
+[connection signal="button_up" from="MenuCont/VBoxContainer/HBoxContainer/Play/Play" to="." method="_on_play_button_up"]
+[connection signal="button_up" from="MenuCont/VBoxContainer/HBoxContainer/Play/Options" to="." method="_on_settings_button_up"]
+[connection signal="button_up" from="MenuCont/VBoxContainer/HBoxContainer/Play/Credits" to="." method="_on_credits_button_up"]
+[connection signal="button_up" from="MenuCont/VBoxContainer/HBoxContainer/Play/Quit" to="." method="_on_quit_button_up"]
+[connection signal="button_up" from="BackButton/Control/Back" to="." method="_on_back_button_up"]

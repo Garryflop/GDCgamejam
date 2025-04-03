@@ -23,6 +23,7 @@ window/size/viewport_height=360
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 window/vsync/vsync_mode=0
+window/vsync/use_vsync=true
 
 [editor_plugins]
 
