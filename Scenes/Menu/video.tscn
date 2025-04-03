@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvssfb0wkwcrc"]
+[gd_scene load_steps=3 format=3 uid="uid://cvssfb0wkwcrc"]
 
 [ext_resource type="Script" uid="uid://dgopd3d2wft34" path="res://Scripts/Menu/video.gd" id="1_ih47a"]
+[ext_resource type="FontFile" uid="uid://bkv7caftudka2" path="res://Assets/Fonts/neoletters.ttf" id="2_d60e3"]
 
 [node name="Video" type="MarginContainer"]
 anchors_preset = 15
@@ -38,7 +39,8 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer/RTX"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 42
+theme_override_fonts/font = ExtResource("2_d60e3")
+theme_override_font_sizes/font_size = 32
 text = "RTX"
 
 [node name="CheckButton" type="CheckButton" parent="VBoxContainer/RTX"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c620yqni6f55i"]
+[gd_scene load_steps=3 format=3 uid="uid://c620yqni6f55i"]
 
 [ext_resource type="Script" uid="uid://t7re27pe6auo" path="res://Scripts/Menu/pause_menu.gd" id="1_i0al5"]
+[ext_resource type="FontFile" uid="uid://bkv7caftudka2" path="res://Assets/Fonts/neoletters.ttf" id="2_6pfc5"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -48,30 +49,35 @@ alignment = 1
 
 [node name="Label" type="Label" parent="Control/MarginContainer/BoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
+theme_override_fonts/font = ExtResource("2_6pfc5")
+theme_override_font_sizes/font_size = 48
 text = "ИГРА НА ПАУЗЕ"
 
 [node name="ResumeButton" type="Button" parent="Control/MarginContainer/BoxContainer"]
 process_mode = 3
 layout_mode = 2
-theme_override_font_sizes/font_size = 52
+theme_override_fonts/font = ExtResource("2_6pfc5")
+theme_override_font_sizes/font_size = 32
 text = "Продолжить"
 
 [node name="OptionsButton" type="Button" parent="Control/MarginContainer/BoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 52
+theme_override_fonts/font = ExtResource("2_6pfc5")
+theme_override_font_sizes/font_size = 32
 text = "Настройки"
 
 [node name="MainMenuButton" type="Button" parent="Control/MarginContainer/BoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 52
+theme_override_fonts/font = ExtResource("2_6pfc5")
+theme_override_font_sizes/font_size = 32
 text = "Главное меню"
 
 [node name="QuitButton" type="Button" parent="Control/MarginContainer/BoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 52
+theme_override_fonts/font = ExtResource("2_6pfc5")
+theme_override_font_sizes/font_size = 32
 text = "Выйти"
 
 [connection signal="pressed" from="Control/MarginContainer/BoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]

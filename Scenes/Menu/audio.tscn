@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://fibtmlgmj7de"]
+[gd_scene load_steps=4 format=3 uid="uid://fibtmlgmj7de"]
 
 [ext_resource type="Script" uid="uid://cqymhbo06q4wy" path="res://Scripts/Menu/audio.gd" id="1_bfoiv"]
 [ext_resource type="PackedScene" uid="uid://cyfew1vyqfcyq" path="res://Scenes/Menu/audio_cont.tscn" id="2_dlj8d"]
+[ext_resource type="FontFile" uid="uid://bkv7caftudka2" path="res://Assets/Fonts/neoletters.ttf" id="3_4xht1"]
 
 [node name="Audio" type="MarginContainer"]
 anchors_preset = 15
@@ -27,4 +28,5 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 52
+theme_override_fonts/font = ExtResource("3_4xht1")
+theme_override_font_sizes/font_size = 32

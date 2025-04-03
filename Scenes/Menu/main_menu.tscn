@@ -1,12 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://celv2gypi3neg"]
+[gd_scene load_steps=5 format=3 uid="uid://celv2gypi3neg"]
 
 [ext_resource type="Script" uid="uid://cwjxyelyrvlwu" path="res://Scripts/Menu/main_menu.gd" id="1_bkwd7"]
 [ext_resource type="PackedScene" uid="uid://br2dhf3v06sig" path="res://Scenes/Menu/options.tscn" id="2_tself"]
 [ext_resource type="PackedScene" uid="uid://dmckiyv2x6q8l" path="res://Scenes/Menu/credits.tscn" id="3_7jtkx"]
+[ext_resource type="FontFile" uid="uid://bkv7caftudka2" path="res://Assets/Fonts/neoletters.ttf" id="4_vmek6"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_bkwd7")
-game_scene = "uid://cyr8344l22you"
 settings_packed_scene = ExtResource("2_tself")
 credits_packed_scene = ExtResource("3_7jtkx")
 
@@ -32,6 +32,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="MenuCont/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vmek6")
 theme_override_font_sizes/font_size = 72
 text = "Project Hiba"
 horizontal_alignment = 1
@@ -59,25 +60,29 @@ alignment = 2
 [node name="Play" type="Button" parent="MenuCont/VBoxContainer/HBoxContainer/Play"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 52
+theme_override_fonts/font = ExtResource("4_vmek6")
+theme_override_font_sizes/font_size = 32
 text = "Начать"
 
 [node name="Options" type="Button" parent="MenuCont/VBoxContainer/HBoxContainer/Play"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 52
+theme_override_fonts/font = ExtResource("4_vmek6")
+theme_override_font_sizes/font_size = 32
 text = "Настройки"
 
 [node name="Credits" type="Button" parent="MenuCont/VBoxContainer/HBoxContainer/Play"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 52
+theme_override_fonts/font = ExtResource("4_vmek6")
+theme_override_font_sizes/font_size = 32
 text = "Авторы"
 
 [node name="Quit" type="Button" parent="MenuCont/VBoxContainer/HBoxContainer/Play"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 52
+theme_override_fonts/font = ExtResource("4_vmek6")
+theme_override_font_sizes/font_size = 32
 text = "Выйти"
 
 [node name="Other" type="VBoxContainer" parent="MenuCont/VBoxContainer/HBoxContainer"]
@@ -133,7 +138,8 @@ visible = false
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
-theme_override_font_sizes/font_size = 52
+theme_override_fonts/font = ExtResource("4_vmek6")
+theme_override_font_sizes/font_size = 32
 text = "BACK"
 
 [connection signal="button_up" from="MenuCont/VBoxContainer/HBoxContainer/Play/Play" to="." method="_on_play_button_up"]

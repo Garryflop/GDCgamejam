@@ -16,9 +16,10 @@ config/icon="res://Assets/Sprites/Pictures/icon.svg"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=640
+window/size/viewport_height=360
 window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_height"
 window/handheld/orientation=4
 window/vsync/vsync_mode=0
 window/vsync/use_vsync=true

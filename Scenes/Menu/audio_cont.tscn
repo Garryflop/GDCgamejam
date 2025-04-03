@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyfew1vyqfcyq"]
+[gd_scene load_steps=3 format=3 uid="uid://cyfew1vyqfcyq"]
 
 [ext_resource type="Script" uid="uid://cufn60i78d3d2" path="res://Scripts/Menu/audio_cont.gd" id="1_i2l00"]
+[ext_resource type="FontFile" uid="uid://bkv7caftudka2" path="res://Assets/Fonts/neoletters.ttf" id="2_mpmk8"]
 
 [node name="AudioCont" type="HBoxContainer"]
 offset_right = 40.0
@@ -9,7 +10,8 @@ script = ExtResource("1_i2l00")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
-theme_override_font_sizes/font_size = 42
+theme_override_fonts/font = ExtResource("2_mpmk8")
+theme_override_font_sizes/font_size = 32
 text = "Уровень"
 
 [node name="HSlider" type="HSlider" parent="."]
