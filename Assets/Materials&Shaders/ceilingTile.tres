@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://up2pn56ystpm"]
+
+[ext_resource type="Texture2D" uid="uid://ckn8dsm1jns7r" path="res://Assets/Textures/ceilingTile.png" id="1_vp6ry"]
+
+[resource]
+shading_mode = 2
+albedo_texture = ExtResource("1_vp6ry")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true

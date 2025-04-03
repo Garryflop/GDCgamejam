@@ -23,14 +23,14 @@ func _unhandled_input(event):
 		
 	if event is InputEventScreenDrag:
 		event_current_pos = event.position
-		$"..".rotate_y(-event.relative.x * 0.005)
-		spring_arm.rotate_x(event.relative.y * 0.005)
+		$"..".rotate_y(-event.relative.x * 0.01)
+		spring_arm.rotate_x(event.relative.y * 0.01)
 		spring_arm.rotation.x = clamp(spring_arm.rotation.x, -PI/4, PI/4)
 	
 
 func _physics_process(_delta):
 	if(picked && pickedObject):
-		pickedObject.set_linear_velocity(pickedObject.global_position.direction_to($SpringArm3D/Camera3D/Hand.global_position))
+		pickedObject.set_linear_velocity(($SpringArm3D/Camera3D/Hand.global_position - pickedObject.global_position)*4)
 	
 	if change_fov_on_run:
 		if owner.is_on_floor():
@@ -46,7 +46,9 @@ func _physics_process(_delta):
 func pick():
 	var ray_query = $SpringArm3D/Camera3D/RayCast3D.get_collider()
 	print(ray_query)
-	pickedObject = ray_query
+	if(ray_query is RigidBody3D):
+		pickedObject = ray_query
+		#pickedObject.
 	
 func oneClickExpired() -> void:
 	doubleTap = false

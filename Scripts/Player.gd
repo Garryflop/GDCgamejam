@@ -21,12 +21,21 @@ func _physics_process(delta):
 	input_direction.x = -(Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"))
 	input_direction.z = -(Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up"))
 	input_direction = input_direction.normalized()
+	if(input_direction.length() > 0):
+		set_collision_layer_value(5, false)
+		set_collision_mask_value(4, true)
+		set_collision_mask_value(2, false)
+	else:
+		set_collision_layer_value(5, false)
+		set_collision_mask_value(2, true)
+		set_collision_mask_value(4, false)
 	move_direction = input_direction.rotated(Vector3.UP, rotation.y)
 		
 	velocity.y -= gravity * delta
 	velocity.x = move_direction.x * speed
 	velocity.z = move_direction.z * speed
-	
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = jump_strength
 	#if move_direction:
 		#player_mesh.rotation.y = lerp_angle(player_mesh.rotation.y, rota, LERP_VALUE)
 	
