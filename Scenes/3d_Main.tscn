@@ -1,15 +1,15 @@
-[gd_scene load_steps=24 format=3 uid="uid://4n0lyb2xuady"]
+[gd_scene load_steps=24 format=3 uid="uid://dl0tb5j3no3w8"]
 
 [ext_resource type="Script" uid="uid://by2k5050k8i7f" path="res://addons/virtual_joystick/virtual_joystick_instantiator.gd" id="1_2d6nn"]
-[ext_resource type="PackedScene" uid="uid://bohm5kpe4n6ft" path="res://Scenes/player.tscn" id="1_od0df"]
+[ext_resource type="PackedScene" uid="uid://dlnc0h005d142" path="res://Scenes/player.tscn" id="1_od0df"]
 [ext_resource type="LightmapGIData" uid="uid://ctsgk76nsmlnm" path="res://GI_Baked/3d_Main.lmbake" id="1_ormww"]
 [ext_resource type="Texture2D" uid="uid://cmoncv7ugodom" path="res://Assets/Textures/overcast_soil_puresky_1k.hdr" id="2_hwb23"]
 [ext_resource type="Texture2D" uid="uid://117buwehvn0l" path="res://Assets/Textures/Crosshair.png" id="2_ormww"]
 [ext_resource type="FontFile" uid="uid://pw7ufq020i4s" path="res://Assets/Fonts/EBGaramond-VariableFont_wght.ttf" id="2_s1eon"]
-[ext_resource type="Script" uid="uid://dhh85gn34b0ek" path="res://Scripts/Profiler.gd" id="3_sdraq"]
+[ext_resource type="Script" path="res://Scripts/Profiler.gd" id="3_sdraq"]
 [ext_resource type="Texture2D" uid="uid://6jruflh85uyn" path="res://Assets/Textures/bobx.png" id="7_ormww"]
-[ext_resource type="PackedScene" uid="uid://dn542skhcxi1v" path="res://Scenes/world.tscn" id="7_sdraq"]
-[ext_resource type="Script" uid="uid://cmhewbyi1lbu0" path="res://Scripts/Player.gd" id="10_hwb23"]
+[ext_resource type="PackedScene" path="res://Scenes/world.tscn" id="7_sdraq"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="10_hwb23"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hwb23"]
 panorama = ExtResource("2_hwb23")
