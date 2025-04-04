@@ -20,6 +20,7 @@ var input_direction : Vector3 = Vector3.ZERO
 func _physics_process(delta):
 	input_direction.x = -(Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"))
 	input_direction.z = -(Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up"))
+	
 	input_direction = input_direction.normalized()
 	if(input_direction.length() > 0):
 		set_collision_layer_value(5, true)
@@ -41,6 +42,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("pick"):
 		if spring_arm_pivot.picked:
+			spring_arm_pivot.picked = false
 		else:
 			spring_arm_pivot.pick()
 	
@@ -58,13 +60,14 @@ func _physics_process(delta):
 
 func animate(delta):
 	if is_on_floor():
+		animator.set("parameters/isAir/blend_amount", lerp(animator.get("parameters/isAir/blend_amount"), 0.0, delta * ANIMATION_BLEND))
 		if velocity.length() > 0:
 			animator.set("parameters/isWalking/blend_amount", lerp(animator.get("parameters/isWalking/blend_amount"), 1.0, delta * ANIMATION_BLEND))
 			animator.set("parameters/isBackward/blend_amount", lerp(animator.get("parameters/isBackward/blend_amount"), min(-(input_direction.z-1.0), 1.0), delta * ANIMATION_BLEND))
 			#print(animator.get("parameters/Strafe/blend_amount"))
-			animator.set("parameters/Strafe/blend_amount", lerp(animator.get("parameters/Strafe/blend_amount"), input_direction.x, delta * ANIMATION_BLEND))
+			animator.set("parameters/Strafe/blend_amount", lerp(animator.get("parameters/Strafe/blend_amount"), -input_direction.x, delta * ANIMATION_BLEND))
 		
 		else:
 			animator.set("parameters/isWalking/blend_amount", lerp(animator.get("parameters/isWalking/blend_amount"), 0.0, delta * ANIMATION_BLEND))
 	else:
-		animator.set("parameters/ground_air_transition/transition_request", "air")
+		animator.set("parameters/isAir/blend_amount", lerp(animator.get("parameters/isAir/blend_amount"), 1.0, delta * ANIMATION_BLEND))
