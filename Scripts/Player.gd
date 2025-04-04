@@ -41,9 +41,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("pick"):
 		if spring_arm_pivot.picked:
-			spring_arm_pivot.picked = false
 		else:
-			spring_arm_pivot.picked = true
 			spring_arm_pivot.pick()
 	
 	var just_landed := is_on_floor() and snap_vector == Vector3.ZERO
