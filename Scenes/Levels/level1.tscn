@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://crybua5mtx5ho"]
+[gd_scene load_steps=25 format=3 uid="uid://crybua5mtx5ho"]
 
 [ext_resource type="Script" uid="uid://cd6tjb2f03wms" path="res://Scripts/Menu/level.gd" id="1_ilsv2"]
 [ext_resource type="PackedScene" uid="uid://c620yqni6f55i" path="res://Scenes/Menu/pause_menu.tscn" id="2_4f2fw"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cmhewbyi1lbu0" path="res://Scripts/Player.gd" id="9_syfhk"]
 [ext_resource type="Material" uid="uid://5fgk0s61fs4g" path="res://Assets/Materials&Shaders/level.tres" id="10_u45xj"]
 [ext_resource type="Texture2D" uid="uid://6jruflh85uyn" path="res://Assets/Textures/bobx.png" id="11_ay16s"]
+[ext_resource type="PackedScene" uid="uid://cltggso6lbm6c" path="res://Scenes/Menu/console.tscn" id="12_4f2fw"]
 
 [sub_resource type="Gradient" id="Gradient_s1eon"]
 
@@ -60,6 +61,9 @@ uv1_triplanar = true
 [sub_resource type="SphereMesh" id="SphereMesh_c5s4o"]
 radius = 0.25
 height = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4f2fw"]
+radius = 2.4485
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_ilsv2")
@@ -279,4 +283,22 @@ shape = SubResource("SphereShape3D_j3yal")
 material_override = SubResource("StandardMaterial3D_r0lyn")
 mesh = SubResource("SphereMesh_c5s4o")
 
+[node name="Console" parent="." instance=ExtResource("12_4f2fw")]
+
+[node name="zone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.1634)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="zone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.924803, 0)
+shape = SubResource("SphereShape3D_4f2fw")
+
+[node name="zone2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.73471, 0, 16.9325)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="zone2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.924803, 0)
+shape = SubResource("SphereShape3D_4f2fw")
+
 [connection signal="released" from="InputLayout/PauseButton" to="." method="_on_pause_button_released"]
+[connection signal="body_entered" from="zone" to="." method="_on_zone_body_entered"]
+[connection signal="body_entered" from="zone2" to="." method="_on_zone_2_body_entered"]
