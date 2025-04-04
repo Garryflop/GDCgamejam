@@ -242,8 +242,8 @@ height = 0.271271
 sides = 12
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="World/CSGCombiner3D"]
-transform = Transform3D(0.999999, -0.00171042, 0, 0.00171042, 0.999999, 0, 0, 0, 1, 0.677176, 1.44348, 16.9746)
-size = Vector3(1, 2.91089, 1)
+transform = Transform3D(0.999999, -0.00171042, 0, 0.00171042, 0.999999, 0, 0, 0, 1, 0.678566, 0.630553, 16.9746)
+size = Vector3(1, 1.28503, 1)
 material = ExtResource("10_u45xj")
 
 [node name="CSGBox3D18" type="CSGBox3D" parent="World/CSGCombiner3D"]
@@ -252,8 +252,8 @@ size = Vector3(2.57422, 2.91089, 2.50781)
 material = ExtResource("10_u45xj")
 
 [node name="CSGBox3D16" type="CSGBox3D" parent="World/CSGCombiner3D"]
-transform = Transform3D(0.999999, -0.00171042, 0, 0.00171042, 0.999999, 0, 0, 0, 1, -1.61438, 1.44348, 19.0997)
-size = Vector3(1, 2.91089, 1)
+transform = Transform3D(0.999999, -0.00171042, 0, 0.00171042, 0.999999, 0, 0, 0, 1, -1.61346, 0.905272, 19.0997)
+size = Vector3(1, 1.83447, 1)
 material = ExtResource("10_u45xj")
 
 [node name="CSGBox3D17" type="CSGBox3D" parent="World/CSGCombiner3D"]
