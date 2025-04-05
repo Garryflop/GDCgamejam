@@ -1,16 +1,17 @@
-[gd_scene load_steps=26 format=3 uid="uid://4n0lyb2xuady"]
+[gd_scene load_steps=28 format=3 uid="uid://4n0lyb2xuady"]
 
 [ext_resource type="Script" uid="uid://by2k5050k8i7f" path="res://addons/virtual_joystick/virtual_joystick_instantiator.gd" id="1_2d6nn"]
 [ext_resource type="PackedScene" uid="uid://bohm5kpe4n6ft" path="res://Scenes/player.tscn" id="1_od0df"]
 [ext_resource type="LightmapGIData" uid="uid://ctsgk76nsmlnm" path="res://GI_Baked/3d_Main.lmbake" id="1_ormww"]
+[ext_resource type="CompressedTexture3D" uid="uid://cedh6do6l74oh" path="res://Assets/Textures/Lut.png" id="2_c4mmn"]
 [ext_resource type="Texture2D" uid="uid://cmoncv7ugodom" path="res://Assets/Textures/overcast_soil_puresky_1k.hdr" id="2_hwb23"]
 [ext_resource type="Texture2D" uid="uid://117buwehvn0l" path="res://Assets/Textures/Crosshair.png" id="2_ormww"]
 [ext_resource type="FontFile" uid="uid://pw7ufq020i4s" path="res://Assets/Fonts/EBGaramond-VariableFont_wght.ttf" id="2_s1eon"]
 [ext_resource type="Script" uid="uid://dhh85gn34b0ek" path="res://Scripts/Profiler.gd" id="3_sdraq"]
 [ext_resource type="Texture2D" uid="uid://6jruflh85uyn" path="res://Assets/Textures/bobx.png" id="7_ormww"]
-[ext_resource type="PackedScene" uid="uid://dn542skhcxi1v" path="res://Scenes/world.tscn" id="7_sdraq"]
 [ext_resource type="Script" uid="uid://cmhewbyi1lbu0" path="res://Scripts/Player.gd" id="10_hwb23"]
 [ext_resource type="PackedScene" uid="uid://dvt5fgkkgsti7" path="res://Scenes/Stul.tscn" id="11_ewbpn"]
+[ext_resource type="PackedScene" uid="uid://hdp8thoov4m6" path="res://Scenes/level1.tscn" id="13_poev4"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hwb23"]
 panorama = ExtResource("2_hwb23")
@@ -24,11 +25,19 @@ background_mode = 2
 sky = SubResource("Sky_ewbpn")
 reflected_light_source = 2
 fog_enabled = true
-fog_light_color = Color(0.0142752, 0.0142752, 0.0142752, 1)
+fog_light_color = Color(1, 1, 1, 1)
 fog_light_energy = 0.0
 fog_sun_scatter = 0.08
-fog_density = 0.2269
-fog_aerial_perspective = 0.531
+fog_density = 0.1878
+fog_aerial_perspective = 0.361
+fog_height = -91.02
+fog_height_density = 16.0
+fog_depth_end = 4000.0
+adjustment_enabled = true
+adjustment_contrast = 0.56
+adjustment_color_correction = ExtResource("2_c4mmn")
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ewbpn"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c4mmn"]
 emission_shape_scale = Vector3(10, 5, 10)
@@ -73,7 +82,7 @@ fill_to = Vector2(0.67094, 0.709402)
 
 [sub_resource type="LabelSettings" id="LabelSettings_sdraq"]
 font = ExtResource("2_s1eon")
-font_size = 35
+font_size = 21
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ikuck"]
 radius = 0.25
@@ -96,6 +105,7 @@ light_data = ExtResource("1_ormww")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ormww")
+camera_attributes = SubResource("CameraAttributesPractical_ewbpn")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(-0.850416, -0.088146, -0.518675, -0.525563, 0.18733, 0.829874, 0.024013, 0.978334, -0.205634, 1.26172, 4.49234, 2.35118)
@@ -110,7 +120,7 @@ light_angular_distance = 55.27
 light_bake_mode = 1
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.66036, 0)
+transform = Transform3D(2.93476, 0, 0, 0, 1, 0, 0, 0, 1.36971, -26.0608, 3.66036, -5.37792)
 amount = 1500
 trail_enabled = true
 trail_lifetime = 0.04
@@ -118,6 +128,7 @@ process_material = SubResource("ParticleProcessMaterial_c4mmn")
 draw_pass_1 = SubResource("RibbonTrailMesh_c4mmn")
 
 [node name="InputLayout" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="BoxContainer" type="BoxContainer" parent="InputLayout"]
 anchors_preset = 15
@@ -135,14 +146,14 @@ size_flags_vertical = 4
 texture = ExtResource("2_ormww")
 
 [node name="Virtual Joystick" type="Control" parent="InputLayout"]
-modulate = Color(1, 1, 1, 0.105882)
+modulate = Color(1, 1, 1, 0.647059)
 layout_mode = 3
 anchors_preset = 0
-offset_left = -5.0
-offset_top = 313.0
-offset_right = 31.0
-offset_bottom = 353.0
-scale = Vector2(0.575, 0.575)
+offset_left = 18.0
+offset_top = 289.0
+offset_right = 54.0
+offset_bottom = 329.0
+scale = Vector2(0.24, 0.24)
 script = ExtResource("1_2d6nn")
 metadata/_custom_type_script = "uid://by2k5050k8i7f"
 metadata/_edit_use_anchors_ = true
@@ -158,14 +169,14 @@ texture_normal = SubResource("GradientTexture2D_8piwu")
 action = "jump"
 
 [node name="Label" type="Label" parent="InputLayout"]
-offset_right = 151.0
-offset_bottom = 83.0
+offset_left = 9.0
+offset_top = 5.0
+offset_right = 160.0
+offset_bottom = 88.0
 text = "FPS:"
 label_settings = SubResource("LabelSettings_sdraq")
 script = ExtResource("3_sdraq")
 metadata/_edit_use_anchors_ = true
-
-[node name="World" parent="." instance=ExtResource("7_sdraq")]
 
 [node name="SharXD" type="RigidBody3D" parent="." groups=["rigids"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2771, 2.21758, 1.9781)
@@ -193,7 +204,7 @@ interior = true
 enable_shadows = true
 
 [node name="StulXD7" parent="." instance=ExtResource("11_ewbpn")]
-transform = Transform3D(-0.684534, 0, -0.728981, 0, 1, 0, 0.728981, 0, -0.684534, -3.34959, 0.00351739, -2.91113)
+transform = Transform3D(-0.684534, 0, -0.728981, 0, 1, 0, 0.728981, 0, -0.684534, -1.05154, 0.145573, -1.5668)
 
-[node name="StulXD8" parent="." instance=ExtResource("11_ewbpn")]
-transform = Transform3D(-0.684534, 0, -0.728981, 0.583329, -0.599736, -0.547763, -0.437196, -0.800198, 0.41054, -2.86463, 0.837855, -2.7383)
+[node name="Level" parent="." instance=ExtResource("13_poev4")]
+transform = Transform3D(-4.05743e-08, 0, -0.928231, 0, 0.928231, 0, 0.928231, 0, -4.05743e-08, 4.15956, 0, -0.321658)
