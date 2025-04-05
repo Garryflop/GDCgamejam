@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/Profiler.gd" id="3_sdraq"]
 [ext_resource type="Texture2D" uid="uid://6jruflh85uyn" path="res://Assets/Textures/bobx.png" id="7_ormww"]
 [ext_resource type="PackedScene" path="res://Scenes/world.tscn" id="7_sdraq"]
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="10_hwb23"]
+[ext_resource type="Script" uid="uid://cmhewbyi1lbu0" path="res://Scripts/Player.gd" id="10_hwb23"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hwb23"]
 panorama = ExtResource("2_hwb23")

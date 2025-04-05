@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c17r0v0vmivj6"]
+[gd_scene load_steps=6 format=3 uid="uid://bs1mde5a6ah2"]
 
 [ext_resource type="Script" uid="uid://cp2whqmc2rqs8" path="res://Scripts/Menu/intro.gd" id="1_6ycwi"]
 [ext_resource type="FontFile" uid="uid://bkv7caftudka2" path="res://Assets/Fonts/neoletters.ttf" id="1_nphbt"]
@@ -97,6 +97,7 @@ text = "SQUARE TEAM"
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
