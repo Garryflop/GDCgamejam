@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://crybua5mtx5ho"]
+[gd_scene load_steps=29 format=3 uid="uid://crybua5mtx5ho"]
 
 [ext_resource type="Script" uid="uid://cd6tjb2f03wms" path="res://Scripts/Menu/level.gd" id="1_ilsv2"]
 [ext_resource type="PackedScene" uid="uid://c620yqni6f55i" path="res://Scenes/Menu/pause_menu.tscn" id="2_4f2fw"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://6jruflh85uyn" path="res://Assets/Textures/bobx.png" id="11_ay16s"]
 [ext_resource type="PackedScene" uid="uid://cuhdblrqx8tly" path="res://Scenes/Menu/console.tscn" id="12_4f2fw"]
 [ext_resource type="PackedScene" uid="uid://hks7pxviimea" path="res://Scenes/Stul.tscn" id="13_8r8ce"]
+[ext_resource type="AudioStream" uid="uid://cmnjh0jvh8828" path="res://Assets/Audio/Music/Echoes of Silence.mp3" id="15_ryjqc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ryjqc"]
 atlas = ExtResource("5_nqasx")
@@ -120,14 +121,23 @@ text = "FPS:"
 label_settings = SubResource("LabelSettings_r0lyn")
 script = ExtResource("6_xe7un")
 
-[node name="GrabButton" type="TouchScreenButton" parent="InputLayout"]
-position = Vector2(448, 224)
+[node name="HBoxContainer" type="HBoxContainer" parent="InputLayout"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="GrabButton" type="TouchScreenButton" parent="InputLayout/HBoxContainer"]
+position = Vector2(-192, -88)
 scale = Vector2(0.140049, 0.142857)
 texture_normal = SubResource("AtlasTexture_nqasx")
 action = "pick"
 
-[node name="JumpButton" type="TouchScreenButton" parent="InputLayout"]
-position = Vector2(544, 184)
+[node name="JumpButton" type="TouchScreenButton" parent="InputLayout/HBoxContainer"]
+position = Vector2(-96, -160)
 scale = Vector2(0.168675, 0.163743)
 texture_normal = SubResource("AtlasTexture_xe7un")
 action = "jump"
@@ -143,7 +153,7 @@ light_bake_mode = 1
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("8_bvs0b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.15767, 6.04835, 44.9904)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05984, 6.04835, 6.88591)
 collision_mask = 23
 script = ExtResource("9_syfhk")
 walk_speed = 2.0
@@ -627,14 +637,9 @@ shape = SubResource("SphereShape3D_4f2fw")
 
 [node name="StulXD7" parent="." instance=ExtResource("13_8r8ce")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07246, 1.07618, 6.54052)
+mass = 19.829
 gravity_scale = 0.0
-
-[node name="StulXD9" parent="." instance=ExtResource("13_8r8ce")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07246, 1.07618, 6.54052)
-gravity_scale = 0.0
-
-[node name="StulXD8" parent="." instance=ExtResource("13_8r8ce")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.52962, -8.40134, 22.9571)
+inertia = Vector3(10, 0, 0)
 
 [node name="NotWork2" type="RigidBody3D" parent="." groups=["rigids"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3411, 2.63501, 43.2397)
@@ -667,6 +672,11 @@ size = Vector3(2, 2, 2)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NotWork3"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5, 0.5, -0.5)
 shape = SubResource("BoxShape3D_nqasx")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.14367, -0.0456018, 13.6449)
+stream = ExtResource("15_ryjqc")
+autoplay = true
 
 [connection signal="released" from="InputLayout/PauseButton" to="." method="_on_pause_button_released"]
 [connection signal="body_entered" from="zone" to="." method="_on_zone_body_entered"]

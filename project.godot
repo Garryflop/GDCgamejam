@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.4", "Mobile")
 run/max_fps=144
 config/icon="res://Assets/Sprites/Pictures/icon.svg"
 
+[autoload]
+
+AudioManager="*res://Scenes/audio_manager.tscn"
+
 [display]
 
 window/size/viewport_width=640
