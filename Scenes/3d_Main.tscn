@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dl0tb5j3no3w8"]
+[gd_scene load_steps=31 format=3 uid="uid://dl0tb5j3no3w8"]
 
 [ext_resource type="Script" uid="uid://by2k5050k8i7f" path="res://addons/virtual_joystick/virtual_joystick_instantiator.gd" id="1_2d6nn"]
 [ext_resource type="PackedScene" uid="uid://bxhjvsquusjiv" path="res://Scenes/player.tscn" id="1_od0df"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://6jruflh85uyn" path="res://Assets/Textures/bobx.png" id="7_ormww"]
 [ext_resource type="PackedScene" uid="uid://hks7pxviimea" path="res://Scenes/chairXD.tscn" id="11_ewbpn"]
 [ext_resource type="PackedScene" uid="uid://cuqq2s4373cwl" path="res://Scenes/Levels/INS.tscn" id="13_poev4"]
+[ext_resource type="PackedScene" uid="uid://u6s133tq6di4" path="res://Scenes/door.tscn" id="14_pv088"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hwb23"]
 panorama = ExtResource("2_hwb23")
@@ -226,3 +227,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.928
 
 [node name="StulXD7" parent="." instance=ExtResource("11_ewbpn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.365176, -1.90735e-06, 2.11837)
+
+[node name="Door" parent="." instance=ExtResource("14_pv088")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5199, -1.78814e-06, -0.0753662)
