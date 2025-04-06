@@ -1,15 +1,18 @@
-[gd_scene load_steps=24 format=3 uid="uid://dl0tb5j3no3w8"]
+[gd_scene load_steps=30 format=3 uid="uid://dl0tb5j3no3w8"]
 
 [ext_resource type="Script" uid="uid://by2k5050k8i7f" path="res://addons/virtual_joystick/virtual_joystick_instantiator.gd" id="1_2d6nn"]
-[ext_resource type="PackedScene" uid="uid://dlnc0h005d142" path="res://Scenes/player.tscn" id="1_od0df"]
+[ext_resource type="PackedScene" uid="uid://bxhjvsquusjiv" path="res://Scenes/player.tscn" id="1_od0df"]
 [ext_resource type="LightmapGIData" uid="uid://ctsgk76nsmlnm" path="res://GI_Baked/3d_Main.lmbake" id="1_ormww"]
+[ext_resource type="CompressedTexture3D" uid="uid://847s7j8rjoye" path="res://Assets/Textures/Lut.png" id="2_c4mmn"]
 [ext_resource type="Texture2D" uid="uid://cmoncv7ugodom" path="res://Assets/Textures/overcast_soil_puresky_1k.hdr" id="2_hwb23"]
 [ext_resource type="Texture2D" uid="uid://117buwehvn0l" path="res://Assets/Textures/Crosshair.png" id="2_ormww"]
 [ext_resource type="FontFile" uid="uid://pw7ufq020i4s" path="res://Assets/Fonts/EBGaramond-VariableFont_wght.ttf" id="2_s1eon"]
-[ext_resource type="Script" path="res://Scripts/Profiler.gd" id="3_sdraq"]
+[ext_resource type="Script" uid="uid://dhh85gn34b0ek" path="res://Scripts/Profiler.gd" id="3_sdraq"]
+[ext_resource type="Material" uid="uid://47vpbpfadhav" path="res://Assets/Materials&Shaders/rain.tres" id="4_poev4"]
+[ext_resource type="Texture2D" uid="uid://br2pw0pht2kfj" path="res://Assets/Sprites/UI/buttons.PNG" id="5_ewbpn"]
 [ext_resource type="Texture2D" uid="uid://6jruflh85uyn" path="res://Assets/Textures/bobx.png" id="7_ormww"]
-[ext_resource type="PackedScene" path="res://Scenes/world.tscn" id="7_sdraq"]
-[ext_resource type="Script" uid="uid://cmhewbyi1lbu0" path="res://Scripts/Player.gd" id="10_hwb23"]
+[ext_resource type="PackedScene" uid="uid://hks7pxviimea" path="res://Scenes/chairXD.tscn" id="11_ewbpn"]
+[ext_resource type="PackedScene" uid="uid://cuqq2s4373cwl" path="res://Scenes/Levels/INS.tscn" id="13_poev4"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hwb23"]
 panorama = ExtResource("2_hwb23")
@@ -21,26 +24,56 @@ sky_material = SubResource("PanoramaSkyMaterial_hwb23")
 [sub_resource type="Environment" id="Environment_ormww"]
 background_mode = 2
 sky = SubResource("Sky_hwb23")
-ambient_light_source = 3
-ambient_light_color = Color(0.60933, 0.60933, 0.60933, 1)
 reflected_light_source = 2
 fog_enabled = true
-fog_density = 0.0433
-fog_sky_affect = 0.633
+fog_light_color = Color(1, 1, 1, 1)
+fog_light_energy = 0.0
+fog_sun_scatter = 0.08
+fog_density = 0.1878
+fog_aerial_perspective = 0.361
+fog_height = -91.02
+fog_height_density = 16.0
+adjustment_enabled = true
+adjustment_contrast = 0.56
+adjustment_color_correction = ExtResource("2_c4mmn")
 
-[sub_resource type="Gradient" id="Gradient_hwb23"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c4mmn"]
+emission_shape_scale = Vector3(10, 5, 10)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, -1, 0)
+spread = 5.0
+initial_velocity_min = 20.61
+initial_velocity_max = 20.61
+gravity = Vector3(0, 0, 0)
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_sdraq"]
-gradient = SubResource("Gradient_hwb23")
+[sub_resource type="Curve" id="Curve_c4mmn"]
+_limits = [0.0, 0.07, 0.0, 1.0]
+_data = [Vector2(0, 0.016), 0.0, 0.0, 0, 0, Vector2(0.153, 0.034), 0.097, 0.097, 0, 0, Vector2(0.959, 0.007), 0.0, 0.0, 0, 0]
+point_count = 3
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_8piwu"]
-gradient = SubResource("Gradient_hwb23")
-fill_from = Vector2(0.384615, 0.269231)
-fill_to = Vector2(0.67094, 0.709402)
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_poev4"]
+material = ExtResource("4_poev4")
+curve = SubResource("Curve_c4mmn")
 
-[sub_resource type="LabelSettings" id="LabelSettings_sdraq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4mmn"]
+atlas = ExtResource("5_ewbpn")
+region = Rect2(91, 78, 383, 386)
+
+[sub_resource type="LabelSettings" id="LabelSettings_poev4"]
 font = ExtResource("2_s1eon")
 font_size = 35
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv088"]
+atlas = ExtResource("5_ewbpn")
+region = Rect2(550, 542, 407, 406)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0f43"]
+atlas = ExtResource("5_ewbpn")
+region = Rect2(584, 95, 332, 342)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ikuck"]
 albedo_texture = ExtResource("7_ormww")
@@ -71,12 +104,18 @@ light_data = ExtResource("1_ormww")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ormww")
 
+[node name="GPUParticles3D" type="GPUParticles3D" parent="WorldEnvironment"]
+amount = 1500
+trail_enabled = true
+trail_lifetime = 0.04
+process_material = SubResource("ParticleProcessMaterial_c4mmn")
+draw_pass_1 = SubResource("RibbonTrailMesh_poev4")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(-0.963526, 0.263502, -0.0467342, -0.0584827, -0.0369154, 0.997606, 0.261146, 0.963952, 0.0509794, 1.26172, 4.49234, 2.35118)
 light_energy = 0.739
 light_angular_distance = 55.27
 light_bake_mode = 1
-shadow_enabled = true
 
 [node name="InputLayout" type="CanvasLayer" parent="."]
 
@@ -99,37 +138,56 @@ texture = ExtResource("2_ormww")
 modulate = Color(1, 1, 1, 0.105882)
 layout_mode = 3
 anchors_preset = 0
-offset_left = -5.0
-offset_top = 313.0
-offset_right = 31.0
-offset_bottom = 353.0
-scale = Vector2(0.575, 0.575)
+offset_left = 40.0
+offset_top = 272.0
+offset_right = 76.0
+offset_bottom = 312.0
+scale = Vector2(0.4, 0.4)
 script = ExtResource("1_2d6nn")
 metadata/_custom_type_script = "uid://by2k5050k8i7f"
 metadata/_edit_use_anchors_ = true
 
-[node name="GrabButton" type="TouchScreenButton" parent="InputLayout"]
-position = Vector2(447, 222)
-texture_normal = SubResource("GradientTexture2D_sdraq")
-action = "pick"
-
-[node name="JumpButton" type="TouchScreenButton" parent="InputLayout"]
-position = Vector2(526, 220)
-texture_normal = SubResource("GradientTexture2D_8piwu")
-action = "jump"
+[node name="PauseButton" type="TouchScreenButton" parent="InputLayout"]
+position = Vector2(17, 11)
+scale = Vector2(0.130548, 0.129534)
+texture_normal = SubResource("AtlasTexture_c4mmn")
 
 [node name="Label" type="Label" parent="InputLayout"]
-offset_right = 151.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -151.0
 offset_bottom = 83.0
+grow_horizontal = 0
 text = "FPS:"
-label_settings = SubResource("LabelSettings_sdraq")
+label_settings = SubResource("LabelSettings_poev4")
 script = ExtResource("3_sdraq")
-metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InputLayout"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="GrabButton" type="TouchScreenButton" parent="InputLayout/HBoxContainer"]
+position = Vector2(-192, -88)
+scale = Vector2(0.140049, 0.142857)
+texture_normal = SubResource("AtlasTexture_pv088")
+action = "pick"
+
+[node name="JumpButton" type="TouchScreenButton" parent="InputLayout/HBoxContainer"]
+position = Vector2(-96, -160)
+scale = Vector2(0.168675, 0.163743)
+texture_normal = SubResource("AtlasTexture_l0f43")
+action = "jump"
 
 [node name="WrongBox" type="RigidBody3D" parent="." groups=["rigids"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.474206, 0.557046, 1.34337)
-collision_layer = 2
-collision_mask = 30
+collision_layer = 32
+collision_mask = 62
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 lock_rotation = true
@@ -142,8 +200,6 @@ mesh = SubResource("BoxMesh_2d6nn")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WrongBox"]
 transform = Transform3D(0.461753, 0, 0, 0, 0.461753, 0, 0, 0, 0.461753, 0, 0, 0)
 shape = SubResource("BoxShape3D_2d6nn")
-
-[node name="World" parent="." instance=ExtResource("7_sdraq")]
 
 [node name="SharXD" type="RigidBody3D" parent="." groups=["rigids"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2771, 2.21758, 1.9781)
@@ -158,15 +214,15 @@ linear_damp_mode = 1
 shape = SubResource("SphereShape3D_ikuck")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SharXD"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13177, 0, 1.50903)
 material_override = SubResource("StandardMaterial3D_hwb23")
 mesh = SubResource("SphereMesh_hwb23")
 
-[node name="Player" parent="." instance=ExtResource("1_od0df")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04879, 1.26557, 2.02744)
-collision_mask = 23
-script = ExtResource("10_hwb23")
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_od0df")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.63037, 1.24658, 1.40535)
+collision_mask = 55
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
-interior = true
-enable_shadows = true
+[node name="Level" parent="." instance=ExtResource("13_poev4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.9284, 0, 0)
+
+[node name="StulXD7" parent="." instance=ExtResource("11_ewbpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.365176, -1.90735e-06, 2.11837)

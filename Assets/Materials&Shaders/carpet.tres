@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://djagcubxqf2ec"]
+
+[ext_resource type="Texture2D" uid="uid://c4j6ruebtcxyg" path="res://Assets/Textures/carpet.png" id="1_du3ih"]
+
+[resource]
+shading_mode = 2
+albedo_texture = ExtResource("1_du3ih")
+roughness = 0.5
+uv1_scale = Vector3(0.315, 0.315, 0.315)
+uv1_triplanar = true
+uv1_world_triplanar = true
