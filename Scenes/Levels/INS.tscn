@@ -3,8 +3,8 @@
 [ext_resource type="Material" uid="uid://51tmya8ktsie" path="res://Assets/Materials&Shaders/wallGrass.tres" id="1_c5erv"]
 [ext_resource type="Material" uid="uid://cg5ilqaucf8w3" path="res://Assets/Materials&Shaders/floorTile.tres" id="1_lyd6k"]
 [ext_resource type="Material" uid="uid://djagcubxqf2ec" path="res://Assets/Materials&Shaders/carpet.tres" id="3_y4dr7"]
-[ext_resource type="PackedScene" path="res://Scenes/Menu/console.tscn" id="18_p68j0"]
-[ext_resource type="PackedScene" path="res://Scenes/Menu/dialog_zone.tscn" id="20_daeh6"]
+[ext_resource type="PackedScene" uid="uid://cuhdblrqx8tly" path="res://Scenes/Menu/console.tscn" id="18_p68j0"]
+[ext_resource type="PackedScene" uid="uid://byy1vsuvxrsjk" path="res://Scenes/Menu/dialog_zone.tscn" id="20_daeh6"]
 [ext_resource type="AudioStream" uid="uid://doukbo8orlx2q" path="res://Assets/Audio/Music/noiseFromRadio.mp3" id="21_dr50b"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_vofpo"]

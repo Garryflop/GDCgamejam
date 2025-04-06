@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://u6s133tq6di4"]
+[gd_scene load_steps=11 format=3 uid="uid://u6s133tq6di4"]
 
-[ext_resource type="Script" path="res://Scripts/door.gd" id="1_fahql"]
+[ext_resource type="Script" uid="uid://yw2wnd5svs5i" path="res://Scripts/door.gd" id="1_fahql"]
 [ext_resource type="ArrayMesh" uid="uid://d3anow3sx6c74" path="res://Assets/Meshes/Door_Frame.obj" id="1_p0e35"]
 [ext_resource type="ArrayMesh" uid="uid://417hj1x1ka1g" path="res://Assets/Meshes/Door.obj" id="2_fahql"]
 [ext_resource type="Material" uid="uid://dkhm4ncc32g3p" path="res://Assets/Materials&Shaders/door.tres" id="3_ab4ky"]
@@ -28,10 +28,39 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_fahql"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RotOrigin:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ab4ky"]
+resource_name = "OPENED"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RotOrigin:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.8326, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ab4ky"]
 _data = {
 &"DoorOpen": SubResource("Animation_p0e35"),
+&"OPENED": SubResource("Animation_ab4ky"),
 &"RESET": SubResource("Animation_fahql")
 }
 
@@ -44,6 +73,7 @@ mesh = ExtResource("1_p0e35")
 surface_material_override/0 = ExtResource("3_ab4ky")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="DoorFrame2"]
+collision_layer = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DoorFrame2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_fahql")
@@ -58,6 +88,7 @@ skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("3_ab4ky")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RotOrigin/Door"]
+collision_layer = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RotOrigin/Door/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ab4ky")

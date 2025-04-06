@@ -50,6 +50,7 @@ func process_messages() -> void:
 		var message = message_queue.pop_front()
 		add_message(message[0], message[1])
 		await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(0.8).timeout
 	is_displaying = false
 	hide_console()
 

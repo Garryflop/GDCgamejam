@@ -1,8 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://4n0lyb2xuady"]
+[gd_scene load_steps=33 format=3 uid="uid://4n0lyb2xuady"]
 
 [ext_resource type="Script" uid="uid://by2k5050k8i7f" path="res://addons/virtual_joystick/virtual_joystick_instantiator.gd" id="1_2d6nn"]
+[ext_resource type="Script" uid="uid://cd6tjb2f03wms" path="res://Scripts/Menu/level.gd" id="1_l0f43"]
 [ext_resource type="PackedScene" uid="uid://bxhjvsquusjiv" path="res://Scenes/player.tscn" id="1_od0df"]
 [ext_resource type="LightmapGIData" uid="uid://ctsgk76nsmlnm" path="res://GI_Baked/3d_Main.lmbake" id="1_ormww"]
+[ext_resource type="PackedScene" uid="uid://c620yqni6f55i" path="res://Scenes/Menu/pause_menu.tscn" id="2_5qv64"]
 [ext_resource type="CompressedTexture3D" uid="uid://847s7j8rjoye" path="res://Assets/Textures/Lut.png" id="2_c4mmn"]
 [ext_resource type="Texture2D" uid="uid://cmoncv7ugodom" path="res://Assets/Textures/overcast_soil_puresky_1k.hdr" id="2_hwb23"]
 [ext_resource type="Texture2D" uid="uid://117buwehvn0l" path="res://Assets/Textures/Crosshair.png" id="2_ormww"]
@@ -19,12 +21,12 @@
 panorama = ExtResource("2_hwb23")
 energy_multiplier = 0.26
 
-[sub_resource type="Sky" id="Sky_hwb23"]
+[sub_resource type="Sky" id="Sky_5qv64"]
 sky_material = SubResource("PanoramaSkyMaterial_hwb23")
 
 [sub_resource type="Environment" id="Environment_ormww"]
 background_mode = 2
-sky = SubResource("Sky_hwb23")
+sky = SubResource("Sky_5qv64")
 reflected_light_source = 2
 fog_enabled = true
 fog_light_color = Color(1, 1, 1, 1)
@@ -51,14 +53,14 @@ collision_mode = 1
 collision_friction = 0.0
 collision_bounce = 0.0
 
-[sub_resource type="Curve" id="Curve_c4mmn"]
+[sub_resource type="Curve" id="Curve_27822"]
 _limits = [0.0, 0.07, 0.0, 1.0]
 _data = [Vector2(0, 0.016), 0.0, 0.0, 0, 0, Vector2(0.153, 0.034), 0.097, 0.097, 0, 0, Vector2(0.959, 0.007), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_poev4"]
 material = ExtResource("4_poev4")
-curve = SubResource("Curve_c4mmn")
+curve = SubResource("Curve_27822")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4mmn"]
 atlas = ExtResource("5_ewbpn")
@@ -97,9 +99,10 @@ radius = 0.25
 height = 0.5
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_l0f43")
+pause_menu_packed = ExtResource("2_5qv64")
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
-visible = false
 quality = 3
 light_data = ExtResource("1_ormww")
 
@@ -231,3 +234,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.365176, -1.90735e-06, 2.11
 
 [node name="Door" parent="." instance=ExtResource("14_pv088")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23742, -1.78814e-06, -0.0753662)
+
+[connection signal="released" from="InputLayout/PauseButton" to="." method="_on_pause_button_released"]
