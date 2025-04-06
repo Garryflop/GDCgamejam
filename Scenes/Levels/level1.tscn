@@ -747,6 +747,14 @@ file = "res://Resources/Dialogs/INS/INS 4.txt"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.61646, 1.37321, 56.9408)
 file = "res://Resources/Dialogs/INS/INS 5.txt"
 
+[node name="OUTDialogZone1" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.4736, 1.37321, 6.57555)
+file = "res://Resources/Dialogs/INS/INS 5.txt"
+
+[node name="OUTDialogZone2" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.61646, 1.37321, 56.9408)
+file = "res://Resources/Dialogs/INS/INS 5.txt"
+
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.74929, 0, 32.0941)
 stream = ExtResource("16_xe7un")
