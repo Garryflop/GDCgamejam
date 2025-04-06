@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://crybua5mtx5ho"]
+[gd_scene load_steps=30 format=3 uid="uid://crybua5mtx5ho"]
 
 [ext_resource type="Script" uid="uid://cd6tjb2f03wms" path="res://Scripts/Menu/level.gd" id="1_ilsv2"]
 [ext_resource type="PackedScene" uid="uid://c620yqni6f55i" path="res://Scenes/Menu/pause_menu.tscn" id="2_4f2fw"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://hks7pxviimea" path="res://Scenes/Stul.tscn" id="13_8r8ce"]
 [ext_resource type="PackedScene" uid="uid://bx102sv8glh6f" path="res://Scenes/Menu/dialog_zone.tscn" id="15_ryjqc"]
 [ext_resource type="AudioStream" uid="uid://doukbo8orlx2q" path="res://Assets/Audio/Music/noiseFromRadio.mp3" id="16_xe7un"]
+[ext_resource type="PackedScene" uid="uid://cngvng4rlf2jd" path="res://Scenes/physics_button.tscn" id="17_v3vqe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ryjqc"]
 atlas = ExtResource("5_nqasx")
@@ -151,7 +152,7 @@ light_bake_mode = 1
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("8_bvs0b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49476, 6.04835, 4.01438)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.48059, 6.50322, 17.031)
 collision_mask = 23
 script = ExtResource("9_syfhk")
 walk_speed = 2.0
@@ -665,9 +666,10 @@ size = Vector3(8.54311, 0.1, 6.18376)
 material = ExtResource("10_u45xj")
 
 [node name="SharXD" type="RigidBody3D" parent="." groups=["rigids"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2771, 2.21758, 28.4532)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.14978, 6.12607, 17.1928)
 collision_layer = 2
 collision_mask = 62
+lock_rotation = true
 contact_monitor = true
 max_contacts_reported = 10
 linear_damp_mode = 1
@@ -676,16 +678,15 @@ linear_damp_mode = 1
 shape = SubResource("SphereShape3D_j3yal")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SharXD"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76189, 1.12577, 3.65315)
 material_override = SubResource("StandardMaterial3D_r0lyn")
 mesh = SubResource("SphereMesh_c5s4o")
 
 [node name="Console" parent="." instance=ExtResource("12_4f2fw")]
 
 [node name="StulXD7" parent="." instance=ExtResource("13_8r8ce")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.30402, 1.07618, 5.3017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.44861, 3.67221, 19.3155)
 mass = 19.829
-gravity_scale = 0.0
+gravity_scale = 0.9
 inertia = Vector3(10, 0, 0)
 
 [node name="NotWork2" type="RigidBody3D" parent="." groups=["rigids"]]
@@ -751,5 +752,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.74929, 0, 32.0941)
 stream = ExtResource("16_xe7un")
 autoplay = true
 bus = &"Музыка"
+
+[node name="PhysicsButton" parent="." instance=ExtResource("17_v3vqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.63773, 3.00159, 17.6772)
+collision_layer = 4
 
 [connection signal="released" from="InputLayout/PauseButton" to="." method="_on_pause_button_released"]
