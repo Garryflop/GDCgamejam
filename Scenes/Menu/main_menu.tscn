@@ -7,7 +7,7 @@
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_bkwd7")
-game_scene = "uid://4n0lyb2xuady"
+game_scene = "uid://crybua5mtx5ho"
 settings_packed_scene = ExtResource("2_tself")
 credits_packed_scene = ExtResource("3_7jtkx")
 
