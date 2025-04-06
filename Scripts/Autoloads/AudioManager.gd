@@ -9,9 +9,11 @@ var sfx_player: AudioStreamPlayer
 
 func _ready():
 	music_player = AudioStreamPlayer.new()
+	music_player.bus = "Музыка"
 	add_child(music_player)
 	
 	sfx_player = AudioStreamPlayer.new()
+	sfx_player.bus = "Звуковые эффекты"
 	add_child(sfx_player)
 	
 	music_player.volume_db = MUSIC_MIN_DB
