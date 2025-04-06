@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://crybua5mtx5ho"]
+[gd_scene load_steps=28 format=3 uid="uid://crybua5mtx5ho"]
 
 [ext_resource type="Script" uid="uid://cd6tjb2f03wms" path="res://Scripts/Menu/level.gd" id="1_ilsv2"]
 [ext_resource type="PackedScene" uid="uid://c620yqni6f55i" path="res://Scenes/Menu/pause_menu.tscn" id="2_4f2fw"]
@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://6jruflh85uyn" path="res://Assets/Textures/bobx.png" id="11_ay16s"]
 [ext_resource type="PackedScene" uid="uid://cuhdblrqx8tly" path="res://Scenes/Menu/console.tscn" id="12_4f2fw"]
 [ext_resource type="PackedScene" uid="uid://hks7pxviimea" path="res://Scenes/Stul.tscn" id="13_8r8ce"]
-[ext_resource type="AudioStream" uid="uid://cmnjh0jvh8828" path="res://Assets/Audio/Music/Echoes of Silence.mp3" id="15_ryjqc"]
+[ext_resource type="PackedScene" uid="uid://byy1vsuvxrsjk" path="res://Scenes/Menu/dialog_zone.tscn" id="15_ryjqc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ryjqc"]
 atlas = ExtResource("5_nqasx")
@@ -64,9 +64,6 @@ uv1_scale = Vector3(2, 2, 2)
 uv1_triplanar = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_c5s4o"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_4f2fw"]
-radius = 2.4485
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nqasx"]
 size = Vector3(2, 2, 2)
@@ -153,7 +150,7 @@ light_bake_mode = 1
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("8_bvs0b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05984, 6.04835, 6.88591)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05984, 6.04835, 4.68501)
 collision_mask = 23
 script = ExtResource("9_syfhk")
 walk_speed = 2.0
@@ -175,16 +172,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.23, 
 layers = 4
 size = Vector3(9, 5, 0.4)
 material = ExtResource("10_u45xj")
-
-[node name="Door5" type="CSGBox3D" parent="World/NoClip"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0313525, 2.5, 8.57833)
-size = Vector3(2.74048, 5, 0.4)
-material = ExtResource("10_u45xj")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="World/NoClip/Door5"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.225151, -1.72831, -0.112215)
-operation = 2
-mesh = SubResource("CapsuleMesh_ryjqc")
 
 [node name="AA29" type="CSGBox3D" parent="World/NoClip"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.80076, 2.5, 8.57833)
@@ -260,16 +247,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.148
 size = Vector3(10.0874, 5, 0.4)
 material = ExtResource("10_u45xj")
 
-[node name="Door6" type="CSGBox3D" parent="World/NoClip"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0530744, 2.5, 21.1577)
-size = Vector3(2.88812, 5, 0.4)
-material = ExtResource("10_u45xj")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="World/NoClip/Door6"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0925018, -1.72831, -0.112215)
-operation = 2
-mesh = SubResource("CapsuleMesh_ryjqc")
-
 [node name="AA16" type="CSGBox3D" parent="World/NoClip"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12943, 2.5, 21.1577)
 size = Vector3(5.6297, 5, 0.4)
@@ -279,16 +256,6 @@ material = ExtResource("10_u45xj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.12078, 2.5, 21.1577)
 size = Vector3(5.64868, 5, 0.4)
 material = ExtResource("10_u45xj")
-
-[node name="Door7" type="CSGBox3D" parent="World/NoClip"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000300646, 2.5, 26.8724)
-size = Vector3(2.6958, 5, 0.4)
-material = ExtResource("10_u45xj")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="World/NoClip/Door7"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.0367863, -1.72831, -0.112215)
-operation = 2
-mesh = SubResource("CapsuleMesh_ryjqc")
 
 [node name="AA27" type="CSGBox3D" parent="World/NoClip"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.94303, 2.5, 26.8724)
@@ -300,16 +267,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2721, 2.5, 26.8724)
 size = Vector3(7.95326, 5, 0.4)
 material = ExtResource("10_u45xj")
 
-[node name="Door4" type="CSGBox3D" parent="World/NoClip"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.09513, 2.5, 37.3536)
-size = Vector3(2.71845, 5, 0.4)
-material = ExtResource("10_u45xj")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="World/NoClip/Door4"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.0115333, -1.72831, -0.112213)
-operation = 2
-mesh = SubResource("CapsuleMesh_ryjqc")
-
 [node name="AA25" type="CSGBox3D" parent="World/NoClip"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.81815, 2.5, 37.3536)
 size = Vector3(2.86115, 5, 0.4)
@@ -320,16 +277,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.39188, 2.5, 37.3536)
 size = Vector3(12.358, 5, 0.4)
 material = ExtResource("10_u45xj")
 
-[node name="Door3" type="CSGBox3D" parent="World/NoClip"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.03235, 2.5, 40.7453)
-size = Vector3(2.70852, 5, 0.4)
-material = ExtResource("10_u45xj")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="World/NoClip/Door3"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.225151, -1.72831, -0.112215)
-operation = 2
-mesh = SubResource("CapsuleMesh_ryjqc")
-
 [node name="AA18" type="CSGBox3D" parent="World/NoClip"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27132, 2.5, 40.7453)
 size = Vector3(2.99804, 5, 0.4)
@@ -339,16 +286,6 @@ material = ExtResource("10_u45xj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1782, 2.5, 40.7453)
 size = Vector3(13.6731, 5, 0.4)
 material = ExtResource("10_u45xj")
-
-[node name="Door" type="CSGBox3D" parent="World/NoClip"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.77182, 2.5, 51.1284)
-size = Vector3(3.7213, 5, 0.4)
-material = ExtResource("10_u45xj")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="World/NoClip/Door"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.0480499, -1.72831, -0.112217)
-operation = 2
-mesh = SubResource("CapsuleMesh_ryjqc")
 
 [node name="AA23" type="CSGBox3D" parent="World/NoClip"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3583, 2.5, 51.1284)
@@ -440,17 +377,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.6094
 size = Vector3(6.7901, 5, 0.4)
 material = ExtResource("10_u45xj")
 
-[node name="Door2" type="CSGBox3D" parent="World/NoClip"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.78378, 2.5, 56.1588)
-layers = 4
-size = Vector3(3.76343, 5, 0.4)
-material = ExtResource("10_u45xj")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="World/NoClip/Door2"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.0480499, -1.72831, -0.112217)
-operation = 2
-mesh = SubResource("CapsuleMesh_ryjqc")
-
 [node name="CSGBox3D7" type="CSGBox3D" parent="World/NoClip"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12.1047, 2.5, 56.1588)
 layers = 4
@@ -506,7 +432,7 @@ size = Vector3(8.865, 6, 0.1)
 material = ExtResource("10_u45xj")
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="World/NoClip"]
-transform = Transform3D(0.999999, -0.00171042, 0, 0.00171042, 0.999999, 0, 0, 0, 1, 0.634493, 0.988038, 16.9746)
+transform = Transform3D(0.999999, -0.00171042, 0, 0.00171042, 0.999999, 0, 0, 0, 1, 0.481972, 0.988038, 16.9746)
 size = Vector3(1, 2, 1)
 material = ExtResource("10_u45xj")
 
@@ -516,12 +442,12 @@ size = Vector3(3, 2.91089, 2.50781)
 material = ExtResource("10_u45xj")
 
 [node name="CSGBox3D16" type="CSGBox3D" parent="World/NoClip"]
-transform = Transform3D(0.999999, -0.00171042, 0, 0.00171042, 0.999999, 0, 0, 0, 1, -0.912229, 1.16974, 18.0947)
+transform = Transform3D(0.999999, -0.00171042, 0, 0.00171042, 0.999999, 0, 0, 0, 1, -1.05389, 1.16974, 18.0947)
 size = Vector3(1, 2.3634, 1)
 material = ExtResource("10_u45xj")
 
 [node name="CSGBox3D17" type="CSGBox3D" parent="World/NoClip"]
-transform = Transform3D(0.999999, -0.00171042, 0, 0.00171042, 0.999999, 0, 0, 0, 1, -2.47443, 1.36185, 16.8642)
+transform = Transform3D(0.999999, -0.00171042, 0, 0.00171042, 0.999999, 0, 0, 0, 1, -2.70588, 1.36185, 16.8642)
 size = Vector3(1, 2.74762, 1)
 material = ExtResource("10_u45xj")
 
@@ -536,7 +462,7 @@ size = Vector3(1, 2, 1)
 material = ExtResource("10_u45xj")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="World/NoClip"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.03303, 0, 18.4008)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38331, 0, 18.4008)
 polygon = PackedVector2Array(0, 0, 0, 2, 1, 2, 3.35779, -0.00937605)
 depth = 2.2
 material = ExtResource("10_u45xj")
@@ -603,6 +529,79 @@ layers = 8
 size = Vector3(3, 5, 0.4)
 material = ExtResource("10_u45xj")
 
+[node name="Doors" type="CSGCombiner3D" parent="World"]
+
+[node name="Door5" type="CSGBox3D" parent="World/Doors"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0313525, 2.5, 8.57833)
+size = Vector3(2.74048, 5, 0.4)
+material = ExtResource("10_u45xj")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="World/Doors/Door5"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.225151, -1.72831, -0.112215)
+operation = 2
+mesh = SubResource("CapsuleMesh_ryjqc")
+
+[node name="Door6" type="CSGBox3D" parent="World/Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0530744, 2.5, 21.1577)
+size = Vector3(2.88812, 5, 0.4)
+material = ExtResource("10_u45xj")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="World/Doors/Door6"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0925018, -1.72831, -0.112215)
+operation = 2
+mesh = SubResource("CapsuleMesh_ryjqc")
+
+[node name="Door7" type="CSGBox3D" parent="World/Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000300646, 2.5, 26.8724)
+size = Vector3(2.6958, 5, 0.4)
+material = ExtResource("10_u45xj")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="World/Doors/Door7"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.0367863, -1.72831, -0.112215)
+operation = 2
+mesh = SubResource("CapsuleMesh_ryjqc")
+
+[node name="Door4" type="CSGBox3D" parent="World/Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.09513, 2.5, 37.3536)
+size = Vector3(2.71845, 5, 0.4)
+material = ExtResource("10_u45xj")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="World/Doors/Door4"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.0115333, -1.72831, -0.112213)
+operation = 2
+mesh = SubResource("CapsuleMesh_ryjqc")
+
+[node name="Door3" type="CSGBox3D" parent="World/Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.03235, 2.5, 40.7453)
+size = Vector3(2.70852, 5, 0.4)
+material = ExtResource("10_u45xj")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="World/Doors/Door3"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.225151, -1.72831, -0.112215)
+operation = 2
+mesh = SubResource("CapsuleMesh_ryjqc")
+
+[node name="Door" type="CSGBox3D" parent="World/Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.77182, 2.5, 51.1284)
+size = Vector3(3.7213, 5, 0.4)
+material = ExtResource("10_u45xj")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="World/Doors/Door"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.0480499, -1.72831, -0.112217)
+operation = 2
+mesh = SubResource("CapsuleMesh_ryjqc")
+
+[node name="Door2" type="CSGBox3D" parent="World/Doors"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.78378, 2.5, 56.1588)
+layers = 4
+size = Vector3(3.76343, 5, 0.4)
+material = ExtResource("10_u45xj")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="World/Doors/Door2"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.0480499, -1.72831, -0.112217)
+operation = 2
+mesh = SubResource("CapsuleMesh_ryjqc")
+
 [node name="SharXD" type="RigidBody3D" parent="." groups=["rigids"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2771, 2.21758, 28.4532)
 collision_layer = 2
@@ -620,20 +619,6 @@ material_override = SubResource("StandardMaterial3D_r0lyn")
 mesh = SubResource("SphereMesh_c5s4o")
 
 [node name="Console" parent="." instance=ExtResource("12_4f2fw")]
-
-[node name="zone" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8415, 0, 10.1634)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="zone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.924803, 0)
-shape = SubResource("SphereShape3D_4f2fw")
-
-[node name="zone2" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0581, -1.19209e-07, 16.9316)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="zone2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.924803, 0)
-shape = SubResource("SphereShape3D_4f2fw")
 
 [node name="StulXD7" parent="." instance=ExtResource("13_8r8ce")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07246, 1.07618, 6.54052)
@@ -673,11 +658,30 @@ size = Vector3(2, 2, 2)
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5, 0.5, -0.5)
 shape = SubResource("BoxShape3D_nqasx")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.14367, -0.0456018, 13.6449)
-stream = ExtResource("15_ryjqc")
-autoplay = true
+[node name="Dialogs" type="Node3D" parent="."]
+
+[node name="DialogZone" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.187227, 0.486681, 6.13899)
+file = "res://Resources/Dialogs/INS/INS 1.txt"
+
+[node name="DialogZone2" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48939, 1.37321, 14.2495)
+file = "res://Resources/Dialogs/INS/INS 2.txt"
+
+[node name="DialogZone3" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.102176, 1.37321, 27.9617)
+file = "res://Resources/Dialogs/INS/INS 3.txt"
+
+[node name="DialogZone4" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.84845, 1.37321, 28.281)
+file = "res://Resources/Dialogs/INS/INS 3.2.txt"
+
+[node name="DialogZone5" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.21824, 1.37321, 41.9224)
+file = "res://Resources/Dialogs/INS/INS 4.txt"
+
+[node name="DialogZone6" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.61646, 1.37321, 56.9408)
+file = "res://Resources/Dialogs/INS/INS 5.txt"
 
 [connection signal="released" from="InputLayout/PauseButton" to="." method="_on_pause_button_released"]
-[connection signal="body_entered" from="zone" to="." method="_on_zone_body_entered"]
-[connection signal="body_entered" from="zone2" to="." method="_on_zone_2_body_entered"]

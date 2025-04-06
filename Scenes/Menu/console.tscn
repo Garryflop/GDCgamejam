@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cuhdblrqx8tly"]
 
 [ext_resource type="Script" uid="uid://cki5p16gvs2o0" path="res://Scripts/Menu/console.gd" id="1_icll3"]
-[ext_resource type="AudioStream" uid="uid://if3mor2lqopx" path="res://Assets/Audio/SFX/uvedomlenie-o-poluchennoy-pochte.ogg" id="2_lt6md"]
+[ext_resource type="AudioStream" uid="uid://if3mor2lqopx" path="res://Assets/Audio/SFX/notification.ogg" id="2_lt6md"]
 
 [sub_resource type="Animation" id="Animation_abh3t"]
 length = 0.001
