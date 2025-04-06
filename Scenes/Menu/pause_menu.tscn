@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c620yqni6f55i"]
+[gd_scene load_steps=4 format=3 uid="uid://c620yqni6f55i"]
 
 [ext_resource type="Script" uid="uid://t7re27pe6auo" path="res://Scripts/Menu/pause_menu.gd" id="1_i0al5"]
 [ext_resource type="FontFile" uid="uid://bkv7caftudka2" path="res://Assets/Fonts/neoletters.ttf" id="2_6pfc5"]
+[ext_resource type="PackedScene" uid="uid://dbjkim6phf5r4" path="res://Scenes/Menu/mini_options.tscn" id="2_jnmi5"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_i0al5")
+options_packed_scene = ExtResource("2_jnmi5")
 main_menu_scene = "uid://celv2gypi3neg"
 
 [node name="Control" type="Control" parent="."]

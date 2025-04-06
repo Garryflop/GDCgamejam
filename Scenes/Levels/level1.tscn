@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://6jruflh85uyn" path="res://Assets/Textures/bobx.png" id="11_ay16s"]
 [ext_resource type="PackedScene" uid="uid://cuhdblrqx8tly" path="res://Scenes/Menu/console.tscn" id="12_4f2fw"]
 [ext_resource type="PackedScene" uid="uid://hks7pxviimea" path="res://Scenes/Stul.tscn" id="13_8r8ce"]
-[ext_resource type="PackedScene" uid="uid://byy1vsuvxrsjk" path="res://Scenes/Menu/dialog_zone.tscn" id="15_ryjqc"]
+[ext_resource type="PackedScene" uid="uid://bx102sv8glh6f" path="res://Scenes/Menu/dialog_zone.tscn" id="15_ryjqc"]
 [ext_resource type="AudioStream" uid="uid://doukbo8orlx2q" path="res://Assets/Audio/Music/noiseFromRadio.mp3" id="16_xe7un"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ryjqc"]

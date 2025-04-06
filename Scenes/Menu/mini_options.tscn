@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbjkim6phf5r4"]
+
+[ext_resource type="Script" uid="uid://cq700cmxc76rq" path="res://Scripts/Menu/mini_options.gd" id="1_2skii"]
+[ext_resource type="FontFile" uid="uid://bkv7caftudka2" path="res://Assets/Fonts/neoletters.ttf" id="1_uwead"]
+[ext_resource type="PackedScene" uid="uid://fibtmlgmj7de" path="res://Scenes/Menu/audio.tscn" id="3_55on2"]
+
+[node name="mini options" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2skii")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.20871, 0.20871, 0.20871, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -399.0
+offset_top = -337.5
+offset_right = 399.0
+offset_bottom = 337.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 120
+
+[node name="BoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/BoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_uwead")
+theme_override_font_sizes/font_size = 48
+text = "Настройки"
+horizontal_alignment = 1
+
+[node name="Audio" parent="MarginContainer/BoxContainer" instance=ExtResource("3_55on2")]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="MarginContainer/BoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_uwead")
+theme_override_font_sizes/font_size = 32
+text = "Назад"
+
+[connection signal="pressed" from="MarginContainer/BoxContainer/BackButton" to="." method="_on_back_button_pressed"]
