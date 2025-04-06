@@ -8,7 +8,6 @@
 process_mode = 3
 script = ExtResource("1_i0al5")
 options_packed_scene = ExtResource("2_jnmi5")
-main_menu_scene = "uid://celv2gypi3neg"
 
 [node name="Control" type="Control" parent="."]
 process_mode = 3
