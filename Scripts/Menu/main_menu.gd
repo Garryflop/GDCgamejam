@@ -1,6 +1,8 @@
 extends CanvasLayer
 
 const LOADING_SCREEN = preload("res://Scenes/Menu/loading_screen.tscn")
+var music = preload("res://Assets/Audio/Music/MainMenuTheme.mp3")
+var button = preload("res://Assets/Audio/SFX/click.mp3")
 
 @export_file("*.tscn") var game_scene : String
 @export var settings_packed_scene : PackedScene
@@ -49,6 +51,7 @@ func _setup_credits():
 
 
 func _on_play_button_up():
+	AudioManager.play_sfx(button)
 	var loading_scene = LOADING_SCREEN.instantiate()
 	loading_scene.next_scene = game_scene
 	add_child(loading_scene)
@@ -59,20 +62,25 @@ func _on_play_button_up():
 
 
 func _on_settings_button_up():
+	AudioManager.play_sfx(button)
 	_open_sub_menu(settings_scene)
 
 
 func _on_credits_button_up():
+	AudioManager.play_sfx(button)
 	_open_sub_menu(credits_scene)
 
 
 func _on_quit_button_up():
+	AudioManager.play_sfx(button)
 	get_tree().quit()
 
 
 func _on_back_button_up():
+	AudioManager.play_sfx(button)
 	_close_sub_menu()
 
 func _ready():
+	AudioManager.play_music(music, 1.5)
 	_setup_options()
 	_setup_credits()

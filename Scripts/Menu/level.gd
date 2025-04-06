@@ -1,6 +1,6 @@
 extends Node3D
 
-
+var levelPassedSfx = preload("res://Assets/Audio/SFX/LevelPassed.mp3")
 @export var pause_menu_packed : PackedScene
 
 
