@@ -90,6 +90,7 @@ jump={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+pointing/emulate_mouse_from_touch=false
 
 [layer_names]
 
@@ -98,6 +99,7 @@ pointing/emulate_touch_from_mouse=true
 3d_physics/layer_3="Obsticles"
 3d_physics/layer_4="Clip"
 3d_physics/layer_5="charClip"
+3d_physics/layer_6="Immovable"
 
 [physics]
 

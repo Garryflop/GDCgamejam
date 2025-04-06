@@ -25,7 +25,7 @@ func _unhandled_input(event):
 		event_current_pos = event.position
 		$"..".rotate_y(-event.relative.x * 0.01)
 		spring_arm.rotate_x(event.relative.y * 0.01)
-		spring_arm.rotation.x = clamp(spring_arm.rotation.x, -PI/4, PI/4)
+		spring_arm.rotation.x = clamp(spring_arm.rotation.x, -PI/3, PI/3)
 	
 
 func _physics_process(_delta):
@@ -46,6 +46,7 @@ func _physics_process(_delta):
 func pick():
 	var ray_query = $SpringArm3D/Camera3D/RayCast3D.get_collider()
 	if(ray_query is RigidBody3D):
+		picked = true
 		pickedObject = ray_query
 		#pickedObject.
 	
