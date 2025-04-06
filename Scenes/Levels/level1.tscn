@@ -612,9 +612,9 @@ size = Vector3(54.7149, 0.1, 95.9597)
 material = ExtResource("10_u45xj")
 
 [node name="plane2" type="CSGBox3D" parent="World/Floors"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.229555, 0, 5.16311)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.229555, 0, 5.24628)
 layers = 4
-size = Vector3(8.97969, 0.1, 6.27499)
+size = Vector3(8.97969, 0.1, 6.44133)
 material = ExtResource("10_u45xj")
 
 [node name="plane3" type="CSGBox3D" parent="World/Floors"]
