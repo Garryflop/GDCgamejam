@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dl0tb5j3no3w8"]
+[gd_scene load_steps=31 format=3 uid="uid://4n0lyb2xuady"]
 
 [ext_resource type="Script" uid="uid://by2k5050k8i7f" path="res://addons/virtual_joystick/virtual_joystick_instantiator.gd" id="1_2d6nn"]
 [ext_resource type="PackedScene" uid="uid://bxhjvsquusjiv" path="res://Scenes/player.tscn" id="1_od0df"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cmoncv7ugodom" path="res://Assets/Textures/overcast_soil_puresky_1k.hdr" id="2_hwb23"]
 [ext_resource type="Texture2D" uid="uid://117buwehvn0l" path="res://Assets/Textures/Crosshair.png" id="2_ormww"]
 [ext_resource type="FontFile" uid="uid://pw7ufq020i4s" path="res://Assets/Fonts/EBGaramond-VariableFont_wght.ttf" id="2_s1eon"]
-[ext_resource type="Script" uid="uid://dhh85gn34b0ek" path="res://Scripts/Profiler.gd" id="3_sdraq"]
+[ext_resource type="Script" path="res://Scripts/Profiler.gd" id="3_sdraq"]
 [ext_resource type="Material" uid="uid://47vpbpfadhav" path="res://Assets/Materials&Shaders/rain.tres" id="4_poev4"]
 [ext_resource type="Texture2D" uid="uid://br2pw0pht2kfj" path="res://Assets/Sprites/UI/buttons.PNG" id="5_ewbpn"]
 [ext_resource type="Texture2D" uid="uid://6jruflh85uyn" path="res://Assets/Textures/bobx.png" id="7_ormww"]
@@ -99,6 +99,7 @@ height = 0.5
 [node name="Node3D" type="Node3D"]
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
+visible = false
 quality = 3
 light_data = ExtResource("1_ormww")
 
@@ -229,4 +230,4 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.928
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.365176, -1.90735e-06, 2.11837)
 
 [node name="Door" parent="." instance=ExtResource("14_pv088")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5199, -1.78814e-06, -0.0753662)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23742, -1.78814e-06, -0.0753662)
