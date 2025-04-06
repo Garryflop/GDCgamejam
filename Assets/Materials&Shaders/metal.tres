@@ -4,5 +4,7 @@
 
 [resource]
 shading_mode = 2
+diffuse_mode = 1
+specular_mode = 2
 albedo_texture = ExtResource("1_suil1")
 uv1_scale = Vector3(0.5, 0.5, 0.5)

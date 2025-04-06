@@ -31,6 +31,8 @@ func _unhandled_input(event):
 func _physics_process(_delta):
 	if(picked && pickedObject):
 		pickedObject.set_linear_velocity(($SpringArm3D/Camera3D/Hand.global_position - pickedObject.global_position)*4)
+		if $SpringArm3D/Camera3D/Hand.global_position.distance_to(pickedObject.global_position) > 2.0:
+			picked = false
 	
 	if change_fov_on_run:
 		if owner.is_on_floor():
