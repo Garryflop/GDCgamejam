@@ -1,22 +1,22 @@
 [gd_scene load_steps=56 format=4 uid="uid://yn2rfngjstvh"]
 
 [ext_resource type="Script" uid="uid://cd6tjb2f03wms" path="res://Scripts/Menu/level.gd" id="1_ilsv2"]
-[ext_resource type="PackedScene" path="res://Scenes/Menu/pause_menu.tscn" id="2_4f2fw"]
+[ext_resource type="PackedScene" uid="uid://c620yqni6f55i" path="res://Scenes/Menu/pause_menu.tscn" id="2_4f2fw"]
 [ext_resource type="Texture2D" uid="uid://117buwehvn0l" path="res://Assets/Textures/Crosshair.png" id="3_8r8ce"]
 [ext_resource type="LightmapGIData" uid="uid://ctsgk76nsmlnm" path="res://GI_Baked/3d_Main.lmbake" id="3_ay16s"]
 [ext_resource type="Script" uid="uid://by2k5050k8i7f" path="res://addons/virtual_joystick/virtual_joystick_instantiator.gd" id="4_nqasx"]
 [ext_resource type="Texture2D" uid="uid://br2pw0pht2kfj" path="res://Assets/Sprites/UI/buttons.PNG" id="5_nqasx"]
 [ext_resource type="FontFile" uid="uid://pw7ufq020i4s" path="res://Assets/Fonts/EBGaramond-VariableFont_wght.ttf" id="5_ryjqc"]
-[ext_resource type="Script" uid="uid://dhh85gn34b0ek" path="res://Scripts/Profiler.gd" id="6_xe7un"]
+[ext_resource type="Script" path="res://Scripts/Profiler.gd" id="6_xe7un"]
 [ext_resource type="Texture2D" uid="uid://cmoncv7ugodom" path="res://Assets/Textures/overcast_soil_puresky_1k.hdr" id="7_v3vqe"]
 [ext_resource type="PackedScene" uid="uid://bxhjvsquusjiv" path="res://Scenes/player.tscn" id="8_bvs0b"]
 [ext_resource type="PackedScene" uid="uid://c4awuf3f43axh" path="res://Scenes/world.tscn" id="10_xe7un"]
 [ext_resource type="Texture2D" uid="uid://6jruflh85uyn" path="res://Assets/Textures/bobx.png" id="11_ay16s"]
 [ext_resource type="PackedScene" uid="uid://u6s133tq6di4" path="res://Scenes/door.tscn" id="11_syfhk"]
 [ext_resource type="Material" uid="uid://47vpbpfadhav" path="res://Assets/Materials&Shaders/rain.tres" id="11_u45xj"]
-[ext_resource type="PackedScene" path="res://Scenes/Menu/console.tscn" id="12_4f2fw"]
+[ext_resource type="PackedScene" uid="uid://cuhdblrqx8tly" path="res://Scenes/Menu/console.tscn" id="12_4f2fw"]
 [ext_resource type="PackedScene" uid="uid://hks7pxviimea" path="res://Scenes/chairXD.tscn" id="13_8r8ce"]
-[ext_resource type="Script" path="res://Scenes/Levels/ins_dialog_start.gd" id="13_u45xj"]
+[ext_resource type="Script" uid="uid://8rjyq88hyyq4" path="res://Scenes/Levels/ins_dialog_start.gd" id="13_u45xj"]
 [ext_resource type="PackedScene" uid="uid://bpmnndfo5vild" path="res://Scenes/Menu/dialog_zone.tscn" id="15_ryjqc"]
 [ext_resource type="AudioStream" uid="uid://doukbo8orlx2q" path="res://Assets/Audio/Music/noiseFromRadio.mp3" id="16_xe7un"]
 [ext_resource type="PackedScene" uid="uid://b81h7dtbc1ow4" path="res://Scenes/physics_button.tscn" id="17_v3vqe"]
@@ -467,9 +467,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.61646, 1.37321, 56.9408)
 file = "res://Resources/Dialogs/INS/INS 5.txt"
 
 [node name="OUTDialogZone1" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2828, 0, 4.09237)
 file = "res://Resources/Dialogs/OUT/1.txt"
 
 [node name="OUTDialogZone2" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0315, 0, 11.7374)
 file = "res://Resources/Dialogs/OUT/2.txt"
 
 [node name="OUTDialogZone3" parent="Dialogs" instance=ExtResource("15_ryjqc")]
