@@ -370,10 +370,9 @@ offset_left = 40.0
 offset_top = 272.0
 offset_right = 76.0
 offset_bottom = 312.0
-scale = Vector2(0.305, 0.305)
+scale = Vector2(0.375, 0.375)
 script = ExtResource("4_nqasx")
 metadata/_custom_type_script = "uid://by2k5050k8i7f"
-metadata/_edit_use_anchors_ = true
 
 [node name="PauseButton" type="TouchScreenButton" parent="InputLayout"]
 modulate = Color(1, 1, 1, 0.258824)
