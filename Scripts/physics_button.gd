@@ -15,3 +15,4 @@ func _on_zone_body_entered(body: Node3D) -> void:
 func _on_zone_body_exited(body: Node3D) -> void:
 	if body.is_in_group("rigids"):
 		anim.play("RESET")
+		door.close()

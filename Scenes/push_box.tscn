@@ -15,7 +15,7 @@ resource_name = "Material"
 albedo_color = Color(0.8, 0.8, 0.8, 1)
 metallic = 0.5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_j4vds"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_g1quh"]
 _surfaces = [{
 "aabb": AABB(-1, -1, -1, 2, 2, 2),
 "format": 34896613377,
@@ -44,7 +44,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AACAvwAAgD8AAIC/AACAPwAAgD8AAIC/AACAvwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgL8AAIA/AACAvwAAgD8AAIA/AACAvwAAgL8AAIA/AACAvwAAgD8AAIA/AACAvwAAgL8AAIA/AACAvwAAgD8AAIC/AACAvwAAgL8AAIC/AACAPwAAgL8AAIC/AACAvwAAgL8AAIC/AACAPwAAgL8AAIA/AACAvwAAgL8AAIA/AACAPwAAgD8AAIC/AACAPwAAgL8AAIC/AACAPwAAgD8AAIA/AACAPwAAgL8AAIA/AACAvwAAgD8AAIC/AACAvwAAgL8AAIC/AACAPwAAgD8AAIC/AACAPwAAgL8AAIC//n/+/wAA/r/+f/7/AAD+v/5//v8AAP6//n/+/wAA/r//f/9/AID+//9//38AgP7//3//fwCA/v//f/9/AID+/wIABIABgPz/AgAEgAGA/P8CAASAAYD8/wIABIABgPz/AIABAP7//78AgAEA/v//vwCAAQD+//+/AIABAP7//7/6/wCA/n/+//r/AID+f/7/+v8AgP5//v/6/wCA/n/+//7//v//f/7//v/+//9//v/+//7//3/+//7//v//f/7/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_j4vds")
+shadow_mesh = SubResource("ArrayMesh_g1quh")
 
 [node name="PushBox" type="StaticBody3D"]
 
