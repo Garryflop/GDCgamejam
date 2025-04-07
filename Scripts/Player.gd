@@ -18,7 +18,7 @@ var input_direction : Vector3 = Vector3.ZERO
 @onready var camera : Camera3D = $SpringArmPivot/SpringArm3D/Camera3D
 var savedvelocity : Vector3
 
-var pickUpSfx = preload("res://Assets/Audio/SFX/portal.mp3")
+
 
 func _physics_process(delta):
 	input_direction.x = -(Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"))
@@ -55,10 +55,8 @@ func _physics_process(delta):
 			spring_arm_pivot.picked = false
 		else:
 			spring_arm_pivot.pick()
-			AudioManager.sfx_player.volume_db -= 10
-			AudioManager.play_sfx(pickUpSfx)
-			await get_tree().create_timer(2.0).timeout
-			AudioManager.sfx_player.volume_db += 10
+			
+
 			
 	
 	#var just_landed := is_on_floor() and snap_vector == Vector3.ZERO
