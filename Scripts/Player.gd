@@ -17,7 +17,7 @@ var input_direction : Vector3 = Vector3.ZERO
 @onready var animator : AnimationTree = $AnimationTree
 @onready var camera : Camera3D = $SpringArmPivot/SpringArm3D/Camera3D
 var savedvelocity : Vector3
-
+var is_outside : bool = false
 
 
 func _physics_process(delta):

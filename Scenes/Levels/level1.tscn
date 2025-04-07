@@ -515,31 +515,42 @@ file = "res://Resources/Dialogs/INS/INS 5.txt"
 [node name="OUTDialogZone1" parent="Dialogs" instance=ExtResource("15_ryjqc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2828, 0, 4.09237)
 file = "res://Resources/Dialogs/OUT/1.txt"
+is_out = true
 
 [node name="OUTDialogZone2" parent="Dialogs" instance=ExtResource("15_ryjqc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0315, 0, 11.7374)
 file = "res://Resources/Dialogs/OUT/2.txt"
+is_out = true
 
 [node name="OUTDialogZone3" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.61936, 0, 11.8451)
 file = "res://Resources/Dialogs/OUT/2.2.txt"
+is_out = true
 
 [node name="OUTDialogZone4" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8242, 0, 13.1384)
 file = "res://Resources/Dialogs/OUT/3.txt"
+is_out = true
 
 [node name="OUTDialogZone5" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.97358, 0, 24.2838)
 file = "res://Resources/Dialogs/OUT/4.txt"
+is_out = true
 
 [node name="OUTDialogZone6" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.99733, 0, 28.5691)
 file = "res://Resources/Dialogs/OUT/5.txt"
+is_out = true
 
 [node name="OUTDialogZone7" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4687, 0, 52.8293)
 file = "res://Resources/Dialogs/OUT/6.txt"
+is_out = true
 
 [node name="OUTDialogZone8" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.12291, 0, 70.6021)
 file = "res://Resources/Dialogs/OUT/7.txt"
-
-[node name="OUTDialogZone9" parent="Dialogs" instance=ExtResource("15_ryjqc")]
-file = "res://Resources/Dialogs/OUT/7.txt"
+is_out = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.74929, 0, 32.0941)
