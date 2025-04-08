@@ -1,7 +1,6 @@
-[gd_scene load_steps=48 format=4 uid="uid://dcisncsshf132"]
+[gd_scene load_steps=47 format=4 uid="uid://dcisncsshf132"]
 
-[ext_resource type="Script" uid="uid://cd6tjb2f03wms" path="res://Scripts/Menu/level.gd" id="1_xbb0r"]
-[ext_resource type="PackedScene" uid="uid://c620yqni6f55i" path="res://Scenes/Menu/pause_menu.tscn" id="2_35jnd"]
+[ext_resource type="Script" uid="uid://bicewbaujgbrt" path="res://Scripts/level_3.gd" id="1_f80nq"]
 [ext_resource type="LightmapGIData" uid="uid://ctsgk76nsmlnm" path="res://GI_Baked/3d_Main.lmbake" id="3_ltrm1"]
 [ext_resource type="CompressedTexture3D" uid="uid://847s7j8rjoye" path="res://Assets/Textures/Lut.png" id="4_16bue"]
 [ext_resource type="Texture2D" uid="uid://cmoncv7ugodom" path="res://Assets/Textures/overcast_soil_puresky_1k.hdr" id="5_rfddm"]
@@ -149,8 +148,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ilop2")
 
 [node name="Level" type="Node3D"]
-script = ExtResource("1_xbb0r")
-pause_menu_packed = ExtResource("2_35jnd")
+script = ExtResource("1_f80nq")
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 light_data = ExtResource("3_ltrm1")
@@ -277,7 +275,7 @@ texture_normal = SubResource("AtlasTexture_xe7un")
 action = "jump"
 
 [node name="Player" parent="." instance=ExtResource("12_fl7h5")]
-transform = Transform3D(0.993278, 0, 0.115752, 0, 1, 0, -0.115752, 0, 0.993278, 4.71681, 0.939393, 9.88752)
+transform = Transform3D(0.993278, 0, 0.115752, 0, 1, 0, -0.115752, 0, 0.993278, 4.71681, 0.939393, 12.7458)
 collision_mask = 55
 
 [node name="World" parent="." instance=ExtResource("20_js7s8")]
@@ -471,6 +469,7 @@ material_override = SubResource("StandardMaterial3D_r0lyn")
 mesh = SubResource("SphereMesh_c5s4o")
 
 [node name="TRIGGEREDPUSHBOX2" type="StaticBody3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(0.217547, 0, 0.97605, 0, 1, 0, -0.97605, 0, 0.217547, 4.9897, 0.879392, 9.06344)
 disable_mode = 1
 collision_layer = 65
