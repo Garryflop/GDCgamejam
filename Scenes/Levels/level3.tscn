@@ -1,6 +1,6 @@
 [gd_scene load_steps=48 format=4 uid="uid://dcisncsshf132"]
 
-[ext_resource type="Script" path="res://Scripts/level_3.gd" id="1_f80nq"]
+[ext_resource type="Script" uid="uid://bicewbaujgbrt" path="res://Scripts/level_3.gd" id="1_f80nq"]
 [ext_resource type="LightmapGIData" uid="uid://ctsgk76nsmlnm" path="res://GI_Baked/3d_Main.lmbake" id="3_ltrm1"]
 [ext_resource type="CompressedTexture3D" uid="uid://847s7j8rjoye" path="res://Assets/Textures/Lut.png" id="4_16bue"]
 [ext_resource type="Texture2D" uid="uid://cmoncv7ugodom" path="res://Assets/Textures/overcast_soil_puresky_1k.hdr" id="5_rfddm"]
@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://by2k5050k8i7f" path="res://addons/virtual_joystick/virtual_joystick_instantiator.gd" id="8_yk4w0"]
 [ext_resource type="Texture2D" uid="uid://br2pw0pht2kfj" path="res://Assets/Sprites/UI/buttons.PNG" id="9_ummpp"]
 [ext_resource type="FontFile" uid="uid://pw7ufq020i4s" path="res://Assets/Fonts/EBGaramond-VariableFont_wght.ttf" id="10_2fc35"]
-[ext_resource type="Script" uid="uid://dhh85gn34b0ek" path="res://Scripts/Profiler.gd" id="11_sospo"]
+[ext_resource type="Script" path="res://Scripts/Profiler.gd" id="11_sospo"]
 [ext_resource type="PackedScene" uid="uid://bxhjvsquusjiv" path="res://Scenes/player.tscn" id="12_fl7h5"]
 [ext_resource type="Script" uid="uid://c1syc6apyhrh2" path="res://Scripts/Menu/out_dialog_zone_2.gd" id="17_f80nq"]
 [ext_resource type="Script" uid="uid://cix4xnpxfcjhx" path="res://Scripts/dialog_zone.gd" id="18_f80nq"]
@@ -21,11 +21,11 @@
 [ext_resource type="AudioStream" uid="uid://doukbo8orlx2q" path="res://Assets/Audio/Music/noiseFromRadio.mp3" id="24_vhuf1"]
 [ext_resource type="PackedScene" uid="uid://b81h7dtbc1ow4" path="res://Scenes/physics_button.tscn" id="25_1n4q2"]
 [ext_resource type="PackedScene" uid="uid://u6s133tq6di4" path="res://Scenes/door.tscn" id="26_bptt3"]
-[ext_resource type="PackedScene" uid="uid://cjdndv0p0e5aj" path="res://Scenes/AAAATACK.tscn" id="27_lnl7s"]
+[ext_resource type="PackedScene" path="res://Scenes/AAAATACK.tscn" id="27_lnl7s"]
 [ext_resource type="PackedScene" uid="uid://b27mkdxaqkako" path="res://Scenes/push_box.tscn" id="27_vbiey"]
 [ext_resource type="Material" uid="uid://cvawvs5dfw6n3" path="res://Assets/Materials&Shaders/MainAtlas.tres" id="28_76ckf"]
 [ext_resource type="Texture2D" uid="uid://bmey8cimaeee2" path="res://Assets/Textures/Atlas.png" id="29_g0r1h"]
-[ext_resource type="Script" uid="uid://cd5o4sd3o2adk" path="res://Scripts/push_box.gd" id="30_kn52q"]
+[ext_resource type="Script" path="res://Scripts/push_box.gd" id="30_kn52q"]
 [ext_resource type="PackedScene" uid="uid://hks7pxviimea" path="res://Scenes/chairXD.tscn" id="31_if3t1"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6748a"]
@@ -276,7 +276,7 @@ texture_normal = SubResource("AtlasTexture_xe7un")
 action = "jump"
 
 [node name="Player" parent="." instance=ExtResource("12_fl7h5")]
-transform = Transform3D(0.993278, 0, 0.115752, 0, 1, 0, -0.115752, 0, 0.993278, -14.4516, 0.939393, 33.4969)
+transform = Transform3D(0.993278, 0, 0.115752, 0, 1, 0, -0.115752, 0, 0.993278, 11.1167, 0.939393, 29.9014)
 collision_mask = 55
 
 [node name="World" parent="." instance=ExtResource("20_js7s8")]
