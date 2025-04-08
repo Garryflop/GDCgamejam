@@ -13,7 +13,7 @@
 [ext_resource type="Script" path="res://Scripts/Profiler.gd" id="11_sospo"]
 [ext_resource type="PackedScene" uid="uid://bxhjvsquusjiv" path="res://Scenes/player.tscn" id="12_fl7h5"]
 [ext_resource type="ArrayMesh" uid="uid://ecrlw3inbrno" path="res://Assets/Meshes/couch.obj" id="13_kbn7v"]
-[ext_resource type="Script" path="res://Scripts/END.gd" id="16_bon45"]
+[ext_resource type="Script" uid="uid://ciqjqxm0n6irp" path="res://Scripts/END.gd" id="16_bon45"]
 [ext_resource type="Script" uid="uid://c1syc6apyhrh2" path="res://Scripts/Menu/out_dialog_zone_2.gd" id="17_f80nq"]
 [ext_resource type="PackedScene" uid="uid://0fbrhih0jfxs" path="res://Scenes/Levels/comix.tscn" id="18_lnl7s"]
 [ext_resource type="Texture2D" uid="uid://6jruflh85uyn" path="res://Assets/Textures/bobx.png" id="19_mhkwd"]
