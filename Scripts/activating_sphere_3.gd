@@ -9,4 +9,6 @@ func _physics_process(delta: float) -> void:
 		#loading_scene.next_scene = main_menu_scene
 		#add_child(loading_scene)
 		
+		
+		
 		get_tree().change_scene_to_file(main_menu_scene)

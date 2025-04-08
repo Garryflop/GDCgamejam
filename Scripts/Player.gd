@@ -9,6 +9,8 @@ var speed : float = 1.3
 @export var walk_speed : float = 1.3
 @export var jump_strength : float = 10.0
 @export var gravity : float = 50.0
+@export var HP : int = 20
+
 const ANIMATION_BLEND : float = 7.0
 var move_direction : Vector3 = Vector3.ZERO
 var input_direction : Vector3 = Vector3.ZERO
@@ -90,3 +92,8 @@ func animate(delta):
 			animator.set("parameters/isWalking/blend_amount", lerp(animator.get("parameters/isWalking/blend_amount"), 0.0, delta * ANIMATION_BLEND))
 	else:
 		animator.set("parameters/isAir/blend_amount", lerp(animator.get("parameters/isAir/blend_amount"), 1.0, delta * ANIMATION_BLEND))
+
+func hit(damage:int):
+	HP-=damage
+	if(HP<=0):
+		print("DED")
