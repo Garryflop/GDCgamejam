@@ -368,13 +368,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8242, 0, 13.1384)
 file = "res://Resources/Dialogs/OUT/3.txt"
 is_out = true
 
-[node name="OUTDialogZone5" parent="Dialogs" instance=ExtResource("23_3fjac")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.97358, 0, 24.2838)
-file = "res://Resources/Dialogs/OUT/4.txt"
-is_out = true
-
 [node name="OUTDialogZone6" parent="Dialogs" instance=ExtResource("23_3fjac")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.99733, 0, 28.5691)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.06311, 0, 29.0998)
 file = "res://Resources/Dialogs/OUT/5.txt"
 is_out = true
 
