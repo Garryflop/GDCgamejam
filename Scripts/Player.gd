@@ -20,6 +20,7 @@ var savedvelocity : Vector3
 var is_outside : bool = false
 
 
+
 func _physics_process(delta):
 	input_direction.x = -(Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"))
 	input_direction.z = -(Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up"))
@@ -81,7 +82,6 @@ func animate(delta):
 			animator.set("parameters/isBackward/blend_amount", lerp(animator.get("parameters/isBackward/blend_amount"), min(-(input_direction.z-1.0), 1.0), delta * ANIMATION_BLEND))
 			#print(animator.get("parameters/Strafe/blend_amount"))
 			animator.set("parameters/Strafe/blend_amount", lerp(animator.get("parameters/Strafe/blend_amount"), -input_direction.x, delta * ANIMATION_BLEND))
-		
 		else:
 			animator.set("parameters/isWalking/blend_amount", lerp(animator.get("parameters/isWalking/blend_amount"), 0.0, delta * ANIMATION_BLEND))
 	else:

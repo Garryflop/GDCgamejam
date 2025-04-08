@@ -1,14 +1,12 @@
 extends CanvasLayer
 
 
-var current_volume: float
 
 func headphone():
-	current_volume = AudioManager.music_player.volume_db
-	AudioManager.music_player.pitch_scale = 0.7
-	AudioManager.music_player.volume_db -= 10
+	AudioManager.current_music_player.pitch_scale = 0.7
+	AudioManager.set_global_volume(-60)
 
 
 func end():
-	AudioManager.music_player.volume_db = current_volume
-	AudioManager.music_player.pitch_scale = 1
+	AudioManager.current_music_player.pitch_scale = 1
+	queue_free()

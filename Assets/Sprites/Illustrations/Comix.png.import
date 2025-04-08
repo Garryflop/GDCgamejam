@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rgndj7flglm2"
-path="res://.godot/imported/Comix.JPG-85c29693c6146ceed790e963e9a034b0.ctex"
+uid="uid://cmwu8u5m4pgju"
+path="res://.godot/imported/Comix.png-d711e118e0f6c23d625f481630890d16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Illustrations/Comix.JPG"
-dest_files=["res://.godot/imported/Comix.JPG-85c29693c6146ceed790e963e9a034b0.ctex"]
+source_file="res://Assets/Sprites/Illustrations/Comix.png"
+dest_files=["res://.godot/imported/Comix.png-d711e118e0f6c23d625f481630890d16.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
-roughness/mode=1
+roughness/mode=0
 roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

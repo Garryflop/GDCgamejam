@@ -6,6 +6,7 @@
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
+layer = 101
 script = ExtResource("1_i0al5")
 options_packed_scene = ExtResource("2_jnmi5")
 
