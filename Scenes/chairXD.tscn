@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://hks7pxviimea"]
 
-[ext_resource type="Material" uid="uid://cy1tp7l5i60n5" path="res://Assets/Materials&Shaders/chair.tres" id="1_iqxmo"]
+[ext_resource type="Material" uid="uid://cvawvs5dfw6n3" path="res://Assets/Materials&Shaders/MainAtlas.tres" id="1_iqxmo"]
 [ext_resource type="ArrayMesh" uid="uid://bgb52pw6g0egl" path="res://Assets/Meshes/Chair.obj" id="2_bd3rm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iqxmo"]
@@ -22,9 +22,8 @@ collision_mask = 62
 [node name="Chair" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.533497, 0, 0, 0, 0.533497, 0, 0, 0, 0.533497, 0, 0, 0)
 material_override = ExtResource("1_iqxmo")
-gi_mode = 2
+gi_mode = 0
 mesh = ExtResource("2_bd3rm")
-skeleton = NodePath("../../WorldEnvironment")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0127497, 0.393555, -0.0063623)

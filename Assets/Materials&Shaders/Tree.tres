@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://us1lqjx6afty"]
+
+[ext_resource type="Texture2D" uid="uid://clpe8sg5w86m7" path="res://Assets/Textures/Tree.png" id="1_qerij"]
+[ext_resource type="Texture2D" uid="uid://5n30tedbjbmh" path="res://Assets/Textures/AtlasEmiss.png" id="2_6okgh"]
+
+[resource]
+shading_mode = 2
+diffuse_mode = 1
+specular_mode = 2
+albedo_texture = ExtResource("1_qerij")
+emission_enabled = true
+emission_texture = ExtResource("2_6okgh")

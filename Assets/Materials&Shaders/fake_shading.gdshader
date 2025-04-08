@@ -35,7 +35,7 @@ void vertex() {
 
 void fragment() {
 	vec2 uv = UV * uv_scale;
-
+	uv.y/=-1.0;
 	if (affine_texture_mapping) {
 		uv /= VERTEX.z;
 	}

@@ -6,7 +6,6 @@ extends Node3D
 @export var run_fov : float = 90.0
 
 
-var pickUpSfx = preload("res://Assets/Audio/SFX/portal.mp3")
 const CAMERA_BLEND : float = 0.05
 var picked : bool = false
 @onready var spring_arm : SpringArm3D = $SpringArm3D
@@ -16,6 +15,7 @@ var event_current_pos : Vector2
 var oneclick = false
 var pickedObject : RigidBody3D
 var doubleTap = false
+var dropsound = preload("res://Assets/Audio/SFX/wpn_denyselect.mp3")
 
 func _ready():
 	pass
@@ -50,7 +50,7 @@ func _physics_process(_delta):
 func pick():
 	var ray_query = $SpringArm3D/Camera3D/RayCast3D.get_collider()
 	if(ray_query is RigidBody3D):
-		AudioManager.play_sfx(pickUpSfx)
+		AudioManager.play_sfx(dropsound)
 		picked = true
 		pickedObject = ray_query
 		#pickedObject.

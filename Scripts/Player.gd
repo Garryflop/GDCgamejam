@@ -15,9 +15,12 @@ var input_direction : Vector3 = Vector3.ZERO
 @onready var player_mesh : Node3D = $Mesh
 @onready var spring_arm_pivot : Node3D = $SpringArmPivot
 @onready var animator : AnimationTree = $AnimationTree
+
 @onready var camera : Camera3D = $SpringArmPivot/SpringArm3D/Camera3D
 var savedvelocity : Vector3
 var is_outside : bool = false
+var picksound = preload("res://Assets/Audio/SFX/wpn_select.mp3")
+var dropsound = preload("res://Assets/Audio/SFX/wpn_denyselect.mp3")
 
 
 func _physics_process(delta):
@@ -53,6 +56,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("pick"):
 		if spring_arm_pivot.picked:
 			spring_arm_pivot.picked = false
+			AudioManager.play_sfx(picksound)
 		else:
 			spring_arm_pivot.pick()
 			

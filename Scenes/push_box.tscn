@@ -1,57 +1,29 @@
-[gd_scene load_steps=7 format=4 uid="uid://b27mkdxaqkako"]
+[gd_scene load_steps=5 format=3 uid="uid://b27mkdxaqkako"]
 
-[ext_resource type="Texture2D" uid="uid://da7rx1l5gxqax" path="res://Assets/Textures/pbXd.png" id="1_tctmx"]
+[ext_resource type="Script" uid="uid://cd5o4sd3o2adk" path="res://Scripts/push_box.gd" id="1_g1quh"]
+[ext_resource type="Material" uid="uid://cvawvs5dfw6n3" path="res://Assets/Materials&Shaders/MainAtlas.tres" id="1_hp6ph"]
+[ext_resource type="ArrayMesh" uid="uid://boginwxjd63aa" path="res://Assets/Meshes/BX.obj" id="2_hp6ph"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_u0718"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ld0s"]
+size = Vector3(0.7, 0.7, 0.7)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1quh"]
-shading_mode = 2
-diffuse_mode = 1
-specular_mode = 2
-albedo_texture = ExtResource("1_tctmx")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e1v3o"]
-resource_name = "Material"
-albedo_color = Color(0.8, 0.8, 0.8, 1)
-metallic = 0.5
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_g1quh"]
-_surfaces = [{
-"aabb": AABB(-1, -1, -1, 2, 2, 2),
-"format": 34896613377,
-"index_count": 36,
-"index_data": PackedByteArray("AAABAAIAAgADAAAAAgABAAQAAAADAAUAAAAFAAEAAgAGAAMABgAFAAMABAAGAAIAAQAFAAcAAQAHAAQABwAFAAYABAAHAAYA"),
-"name": "Material",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray("AAD//wAAAAD/////AAAAAAAA/////wAAAAAAAP//AAD///////8AAAAAAAAAAAAA//8AAP//AAD//wAAAAAAAA==")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_tctmx"]
-lightmap_size_hint = Vector2i(70, 46)
-_surfaces = [{
-"aabb": AABB(-1, -1, -1, 2, 2, 2),
-"attribute_data": PackedByteArray("4P9fPwD//z4WXzE/pzd9P6D/Hz8A//8+Fl8xPwtZCD/g/18/AP1/PuMrfj+nN30/oP8fPwD9fz7jK34/C1kIP6D/Hz8A/X8+oQ7qO6c3fT/A/r8+AP1/PqEO6jsLWQg/oP8fPwAAAADUQZ0+pzd9P8D+vz4AAAAA1EGdPgtZCD+g/x8/AACAP2ZmJj+nN30/wP6/PgAAgD8zM7M+pzd9P6D/Hz/A/z8/ZmYmPwtZCD/A/r8+wP8/PzMzsz4LWQg/wP6/PgD//z4zM7M+6k3vPgD5/z0A//8+MzOzPkMWMjzA/r8+AP1/PmZmJj/qTe8+APn/PQD9fz5mZiY/QxYyPKD/Hz8A//8+oQ7qO+pN7z7A/r8+AP//PqEO6jtDFjI8oP8fPwD9fz7UQZ0+6k3vPsD+vz4A/X8+1EGdPkMWMjyg/x8/wP8/P+Mrfj/qTe8+wP6/PsD/Pz8WXzE/6k3vPqD/Hz8A//8+4yt+P0MWMjzA/r8+AP//PhZfMT9DFjI8"),
-"format": 34359742519,
-"index_count": 36,
-"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcACAAJAAoACgAJAAsADAANAA4ADgANAA8AEAARABIAEgARABMAFAAVABYAFgAVABcA"),
-"material": SubResource("StandardMaterial3D_e1v3o"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 24,
-"vertex_data": PackedByteArray("AACAvwAAgD8AAIC/AACAPwAAgD8AAIC/AACAvwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgL8AAIA/AACAvwAAgD8AAIA/AACAvwAAgL8AAIA/AACAvwAAgD8AAIA/AACAvwAAgL8AAIA/AACAvwAAgD8AAIC/AACAvwAAgL8AAIC/AACAPwAAgL8AAIC/AACAvwAAgL8AAIC/AACAPwAAgL8AAIA/AACAvwAAgL8AAIA/AACAPwAAgD8AAIC/AACAPwAAgL8AAIC/AACAPwAAgD8AAIA/AACAPwAAgL8AAIA/AACAvwAAgD8AAIC/AACAvwAAgL8AAIC/AACAPwAAgD8AAIC/AACAPwAAgL8AAIC//n/+/wAA/r/+f/7/AAD+v/5//v8AAP6//n/+/wAA/r//f/9/AID+//9//38AgP7//3//fwCA/v//f/9/AID+/wIABIABgPz/AgAEgAGA/P8CAASAAYD8/wIABIABgPz/AIABAP7//78AgAEA/v//vwCAAQD+//+/AIABAP7//7/6/wCA/n/+//r/AID+f/7/+v8AgP5//v/6/wCA/n/+//7//v//f/7//v/+//9//v/+//7//3/+//7//v//f/7/")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_g1quh")
-
-[node name="PushBox" type="StaticBody3D"]
+[node name="Area3D" type="RigidBody3D"]
+collision_layer = 128
+collision_mask = 12
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_u0718")
+shape = SubResource("BoxShape3D_5ld0s")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 34
+script = ExtResource("1_g1quh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_5ld0s")
 
 [node name="Bx" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_g1quh")
-mesh = SubResource("ArrayMesh_tctmx")
+transform = Transform3D(0.35, 0, 0, 0, -0.35, -5.28485e-08, 0, 5.28485e-08, -0.35, 0, 0, 0)
+material_override = ExtResource("1_hp6ph")
+mesh = ExtResource("2_hp6ph")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
