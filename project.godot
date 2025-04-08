@@ -49,6 +49,7 @@ folder_colors={
 
 rigids=""
 Activators=""
+player=""
 
 [input]
 
