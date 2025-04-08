@@ -306,7 +306,7 @@ texture_normal = SubResource("AtlasTexture_xe7un")
 action = "jump"
 
 [node name="Player" parent="." instance=ExtResource("12_fl7h5")]
-transform = Transform3D(0.993278, 0, 0.115752, 0, 1, 0, -0.115752, 0, 0.993278, -12.6585, 0.939393, 33.1548)
+transform = Transform3D(0.993278, 0, 0.115752, 0, 1, 0, -0.115752, 0, 0.993278, 4.43269, 0.939393, 10.0139)
 collision_mask = 55
 
 [node name="World" parent="." instance=ExtResource("20_js7s8")]

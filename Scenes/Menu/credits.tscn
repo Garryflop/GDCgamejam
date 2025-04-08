@@ -1,4 +1,6 @@
-[gd_scene load_steps=0 format=3 uid="uid://dmckiyv2x6q8l"]
+[gd_scene load_steps=2 format=3 uid="uid://dmckiyv2x6q8l"]
+
+[ext_resource type="FontFile" uid="uid://pw7ufq020i4s" path="res://Assets/Fonts/EBGaramond-VariableFont_wght.ttf" id="1_gwqnf"]
 
 [node name="credits" type="Control"]
 layout_mode = 3
@@ -20,6 +22,23 @@ theme_override_constants/margin_top = 120
 theme_override_constants/margin_right = 120
 theme_override_constants/margin_bottom = 120
 
-[node name="Label" type="Label" parent="MarginContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
 layout_mode = 2
-text = "To be continued..."
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("1_gwqnf")
+bbcode_enabled = true
+text = "[center][b][color=#00acee]SQUARE TEAM[/color][/b]
+[color=#cccccc]presents[/color]
+[b][color=#f39c12]\"Project Hiba\"[/color][/b][/center]
+
+🎯 [b][color=#1abc9c]Harryfloppa[/color][/b] – [i][color=#bbbbbb]TeamLead & Code[/color][/i]  
+🎮 [b][color=#1abc9c]Alimger[/color][/b] – [i][color=#bbbbbb]Game Design & Scripts[/color][/i]  
+🧱 [b][color=#1abc9c]Nokken[/color][/b] – [i][color=#bbbbbb]3D Model & Code[/color][/i]  
+🎨 [b][color=#1abc9c]Zira[/color][/b] – [i][color=#bbbbbb]Art & Design[/color][/i]  
+🎵 [b][color=#1abc9c]Erali[/color][/b] – [i][color=#bbbbbb]Sound Design[/color][/i]
+
+[center][i][color=#aaaaaa]Made with ❤️ in[/color] [b][color=#ffffff]Godot Engine 4.4.1[/color][/b][/i]  
+[i][color=#aaaaaa]For[/color] [color=#f1c40f]Astana Hub GDC GameJam 2025[/color][/i]  
+[i][color=#aaaaaa]Theme:[/color] [b][color=#e74c3c]\"Bug is a Feature\"[/color][/b][/i][/center]
+"
+fit_content = true

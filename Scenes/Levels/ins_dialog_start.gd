@@ -12,4 +12,5 @@ func _on_body_entered(body: Node3D) -> void:
 			door.open()
 			if(door2):
 				door2.open()
+		queue_free()
 				

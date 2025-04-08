@@ -7,10 +7,12 @@ var levelMusic = preload("res://Assets/Audio/Music/noise1.mp3")
 
 func _ready() -> void:
 	%TRIGGEREDPUSHBOX2.global_position.y += 10
+	$SharXD6.global_position.x -= 3
 	AudioManager.play_music(levelMusic)
 
 func after()->void:
 	%TRIGGEREDPUSHBOX2.global_position.y -= 10
+	$SharXD6.global_position.x += 3
 
 
 func _on_pause_button_released() -> void:

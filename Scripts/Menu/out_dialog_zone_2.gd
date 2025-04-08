@@ -5,9 +5,11 @@ extends Area3D
 @export var comix : PackedScene
 var drive_music = preload("res://Assets/Audio/Music/drive.mp3")
 var current_volume: float
+var is_activated: bool = false
 
 func _on_body_entered(body: Node3D) -> void:
-	if body.name == "Player":
+	if body.name == "Player" && !is_activated:
+		is_activated = true
 		get_parent().get_parent().interactable = false
 		AudioManager.play_music(drive_music, 0)
 		current_volume = AudioManager.current_music_player.volume_db
