@@ -17,5 +17,5 @@ func _on_body_entered(body: Node3D) -> void:
 		var current_scene = comix.instantiate()
 		get_parent().get_parent().add_child(current_scene)
 		await get_tree().create_timer(36.0).timeout
-		get_parent().get_node("Console").start("res://Resources/Dialogs/OUT/2.2.txt")
+		get_parent().get_parent().get_node("Console").start("res://Resources/Dialogs/OUT/2.2.txt")
 		queue_free()
