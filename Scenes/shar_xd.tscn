@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://do6lgfjm8roa4"]
+
+[ext_resource type="Texture2D" uid="uid://6jruflh85uyn" path="res://Assets/Textures/bobx.png" id="1_akyqu"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_j3yal"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0lyn"]
+shading_mode = 2
+albedo_texture = ExtResource("1_akyqu")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_c5s4o"]
+
+[node name="SharXD6" type="RigidBody3D" groups=["rigids"]]
+collision_layer = 2
+collision_mask = 62
+contact_monitor = true
+max_contacts_reported = 5
+linear_damp_mode = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_j3yal")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_r0lyn")
+mesh = SubResource("SphereMesh_c5s4o")

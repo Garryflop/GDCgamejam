@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://dcisncsshf132"]
+[gd_scene load_steps=56 format=4 uid="uid://dcisncsshf132"]
 
 [ext_resource type="Script" uid="uid://bicewbaujgbrt" path="res://Scripts/level_3.gd" id="1_f80nq"]
 [ext_resource type="PackedScene" uid="uid://c620yqni6f55i" path="res://Scenes/Menu/pause_menu.tscn" id="2_35jnd"]
@@ -24,11 +24,12 @@
 [ext_resource type="AudioStream" uid="uid://doukbo8orlx2q" path="res://Assets/Audio/Music/noiseFromRadio.mp3" id="24_vhuf1"]
 [ext_resource type="PackedScene" uid="uid://b81h7dtbc1ow4" path="res://Scenes/physics_button.tscn" id="25_1n4q2"]
 [ext_resource type="PackedScene" uid="uid://u6s133tq6di4" path="res://Scenes/door.tscn" id="26_bptt3"]
-[ext_resource type="PackedScene" path="res://Scenes/AAAATACK.tscn" id="27_lnl7s"]
+[ext_resource type="PackedScene" uid="uid://14ovtsm4l155" path="res://Scenes/AAAATACK.tscn" id="27_lnl7s"]
 [ext_resource type="PackedScene" uid="uid://b27mkdxaqkako" path="res://Scenes/push_box.tscn" id="27_vbiey"]
 [ext_resource type="Material" uid="uid://cvawvs5dfw6n3" path="res://Assets/Materials&Shaders/MainAtlas.tres" id="28_76ckf"]
 [ext_resource type="Texture2D" uid="uid://bmey8cimaeee2" path="res://Assets/Textures/Atlas.png" id="29_g0r1h"]
 [ext_resource type="Script" path="res://Scripts/push_box.gd" id="30_kn52q"]
+[ext_resource type="PackedScene" uid="uid://do6lgfjm8roa4" path="res://Scenes/shar_xd.tscn" id="30_xbb0r"]
 [ext_resource type="PackedScene" uid="uid://hks7pxviimea" path="res://Scenes/chairXD.tscn" id="31_if3t1"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6748a"]
@@ -272,6 +273,7 @@ scale = Vector2(0.130548, 0.129534)
 texture_normal = SubResource("AtlasTexture_ryjqc")
 
 [node name="Label" type="Label" parent="InputLayout"]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -306,7 +308,7 @@ texture_normal = SubResource("AtlasTexture_xe7un")
 action = "jump"
 
 [node name="Player" parent="." instance=ExtResource("12_fl7h5")]
-transform = Transform3D(0.993278, 0, 0.115752, 0, 1, 0, -0.115752, 0, 0.993278, 4.43269, 0.939393, 10.0139)
+transform = Transform3D(0.993278, 0, 0.115752, 0, 1, 0, -0.115752, 0, 0.993278, 4.02232, 0.939393, 9.69958)
 collision_mask = 55
 
 [node name="World" parent="." instance=ExtResource("20_js7s8")]
@@ -539,23 +541,11 @@ transform = Transform3D(0.35, 0, 0, 0, -0.35, -5.28485e-08, 0, 5.28485e-08, -0.3
 material_override = ExtResource("28_76ckf")
 mesh = SubResource("ArrayMesh_lqrgo")
 
-[node name="SharXD6" type="RigidBody3D" parent="." groups=["rigids"]]
+[node name="SharXD6" parent="." instance=ExtResource("30_xbb0r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11082, 0.477527, 10.0727)
-collision_layer = 2
-collision_mask = 62
-contact_monitor = true
-max_contacts_reported = 5
-linear_damp_mode = 1
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SharXD6"]
-shape = SubResource("SphereShape3D_j3yal")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SharXD6"]
-material_override = SubResource("StandardMaterial3D_r0lyn")
-mesh = SubResource("SphereMesh_c5s4o")
 
 [node name="StulXD9" parent="." instance=ExtResource("27_lnl7s")]
-transform = Transform3D(0.919499, 0, -0.393092, 0, 1, 0, 0.393092, 0, 0.919499, -16.1958, 0.546815, 33.6854)
+transform = Transform3D(0.919499, 0, -0.393092, 0, 1, 0, 0.393092, 0, 0.919499, 3.16458, 0.546815, 23.2999)
 collision_mask = 12
 
 [connection signal="released" from="InputLayout/PauseButton" to="." method="_on_pause_button_released"]
