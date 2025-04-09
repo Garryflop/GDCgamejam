@@ -19,9 +19,9 @@ func after()->void:
 func tween_vignette(new_alpha: float, new_inner_radius: float, new_outer_radius: float, duration: float):
 	if sprite.material is ShaderMaterial:
 		var tween = get_tree().create_tween()
-		tween.tween_property(sprite.material, "shader_param/alpha", new_alpha, duration)
-		tween.tween_property(sprite.material, "shader_param/inner_radius", new_inner_radius, duration)
-		tween.tween_property(sprite.material, "shader_param/outer_radius", new_outer_radius, duration)
+		tween.tween_property(sprite.material, "shader_parameter/alpha", new_alpha, duration)
+		tween.tween_property(sprite.material, "shader_parameter/inner_radius", new_inner_radius, duration)
+		tween.tween_property(sprite.material, "shader_parameter/outer_radius", new_outer_radius, duration)
 
 func reset_vignette(duration: float):
 	tween_vignette(1.0, 0.0, 1.0, duration)
@@ -31,3 +31,8 @@ func _on_pause_button_released() -> void:
 		var current_menu = pause_menu_packed.instantiate()
 		get_tree().current_scene.call_deferred("add_child", current_menu)
 		get_tree().paused = true
+
+
+func _on_player_hits() -> void:
+	print("Asd")
+	tween_vignette(1, 0.16, 1 , 1)
