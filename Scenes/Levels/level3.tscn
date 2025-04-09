@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://dcisncsshf132"]
+[gd_scene load_steps=71 format=4 uid="uid://dcisncsshf132"]
 
 [ext_resource type="Script" uid="uid://bicewbaujgbrt" path="res://Scripts/level_3.gd" id="1_f80nq"]
 [ext_resource type="PackedScene" path="res://Scenes/Menu/pause_menu.tscn" id="2_35jnd"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://ciqjqxm0n6irp" path="res://Scripts/END.gd" id="16_bon45"]
 [ext_resource type="Script" uid="uid://c1syc6apyhrh2" path="res://Scripts/Menu/out_dialog_zone_2.gd" id="17_f80nq"]
 [ext_resource type="PackedScene" uid="uid://0fbrhih0jfxs" path="res://Scenes/Levels/comix.tscn" id="18_lnl7s"]
+[ext_resource type="Texture2D" uid="uid://bkh7ciwwgayhl" path="res://Assets/Meshes/9037b53a-b258-432b-803b-945faf186712.jpg" id="18_rfddm"]
 [ext_resource type="Texture2D" uid="uid://6jruflh85uyn" path="res://Assets/Textures/bobx.png" id="19_mhkwd"]
 [ext_resource type="PackedScene" uid="uid://c4awuf3f43axh" path="res://Scenes/world.tscn" id="20_js7s8"]
 [ext_resource type="Script" uid="uid://bg4u1nbq1tkp3" path="res://Scripts/aaaatack.gd" id="20_ltrm1"]
@@ -131,6 +132,42 @@ size = Vector3(2.47681, 1, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xbb0r"]
 radius = 3.27755
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c8hbi"]
+shading_mode = 2
+diffuse_mode = 1
+specular_mode = 2
+albedo_texture = ExtResource("18_rfddm")
+uv1_scale = Vector3(0.525, 0.525, 0.525)
+uv1_offset = Vector3(-0.515, -0.03, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_7mxbq"]
+lightmap_size_hint = Vector2i(7, 7)
+add_uv2 = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yk4w0"]
+shading_mode = 2
+diffuse_mode = 1
+specular_mode = 2
+albedo_texture = ExtResource("18_rfddm")
+uv1_scale = Vector3(0.525, 0.525, 0.525)
+uv1_offset = Vector3(-0.01, 0.45, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ummpp"]
+shading_mode = 2
+diffuse_mode = 1
+specular_mode = 2
+albedo_texture = ExtResource("18_rfddm")
+uv1_scale = Vector3(0.525, 0.525, 0.525)
+uv1_offset = Vector3(0, -0.03, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2fc35"]
+shading_mode = 2
+diffuse_mode = 1
+specular_mode = 2
+albedo_texture = ExtResource("18_rfddm")
+uv1_scale = Vector3(0.525, 0.525, 0.525)
+uv1_offset = Vector3(-0.515, 0.465, 0)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_j3yal"]
 
@@ -376,6 +413,26 @@ script = ExtResource("16_bon45")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Area3D"]
 shape = SubResource("SphereShape3D_xbb0r")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="World"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.29811, 1.26153, 23.9356)
+material_override = SubResource("StandardMaterial3D_c8hbi")
+mesh = SubResource("QuadMesh_7mxbq")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="World"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.38732, 1.26153, 39.0378)
+material_override = SubResource("StandardMaterial3D_yk4w0")
+mesh = SubResource("QuadMesh_7mxbq")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="World"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.30555, 1.50294, 9.75295)
+material_override = SubResource("StandardMaterial3D_ummpp")
+mesh = SubResource("QuadMesh_7mxbq")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="World"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.2549, 1.26154, 53.9)
+material_override = SubResource("StandardMaterial3D_2fc35")
+mesh = SubResource("QuadMesh_7mxbq")
 
 [node name="SharXD" type="RigidBody3D" parent="." groups=["rigids"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.46348, 1.25999, 14.2189)
