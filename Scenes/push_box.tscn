@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b27mkdxaqkako"]
+
+[ext_resource type="Script" uid="uid://cd5o4sd3o2adk" path="res://Scripts/push_box.gd" id="1_g1quh"]
+[ext_resource type="Material" uid="uid://cvawvs5dfw6n3" path="res://Assets/Materials&Shaders/MainAtlas.tres" id="1_hp6ph"]
+[ext_resource type="ArrayMesh" uid="uid://boginwxjd63aa" path="res://Assets/Meshes/BX.obj" id="2_hp6ph"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ld0s"]
+size = Vector3(0.7, 0.7, 0.7)
+
+[node name="Area3D" type="RigidBody3D"]
+collision_layer = 128
+collision_mask = 12
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_5ld0s")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 34
+script = ExtResource("1_g1quh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_5ld0s")
+
+[node name="Bx" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.35, 0, 0, 0, -0.35, -5.28485e-08, 0, 5.28485e-08, -0.35, 0, 0, 0)
+material_override = ExtResource("1_hp6ph")
+mesh = ExtResource("2_hp6ph")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

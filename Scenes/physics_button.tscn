@@ -1,0 +1,99 @@
+[gd_scene load_steps=12 format=3 uid="uid://b81h7dtbc1ow4"]
+
+[ext_resource type="Script" uid="uid://de1ta0dcu7ltf" path="res://Scripts/physics_button.gd" id="1_kx5cx"]
+[ext_resource type="Material" uid="uid://t2vj1j36tkmo" path="res://Assets/Materials&Shaders/metal.tres" id="2_4lx5c"]
+[ext_resource type="Texture2D" uid="uid://dnpmiieqy3ib6" path="res://Assets/Textures/Metal.png" id="3_7ukbt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ijwo0"]
+lightmap_size_hint = Vector2i(14, 13)
+material = ExtResource("2_4lx5c")
+add_uv2 = true
+size = Vector3(1, 0.2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yfid8"]
+shading_mode = 2
+diffuse_mode = 1
+specular_mode = 2
+albedo_color = Color(0.917071, 0.174462, 0.151164, 1)
+albedo_texture = ExtResource("3_7ukbt")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lepnf"]
+lightmap_size_hint = Vector2i(17, 10)
+material = SubResource("StandardMaterial3D_yfid8")
+add_uv2 = true
+top_radius = 0.4
+height = 0.2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4lx5c"]
+size = Vector3(1, 0.2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ukbt"]
+size = Vector3(0.874878, 0.17334, 1)
+
+[sub_resource type="Animation" id="Animation_kx5cx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.08, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ijwo0"]
+resource_name = "pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.116629, 0.0173371),
+"update": 0,
+"values": [Vector3(0, 0.08, 0), Vector3(0, 0.0396899, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lepnf"]
+_data = {
+&"RESET": SubResource("Animation_kx5cx"),
+&"pressed": SubResource("Animation_ijwo0")
+}
+
+[node name="PhysicsButton" type="StaticBody3D"]
+collision_layer = 4
+script = ExtResource("1_kx5cx")
+
+[node name="Base" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ijwo0")
+
+[node name="Button" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08, 0)
+mesh = SubResource("CylinderMesh_lepnf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_4lx5c")
+
+[node name="zone" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 34
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="zone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00701904, 0.124073, 0)
+shape = SubResource("BoxShape3D_7ukbt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_lepnf")
+}
+
+[connection signal="body_entered" from="zone" to="." method="_on_zone_body_entered"]
+[connection signal="body_exited" from="zone" to="." method="_on_zone_body_exited"]

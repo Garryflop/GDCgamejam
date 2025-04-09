@@ -1,0 +1,352 @@
+[gd_scene load_steps=36 format=3 uid="uid://yn2rfngjstvh"]
+
+[ext_resource type="Script" uid="uid://cd6tjb2f03wms" path="res://Scripts/Menu/level.gd" id="1_ilsv2"]
+[ext_resource type="PackedScene" path="res://Scenes/Menu/pause_menu.tscn" id="2_4f2fw"]
+[ext_resource type="Texture2D" uid="uid://117buwehvn0l" path="res://Assets/Textures/Crosshair.png" id="3_8r8ce"]
+[ext_resource type="Script" uid="uid://by2k5050k8i7f" path="res://addons/virtual_joystick/virtual_joystick_instantiator.gd" id="4_nqasx"]
+[ext_resource type="Texture2D" uid="uid://br2pw0pht2kfj" path="res://Assets/Sprites/UI/buttons.PNG" id="5_nqasx"]
+[ext_resource type="FontFile" uid="uid://pw7ufq020i4s" path="res://Assets/Fonts/EBGaramond-VariableFont_wght.ttf" id="5_ryjqc"]
+[ext_resource type="Script" uid="uid://dhh85gn34b0ek" path="res://Scripts/Profiler.gd" id="6_xe7un"]
+[ext_resource type="Texture2D" uid="uid://cmoncv7ugodom" path="res://Assets/Textures/overcast_soil_puresky_1k.hdr" id="7_v3vqe"]
+[ext_resource type="PackedScene" uid="uid://bxhjvsquusjiv" path="res://Scenes/player.tscn" id="8_bvs0b"]
+[ext_resource type="PackedScene" uid="uid://c4awuf3f43axh" path="res://Scenes/world.tscn" id="10_xe7un"]
+[ext_resource type="Texture2D" uid="uid://6jruflh85uyn" path="res://Assets/Textures/bobx.png" id="11_ay16s"]
+[ext_resource type="PackedScene" uid="uid://u6s133tq6di4" path="res://Scenes/door.tscn" id="11_syfhk"]
+[ext_resource type="Material" uid="uid://47vpbpfadhav" path="res://Assets/Materials&Shaders/rain.tres" id="11_u45xj"]
+[ext_resource type="PackedScene" path="res://Scenes/Menu/console.tscn" id="12_4f2fw"]
+[ext_resource type="PackedScene" uid="uid://hks7pxviimea" path="res://Scenes/chairXD.tscn" id="13_8r8ce"]
+[ext_resource type="Script" path="res://Scenes/Levels/ins_dialog_start.gd" id="13_u45xj"]
+[ext_resource type="PackedScene" uid="uid://bpmnndfo5vild" path="res://Scenes/Menu/dialog_zone.tscn" id="15_ryjqc"]
+[ext_resource type="AudioStream" uid="uid://doukbo8orlx2q" path="res://Assets/Audio/Music/noiseFromRadio.mp3" id="16_xe7un"]
+[ext_resource type="PackedScene" path="res://Scenes/physics_button.tscn" id="17_v3vqe"]
+[ext_resource type="CompressedTexture3D" uid="uid://847s7j8rjoye" path="res://Assets/Textures/Lut.png" id="20_ay16s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryjqc"]
+atlas = ExtResource("5_nqasx")
+region = Rect2(91, 78, 383, 386)
+
+[sub_resource type="LabelSettings" id="LabelSettings_r0lyn"]
+font = ExtResource("5_ryjqc")
+font_size = 35
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqasx"]
+atlas = ExtResource("5_nqasx")
+region = Rect2(550, 542, 407, 406)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe7un"]
+atlas = ExtResource("5_nqasx")
+region = Rect2(584, 95, 332, 342)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_j3yal"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0lyn"]
+shading_mode = 2
+albedo_texture = ExtResource("11_ay16s")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_c5s4o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nqasx"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jeyjg"]
+radius = 1.0
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6748a"]
+panorama = ExtResource("7_v3vqe")
+energy_multiplier = 0.26
+
+[sub_resource type="Sky" id="Sky_hwb23"]
+sky_material = SubResource("PanoramaSkyMaterial_6748a")
+
+[sub_resource type="Environment" id="Environment_5y6uu"]
+background_mode = 2
+sky = SubResource("Sky_hwb23")
+reflected_light_source = 2
+fog_enabled = true
+fog_light_color = Color(1, 1, 1, 1)
+fog_light_energy = 0.0
+fog_sun_scatter = 0.08
+fog_density = 0.1878
+fog_aerial_perspective = 0.361
+fog_height = -91.02
+fog_height_density = 16.0
+adjustment_enabled = true
+adjustment_contrast = 0.56
+adjustment_color_correction = ExtResource("20_ay16s")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m4h5f"]
+emission_shape_scale = Vector3(10, 5, 10)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, -1, 0)
+spread = 5.0
+initial_velocity_min = 20.61
+initial_velocity_max = 20.61
+gravity = Vector3(0, 0, 0)
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="Curve" id="Curve_c4mmn"]
+_limits = [0.0, 0.07, 0.0, 1.0]
+_data = [Vector2(0, 0.016), 0.0, 0.0, 0, 0, Vector2(0.153, 0.034), 0.097, 0.097, 0, 0, Vector2(0.959, 0.007), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_d2e0u"]
+material = ExtResource("11_u45xj")
+curve = SubResource("Curve_c4mmn")
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_ilsv2")
+pause_menu_packed = ExtResource("2_4f2fw")
+
+[node name="InputLayout" type="CanvasLayer" parent="."]
+
+[node name="BoxContainer" type="BoxContainer" parent="InputLayout"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="InputLayout/BoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="InputLayout/BoxContainer/CenterContainer"]
+texture = ExtResource("3_8r8ce")
+
+[node name="Virtual Joystick" type="Control" parent="InputLayout"]
+modulate = Color(1, 1, 1, 0.105882)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 40.0
+offset_top = 272.0
+offset_right = 76.0
+offset_bottom = 312.0
+scale = Vector2(0.4, 0.4)
+script = ExtResource("4_nqasx")
+metadata/_custom_type_script = "uid://by2k5050k8i7f"
+metadata/_edit_use_anchors_ = true
+
+[node name="PauseButton" type="TouchScreenButton" parent="InputLayout"]
+position = Vector2(17, 11)
+scale = Vector2(0.130548, 0.129534)
+texture_normal = SubResource("AtlasTexture_ryjqc")
+
+[node name="Label" type="Label" parent="InputLayout"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -151.0
+offset_bottom = 83.0
+grow_horizontal = 0
+text = "FPS:"
+label_settings = SubResource("LabelSettings_r0lyn")
+script = ExtResource("6_xe7un")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InputLayout"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="GrabButton" type="TouchScreenButton" parent="InputLayout/HBoxContainer"]
+position = Vector2(-192, -88)
+scale = Vector2(0.140049, 0.142857)
+texture_normal = SubResource("AtlasTexture_nqasx")
+action = "pick"
+
+[node name="JumpButton" type="TouchScreenButton" parent="InputLayout/HBoxContainer"]
+position = Vector2(-96, -160)
+scale = Vector2(0.168675, 0.163743)
+texture_normal = SubResource("AtlasTexture_xe7un")
+action = "jump"
+
+[node name="Player" parent="." instance=ExtResource("8_bvs0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.373094, 1.48605, 4.00962)
+collision_mask = 23
+
+[node name="World" parent="." instance=ExtResource("10_xe7un")]
+
+[node name="SharXD" type="RigidBody3D" parent="." groups=["rigids"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.35439, 3.35126, 14.8789)
+collision_layer = 2
+collision_mask = 62
+lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 10
+linear_damp_mode = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SharXD"]
+shape = SubResource("SphereShape3D_j3yal")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SharXD"]
+material_override = SubResource("StandardMaterial3D_r0lyn")
+mesh = SubResource("SphereMesh_c5s4o")
+
+[node name="Console" parent="." instance=ExtResource("12_4f2fw")]
+
+[node name="StulXD7" parent="." instance=ExtResource("13_8r8ce")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.44861, 5.7647, 13.867)
+mass = 19.829
+gravity_scale = 0.0
+inertia = Vector3(10, 0, 0)
+
+[node name="NotWork2" type="RigidBody3D" parent="." groups=["rigids"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3411, 2.63501, 43.2397)
+collision_layer = 2
+collision_mask = 62
+contact_monitor = true
+max_contacts_reported = 10
+linear_damp_mode = 1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NotWork2"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5, 0.5, -0.5)
+size = Vector3(2, 2, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NotWork2"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5, 0.5, -0.5)
+shape = SubResource("BoxShape3D_nqasx")
+
+[node name="NotWork3" type="RigidBody3D" parent="." groups=["rigids"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69992, 2.63501, 32.5748)
+collision_layer = 2
+collision_mask = 62
+contact_monitor = true
+max_contacts_reported = 10
+linear_damp_mode = 1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NotWork3"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5, 0.5, -0.5)
+size = Vector3(2, 2, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NotWork3"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5, 0.5, -0.5)
+shape = SubResource("BoxShape3D_nqasx")
+
+[node name="Dialogs" type="Node3D" parent="."]
+
+[node name="INSDialogZone" type="Area3D" parent="Dialogs" node_paths=PackedStringArray("door")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.187227, 0.486681, 6.13899)
+script = ExtResource("13_u45xj")
+file = "res://Resources/Dialogs/INS/INS 1.txt"
+door = NodePath("../../Doors/Door1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialogs/INSDialogZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.09277)
+shape = SubResource("SphereShape3D_jeyjg")
+
+[node name="INSDialogZone2" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164781, 1.37321, 12.642)
+file = "res://Resources/Dialogs/INS/INS 2.txt"
+
+[node name="INSDialogZone3" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.102176, 1.37321, 27.9617)
+file = "res://Resources/Dialogs/INS/INS 3.txt"
+
+[node name="INSDialogZone4" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.84845, 1.37321, 28.281)
+file = "res://Resources/Dialogs/INS/INS 3.2.txt"
+
+[node name="INSDialogZone5" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.21824, 1.37321, 41.9224)
+file = "res://Resources/Dialogs/INS/INS 4.txt"
+
+[node name="INSDialogZone6" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.61646, 1.37321, 56.9408)
+file = "res://Resources/Dialogs/INS/INS 5.txt"
+
+[node name="OUTDialogZone1" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+file = "res://Resources/Dialogs/OUT/1.txt"
+
+[node name="OUTDialogZone2" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+file = "res://Resources/Dialogs/OUT/2.txt"
+
+[node name="OUTDialogZone3" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+file = "res://Resources/Dialogs/OUT/2.2.txt"
+
+[node name="OUTDialogZone4" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+file = "res://Resources/Dialogs/OUT/3.txt"
+
+[node name="OUTDialogZone5" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+file = "res://Resources/Dialogs/OUT/4.txt"
+
+[node name="OUTDialogZone6" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+file = "res://Resources/Dialogs/OUT/5.txt"
+
+[node name="OUTDialogZone7" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+file = "res://Resources/Dialogs/OUT/6.txt"
+
+[node name="OUTDialogZone8" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+file = "res://Resources/Dialogs/OUT/7.txt"
+
+[node name="OUTDialogZone9" parent="Dialogs" instance=ExtResource("15_ryjqc")]
+file = "res://Resources/Dialogs/OUT/7.txt"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.74929, 0, 32.0941)
+stream = ExtResource("16_xe7un")
+autoplay = true
+bus = &"Музыка"
+
+[node name="PhysicsButton" parent="." node_paths=PackedStringArray("door") instance=ExtResource("17_v3vqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5388, 2.34335, 17.5941)
+collision_layer = 4
+door = NodePath("../Doors/Door3")
+
+[node name="PhysicsButton2" parent="." node_paths=PackedStringArray("door") instance=ExtResource("17_v3vqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.28273, 0.143721, 32.4691)
+collision_layer = 4
+door = NodePath("../Doors/Door5")
+
+[node name="Doors" type="Node3D" parent="."]
+
+[node name="Door1" parent="Doors" instance=ExtResource("11_syfhk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.45058e-09, 0, 8.38808)
+
+[node name="Door2" parent="Doors" instance=ExtResource("11_syfhk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.000352506, 0, 11.2914)
+is_open = true
+
+[node name="Door3" parent="Doors" instance=ExtResource("11_syfhk")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0843525, 0, 21.0928)
+
+[node name="Door4" parent="Doors" instance=ExtResource("11_syfhk")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0843525, 0, 27.0656)
+is_open = true
+
+[node name="Door5" parent="Doors" instance=ExtResource("11_syfhk")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.12635, 0, 37.2898)
+
+[node name="Door6" parent="Doors" instance=ExtResource("11_syfhk")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.08703, 0, 40.9358)
+is_open = true
+
+[node name="Door7" parent="Doors" instance=ExtResource("11_syfhk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.75265, 0, 56.2237)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5y6uu")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="WorldEnvironment"]
+amount = 1500
+trail_enabled = true
+trail_lifetime = 0.04
+process_material = SubResource("ParticleProcessMaterial_m4h5f")
+draw_pass_1 = SubResource("RibbonTrailMesh_d2e0u")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(-0.963526, 0.263502, -0.0467342, -0.0584827, -0.0369154, 0.997606, 0.261146, 0.963952, 0.0509794, 1.26172, 4.49234, 2.35118)
+light_energy = 0.739
+light_angular_distance = 55.27
+light_bake_mode = 1
+
+[connection signal="released" from="InputLayout/PauseButton" to="." method="_on_pause_button_released"]
+[connection signal="body_entered" from="Dialogs/INSDialogZone" to="Dialogs/INSDialogZone" method="_on_body_entered"]

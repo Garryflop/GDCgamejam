@@ -1,0 +1,294 @@
+[gd_scene load_steps=17 format=3 uid="uid://0fbrhih0jfxs"]
+
+[ext_resource type="Script" uid="uid://bv5ua0fg567k4" path="res://Scripts/comix.gd" id="1_ffxea"]
+[ext_resource type="Shader" uid="uid://gtnii2yj4ug1" path="res://Assets/Materials&Shaders/comix.gdshader" id="2_yhh1d"]
+[ext_resource type="Texture2D" uid="uid://dmyvlsm44gtop" path="res://Assets/Sprites/Illustrations/Comix.png" id="3_ffxea"]
+[ext_resource type="AudioStream" uid="uid://cbsluv2ka5yvh" path="res://Assets/Audio/SFX/enemyAppearing.mp3" id="4_3q0pd"]
+[ext_resource type="AudioStream" uid="uid://dke0wk22v1683" path="res://Assets/Audio/SFX/smash.mp3" id="5_0p2yg"]
+[ext_resource type="AudioStream" uid="uid://b03l6gbtvnt8u" path="res://Assets/Audio/SFX/keyboard.mp3" id="5_ffxea"]
+[ext_resource type="AudioStream" uid="uid://c37brygedgljd" path="res://Assets/Audio/SFX/shot.mp3" id="5_s2l24"]
+[ext_resource type="AudioStream" uid="uid://e78t83b05ovs" path="res://Assets/Audio/SFX/gliding_mouse.mp3" id="6_yhh1d"]
+[ext_resource type="Texture2D" uid="uid://cuuxhr0iamdmo" path="res://addons/virtual_joystick/textures/joystickBackground.png" id="7_oriui"]
+[ext_resource type="AudioStream" uid="uid://lb1ly83difyx" path="res://Assets/Audio/SFX/portal.mp3" id="8_s2l24"]
+[ext_resource type="AudioStream" uid="uid://bryph67meor0c" path="res://Assets/Audio/SFX/keys.mp3" id="9_0p2yg"]
+[ext_resource type="AudioStream" uid="uid://dt7ho861qitxv" path="res://Assets/Audio/SFX/whooshMotion.mp3" id="10_0p2yg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k5fi7"]
+shader = ExtResource("2_yhh1d")
+shader_parameter/dir = Vector2(0, 0)
+shader_parameter/quality = 1280
+
+[sub_resource type="Animation" id="Animation_cvh35"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_3q0pd")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1296, 2496)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect:material:shader_parameter/dir")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioStreamPlayer:stream")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_0p2yg")]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AudioStreamPlayer:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_3yr8r"]
+resource_name = "Transition"
+length = 35.0
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.78155, 5.03333, 5.84254, 7.29313, 8.37105, 9.48092, 10.3592, 11.4316, 11.9092, 12.3592, 12.6359, 12.9092, 13.4925, 13.8812, 14.1759, 14.5812, 14.9812, 15.3292, 15.6639, 16.3259, 16.9092, 17.4925, 17.9592, 18.4592, 19.1759, 19.7153, 20.3592, 20.7259, 21.3925, 22.0248, 22.8477, 23.5143, 24.0477, 24.5477, 25.193, 25.7267, 27.0755, 27.6092, 29.8592, 31.0163, 31.8271, 32.7915),
+"transitions": PackedFloat32Array(1, 6.06286, 6.06286, 1, 0.287175, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.6245, 1, 0.307786, 1.56917, 1.56917, 1, 0.31864, 6.9644, 1, 0.143587, 1, 1, 1, 0.287175, 1, 1, 0.34151, 0.31864, 1.03526, 2.14355, 1),
+"update": 0,
+"values": [Vector2(648, -8), Vector2(84, -4), Vector2(84, -4), Vector2(-80, 56), Vector2(-80, 56), Vector2(-264, 32), Vector2(-264, 32), Vector2(-328, -72), Vector2(-280, -88), Vector2(-136, -40), Vector2(-72, -24), Vector2(-72, -48), Vector2(8, -56), Vector2(56, -80), Vector2(88, -128), Vector2(112, -184), Vector2(96, -224), Vector2(72, -232), Vector2(32, -240), Vector2(-8, -232), Vector2(-112, -184), Vector2(-168, -160), Vector2(-264, -160), Vector2(-264, -160), Vector2(136, -376), Vector2(136, -376), Vector2(80, -432), Vector2(80, -432), Vector2(-184, -344), Vector2(-184, -344), Vector2(-256, -488), Vector2(-256, -488), Vector2(-216, -568), Vector2(-176, -648), Vector2(-88, -752), Vector2(-88, -752), Vector2(72, -952), Vector2(72, -952), Vector2(-160, -960), Vector2(-224, -880), Vector2(-672, -1880), Vector2(-984, -2400)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(7.3, 8.49254, 8.82587, 11.6092, 15.8667, 18.9333, 22.8305, 25.2362, 26.4333, 26.4792, 27.4292, 31.5892, 32.3992),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_ffxea"), ExtResource("5_ffxea"), ExtResource("6_yhh1d"), ExtResource("6_yhh1d"), ExtResource("4_3q0pd"), ExtResource("4_3q0pd"), ExtResource("5_s2l24"), ExtResource("8_s2l24"), ExtResource("8_s2l24"), ExtResource("9_0p2yg"), ExtResource("9_0p2yg"), ExtResource("10_0p2yg"), ExtResource("10_0p2yg")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(7.3, 8.35921, 9.4092, 12.9677, 15.9333, 25.2362, 26.3667, 26.4792, 27.3167, 31.5892, 32.2692),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, true, false, true, false, true, false]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(22.8092, 34.8259),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"headphone"
+}, {
+"args": [],
+"method": &"end"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(19.3184, 31.0163, 31.8271, 32.7915),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(712, 1280), Vector2(712, 1280), Vector2(1296, 2496), Vector2(1680, 3184)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureRect:material:shader_parameter/dir")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(30.2585, 31.6259, 32.708, 34.8092),
+"transitions": PackedFloat32Array(1, 1, 1, 0.203063),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0.42), Vector2(0, 2.7)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.91667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AudioStreamPlayer:stream")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(22.8191, 23.5191),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("5_0p2yg"), ExtResource("5_0p2yg")]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AudioStreamPlayer:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(22.8191, 23.5191),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k5fi7"]
+_data = {
+&"RESET": SubResource("Animation_cvh35"),
+&"Transition": SubResource("Animation_3yr8r")
+}
+
+[node name="Comix" type="CanvasLayer"]
+process_mode = 3
+layer = 100
+script = ExtResource("1_ffxea")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_k5fi7")
+offset_right = 1296.0
+offset_bottom = 2496.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ffxea")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_k5fi7")
+}
+autoplay = "Transition"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("7_oriui")
+expand_mode = 1
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3q0pd")
+bus = &"Звуковые эффекты"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_0p2yg")
+volume_db = -27.937
+bus = &"Звуковые эффекты"

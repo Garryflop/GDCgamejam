@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://up2pn56ystpm"]
+
+[ext_resource type="Texture2D" uid="uid://ckn8dsm1jns7r" path="res://Assets/Textures/ceilingTile.png" id="1_vp6ry"]
+[ext_resource type="Texture2D" uid="uid://4xwbfgl5eppm" path="res://Assets/Textures/ceilingTileEmissionMask.png" id="2_ohppg"]
+
+[resource]
+shading_mode = 2
+albedo_texture = ExtResource("1_vp6ry")
+emission_enabled = true
+emission_energy_multiplier = 5.0
+emission_texture = ExtResource("2_ohppg")
+uv1_scale = Vector3(0.36, 0.36, 0.36)
+uv1_offset = Vector3(0.385, 0, 1.037)
+uv1_triplanar = true

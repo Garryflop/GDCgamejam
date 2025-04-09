@@ -1,0 +1,23 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://gmow81subox0"]
+
+[ext_resource type="Shader" uid="uid://bfq5m2pg1jfwn" path="res://Assets/Materials&Shaders/WallsMain.gdshader" id="1_d4mhm"]
+[ext_resource type="Texture2D" uid="uid://hw26p814bp7j" path="res://Assets/Textures/wallGrass.png" id="2_bxxjl"]
+[ext_resource type="Texture2D" uid="uid://cedknxt16kupm" path="res://Assets/Textures/wallNoGrass.png" id="2_sphby"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_d4mhm")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_bxxjl")
+shader_parameter/texture_top = ExtResource("2_sphby")
+shader_parameter/albedo_texture_size = Vector2i(256, 256)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 0.5
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/uv1_scale = Vector3(0.32, 0.32, 0.32)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)

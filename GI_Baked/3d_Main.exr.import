@@ -1,0 +1,28 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://cf06mlytphknl"
+path.bptc="res://.godot/imported/3d_Main.exr-6bb08ea7b6fd5feb6b895f9b1fc7a9ab.bptc.ctexarray"
+path.astc="res://.godot/imported/3d_Main.exr-6bb08ea7b6fd5feb6b895f9b1fc7a9ab.astc.ctexarray"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://GI_Baked/3d_Main.exr"
+dest_files=["res://.godot/imported/3d_Main.exr-6bb08ea7b6fd5feb6b895f9b1fc7a9ab.bptc.ctexarray", "res://.godot/imported/3d_Main.exr-6bb08ea7b6fd5feb6b895f9b1fc7a9ab.astc.ctexarray"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=1

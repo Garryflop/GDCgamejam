@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://csy5lp3u143o3"]
+
+[ext_resource type="Script" uid="uid://bqbibh8ohbyi3" path="res://Scripts/Menu/message.gd" id="1_mqvb8"]
+[ext_resource type="FontFile" uid="uid://bkv7caftudka2" path="res://Assets/Fonts/neoletters.ttf" id="1_qsfm2"]
+
+[node name="Message" type="VBoxContainer"]
+offset_right = 1.0
+offset_bottom = 50.0
+script = ExtResource("1_mqvb8")
+MName = "Name"
+Mtext = "Text"
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_qsfm2")
+theme_override_font_sizes/font_size = 24
+text = "Name"
+
+[node name="Text" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_qsfm2")
+theme_override_font_sizes/font_size = 16
+text = "message to you"
