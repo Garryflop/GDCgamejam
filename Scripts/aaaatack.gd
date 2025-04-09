@@ -5,7 +5,7 @@ var attck : bool = false
 var is_dead : bool = false
 @onready var ray : RayCast3D = $RayCast3D 
 var ded = preload("res://Assets/Audio/SFX/enemyAppearing2.mp3")
-
+@export var second : bool = false
 var can_attack : bool = true  # Флаг для контроля частоты атак
 var attack_cooldown : float = 1.0  # Время между атаками в секундах
 var attack_timer : float = 0.0  # Таймер для отслеживания времени
@@ -63,6 +63,10 @@ func _on_body_entered(body: Node) -> void:
 
 func dead():
 	AudioManager.play_sfx(ded)
-	get_parent().get_node("Console").start("res://Resources/Dialogs/OUT/4.txt")
+	if(!second):
+		get_parent().get_node("Console").start("res://Resources/Dialogs/OUT/4.txt")
+	else:
+		get_parent().get_node("Console").start("res://Resources/Dialogs/OUT/6.txt")
+		
 	queue_free()
 	print("Стульчик умер")

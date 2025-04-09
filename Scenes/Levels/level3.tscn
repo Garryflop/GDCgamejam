@@ -1,7 +1,7 @@
-[gd_scene load_steps=59 format=4 uid="uid://dcisncsshf132"]
+[gd_scene load_steps=65 format=4 uid="uid://dcisncsshf132"]
 
 [ext_resource type="Script" uid="uid://bicewbaujgbrt" path="res://Scripts/level_3.gd" id="1_f80nq"]
-[ext_resource type="PackedScene" uid="uid://c620yqni6f55i" path="res://Scenes/Menu/pause_menu.tscn" id="2_35jnd"]
+[ext_resource type="PackedScene" path="res://Scenes/Menu/pause_menu.tscn" id="2_35jnd"]
 [ext_resource type="LightmapGIData" uid="uid://ctsgk76nsmlnm" path="res://GI_Baked/3d_Main.lmbake" id="3_ltrm1"]
 [ext_resource type="CompressedTexture3D" uid="uid://847s7j8rjoye" path="res://Assets/Textures/Lut.png" id="4_16bue"]
 [ext_resource type="Texture2D" uid="uid://cmoncv7ugodom" path="res://Assets/Textures/overcast_soil_puresky_1k.hdr" id="5_rfddm"]
@@ -10,8 +10,8 @@
 [ext_resource type="Script" uid="uid://by2k5050k8i7f" path="res://addons/virtual_joystick/virtual_joystick_instantiator.gd" id="8_yk4w0"]
 [ext_resource type="Texture2D" uid="uid://br2pw0pht2kfj" path="res://Assets/Sprites/UI/buttons.PNG" id="9_ummpp"]
 [ext_resource type="FontFile" uid="uid://pw7ufq020i4s" path="res://Assets/Fonts/EBGaramond-VariableFont_wght.ttf" id="10_2fc35"]
-[ext_resource type="Script" path="res://Scripts/Profiler.gd" id="11_sospo"]
-[ext_resource type="Shader" uid="uid://2g4d7h1yckbf" path="res://Assets/Materials&Shaders/vin.gdshader" id="12_35jnd"]
+[ext_resource type="Script" uid="uid://dhh85gn34b0ek" path="res://Scripts/Profiler.gd" id="11_sospo"]
+[ext_resource type="Shader" path="res://Assets/Materials&Shaders/vin.gdshader" id="12_35jnd"]
 [ext_resource type="PackedScene" uid="uid://bxhjvsquusjiv" path="res://Scenes/player.tscn" id="12_fl7h5"]
 [ext_resource type="ArrayMesh" uid="uid://ecrlw3inbrno" path="res://Assets/Meshes/couch.obj" id="13_kbn7v"]
 [ext_resource type="Script" uid="uid://ciqjqxm0n6irp" path="res://Scripts/END.gd" id="16_bon45"]
@@ -19,9 +19,11 @@
 [ext_resource type="PackedScene" uid="uid://0fbrhih0jfxs" path="res://Scenes/Levels/comix.tscn" id="18_lnl7s"]
 [ext_resource type="Texture2D" uid="uid://6jruflh85uyn" path="res://Assets/Textures/bobx.png" id="19_mhkwd"]
 [ext_resource type="PackedScene" uid="uid://c4awuf3f43axh" path="res://Scenes/world.tscn" id="20_js7s8"]
-[ext_resource type="Script" uid="uid://bs8m2lm5yy73t" path="res://Scenes/Levels/out_dialog_zone_8.gd" id="21_laeu0"]
+[ext_resource type="Script" uid="uid://bg4u1nbq1tkp3" path="res://Scripts/aaaatack.gd" id="20_ltrm1"]
+[ext_resource type="Script" path="res://Scenes/Levels/out_dialog_zone_8.gd" id="21_laeu0"]
 [ext_resource type="PackedScene" uid="uid://byxpfxxv6r2bx" path="res://Scenes/Menu/console.tscn" id="21_p4j2g"]
 [ext_resource type="PackedScene" uid="uid://bpmnndfo5vild" path="res://Scenes/Menu/dialog_zone.tscn" id="23_3fjac"]
+[ext_resource type="ArrayMesh" uid="uid://6tfpnet8ov7p" path="res://Assets/Meshes/Stol1.obj" id="24_ltrm1"]
 [ext_resource type="AudioStream" uid="uid://doukbo8orlx2q" path="res://Assets/Audio/Music/noiseFromRadio.mp3" id="24_vhuf1"]
 [ext_resource type="PackedScene" uid="uid://b81h7dtbc1ow4" path="res://Scenes/physics_button.tscn" id="25_1n4q2"]
 [ext_resource type="PackedScene" uid="uid://u6s133tq6di4" path="res://Scenes/door.tscn" id="26_bptt3"]
@@ -29,8 +31,8 @@
 [ext_resource type="PackedScene" uid="uid://b27mkdxaqkako" path="res://Scenes/push_box.tscn" id="27_vbiey"]
 [ext_resource type="Material" uid="uid://cvawvs5dfw6n3" path="res://Assets/Materials&Shaders/MainAtlas.tres" id="28_76ckf"]
 [ext_resource type="Texture2D" uid="uid://bmey8cimaeee2" path="res://Assets/Textures/Atlas.png" id="29_g0r1h"]
-[ext_resource type="Script" path="res://Scripts/push_box.gd" id="30_kn52q"]
-[ext_resource type="PackedScene" uid="uid://do6lgfjm8roa4" path="res://Scenes/shar_xd.tscn" id="30_xbb0r"]
+[ext_resource type="Script" uid="uid://cd5o4sd3o2adk" path="res://Scripts/push_box.gd" id="30_kn52q"]
+[ext_resource type="PackedScene" path="res://Scenes/shar_xd.tscn" id="30_xbb0r"]
 [ext_resource type="PackedScene" uid="uid://hks7pxviimea" path="res://Scenes/chairXD.tscn" id="31_if3t1"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6748a"]
@@ -188,6 +190,18 @@ shadow_mesh = SubResource("ArrayMesh_ilop2")
 [sub_resource type="BoxShape3D" id="BoxShape3D_xbb0r"]
 size = Vector3(6.97324, 5.75342, 2.79684)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_iqxmo"]
+size = Vector3(0.660926, 0.0965128, 1.58344)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bd3rm"]
+size = Vector3(0.457954, 0.0683594, 0.074707)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a3ouf"]
+size = Vector3(0.487262, 0.0642734, 0.469023)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3km2d"]
+size = Vector3(0.423, 0.035, 0.035)
+
 [node name="Level" type="Node3D"]
 script = ExtResource("1_f80nq")
 pause_menu_packed = ExtResource("2_35jnd")
@@ -327,7 +341,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Player" parent="." instance=ExtResource("12_fl7h5")]
-transform = Transform3D(0.993278, 0, 0.115752, 0, 1, 0, -0.115752, 0, 0.993278, 6.7741, 0.939393, 23.7465)
+transform = Transform3D(0.993278, 0, 0.115752, 0, 1, 0, -0.115752, 0, 0.993278, -22.3834, 0.939393, 52.2035)
 collision_mask = 55
 
 [node name="World" parent="." instance=ExtResource("20_js7s8")]
@@ -573,6 +587,62 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.44725, 0, 12.2086)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="test"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15163, 2.37671, 1.28969)
 shape = SubResource("BoxShape3D_xbb0r")
+
+[node name="StulXD10" type="RigidBody3D" parent="." groups=["rigids"]]
+transform = Transform3D(0.919499, 0, -0.393092, 0, 1, 0, 0.393092, 0, 0.919499, -20.4376, 0.546815, 53.2532)
+collision_layer = 2
+collision_mask = 12
+lock_rotation = true
+script = ExtResource("20_ltrm1")
+second = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StulXD10"]
+transform = Transform3D(1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, 1, -0.0243678, 0.384849, 0.00159455)
+shape = SubResource("BoxShape3D_iqxmo")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StulXD10"]
+transform = Transform3D(-0.124796, 0.992182, 0, -0.988519, -0.124336, 0.0858517, 0.0851805, 0.010714, 0.996308, -0.206238, 0.217166, 0.203783)
+shape = SubResource("BoxShape3D_bd3rm")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StulXD10"]
+transform = Transform3D(-0.125333, 0.992115, 0, -0.988489, -0.124875, -0.0854169, -0.0847434, -0.0107056, 0.996345, -0.206, 0.217, -0.204)
+shape = SubResource("BoxShape3D_bd3rm")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StulXD10"]
+transform = Transform3D(-0.125333, -0.992115, 0, 0.988452, -0.12487, 0.0858517, -0.0851747, 0.0107601, 0.996308, 0.205378, 0.217166, 0.203783)
+shape = SubResource("BoxShape3D_bd3rm")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StulXD10"]
+transform = Transform3D(-0.125333, -0.992115, -9.33805e-10, 0.988489, -0.124875, -0.0854169, 0.0847434, -0.0107056, 0.996345, 0.205616, 0.217, -0.204)
+shape = SubResource("BoxShape3D_bd3rm")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StulXD10"]
+transform = Transform3D(-0.125333, -0.992115, -7.96843e-10, 0.99179, -0.125292, -0.0255663, 0.0253647, -0.0032043, 0.999673, -0.226844, 0.647936, 0.19528)
+shape = SubResource("BoxShape3D_bd3rm")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="StulXD10"]
+transform = Transform3D(-0.125333, -0.992115, 0, 0.991775, -0.12529, 0.0261769, -0.0259705, 0.00328084, 0.999657, -0.227, 0.648, -0.195)
+shape = SubResource("BoxShape3D_bd3rm")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="StulXD10"]
+transform = Transform3D(-0.130976, -0.991386, 0, 0.991386, -0.130976, 0, 0, 0, 1, -0.268622, 0.781209, 0)
+shape = SubResource("BoxShape3D_a3ouf")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="StulXD10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00946869, 0.226585, 0.207822)
+shape = SubResource("BoxShape3D_3km2d")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="StulXD10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009, 0.227, -0.208)
+shape = SubResource("BoxShape3D_3km2d")
+
+[node name="RayCast3D" type="RayCast3D" parent="StulXD10"]
+collision_mask = 255
+
+[node name="Stol1" type="MeshInstance3D" parent="StulXD10"]
+transform = Transform3D(0.560683, 0, -1.49012e-08, 0, 0.560683, 0, 1.49012e-08, 0, 0.560683, 0, 0.0491329, 0)
+mesh = ExtResource("24_ltrm1")
+skeleton = NodePath("../..")
 
 [connection signal="released" from="InputLayout/PauseButton" to="." method="_on_pause_button_released"]
 [connection signal="body_entered" from="World/Area3D" to="World/Area3D" method="_on_body_entered"]

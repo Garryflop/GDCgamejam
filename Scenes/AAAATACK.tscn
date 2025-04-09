@@ -5,7 +5,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bgb52pw6g0egl" path="res://Assets/Meshes/Chair.obj" id="2_y40dt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iqxmo"]
-size = Vector3(0.428297, 0.0965128, 0.470732)
+size = Vector3(0.660926, 0.0965128, 1.58344)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bd3rm"]
 size = Vector3(0.457954, 0.0683594, 0.074707)
