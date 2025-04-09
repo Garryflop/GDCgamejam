@@ -29,7 +29,6 @@ func load_dialog_data(dialog_file_path: String) -> void:
 			var line: String = file.get_line().strip_edges()
 			if line == "":
 				continue
-			# Разбиваем строку по символу "|"
 			var parts: Array = line.split("|")
 			if parts.size() >= 2:
 				var speaker: String = parts[0].strip_edges()

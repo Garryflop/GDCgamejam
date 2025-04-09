@@ -94,6 +94,7 @@ func animate(delta):
 		animator.set("parameters/isAir/blend_amount", lerp(animator.get("parameters/isAir/blend_amount"), 1.0, delta * ANIMATION_BLEND))
 
 func hit(damage:int):
+	print(HP)
 	HP-=damage
 	if(HP<=0):
 		print("DED")
