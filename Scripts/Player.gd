@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 const LERP_VALUE : float = 0.15
 
+signal hits
 #var snap_vector : Vector3 = Vector3.DOWN
 var speed : float = 1.3
 
@@ -98,3 +99,4 @@ func hit(damage:int):
 	HP-=damage
 	if(HP<=0):
 		print("DED")
+	emit_signal("hits")

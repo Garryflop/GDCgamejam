@@ -98,8 +98,8 @@ region = Rect2(584, 95, 332, 342)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ltrm1"]
 shader = ExtResource("12_35jnd")
 shader_parameter/alpha = 1.0
-shader_parameter/inner_radius = 1.0
-shader_parameter/outer_radius = 10.0
+shader_parameter/inner_radius = 0.16
+shader_parameter/outer_radius = 2.415
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f80nq"]
 size = Vector3(1, 6.46973, 10.4425)
@@ -318,6 +318,7 @@ texture_normal = SubResource("AtlasTexture_xe7un")
 action = "jump"
 
 [node name="ColorRect" type="ColorRect" parent="InputLayout"]
+visible = false
 material = SubResource("ShaderMaterial_ltrm1")
 anchors_preset = 15
 anchor_right = 1.0
@@ -327,7 +328,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Player" parent="." instance=ExtResource("12_fl7h5")]
-transform = Transform3D(0.993278, 0, 0.115752, 0, 1, 0, -0.115752, 0, 0.993278, 6.7741, 0.939393, 23.7465)
+transform = Transform3D(0.993278, 0, 0.115752, 0, 1, 0, -0.115752, 0, 0.993278, 4.49523, 1.02977, 9.91679)
 collision_mask = 55
 
 [node name="World" parent="." instance=ExtResource("20_js7s8")]
@@ -575,6 +576,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15163, 2.37671, 1.28969)
 shape = SubResource("BoxShape3D_xbb0r")
 
 [connection signal="released" from="InputLayout/PauseButton" to="." method="_on_pause_button_released"]
+[connection signal="hits" from="Player" to="." method="_on_player_hits"]
 [connection signal="body_entered" from="World/Area3D" to="World/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Dialogs/OUTDialogZone2" to="Dialogs/OUTDialogZone2" method="_on_body_entered"]
 [connection signal="body_entered" from="Dialogs/OUTDialogZone8" to="Dialogs/OUTDialogZone8" method="_on_body_entered"]
