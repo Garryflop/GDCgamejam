@@ -341,7 +341,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Player" parent="." instance=ExtResource("12_fl7h5")]
-transform = Transform3D(0.993278, 0, 0.115752, 0, 1, 0, -0.115752, 0, 0.993278, -22.3834, 0.939393, 52.2035)
+transform = Transform3D(0.993278, 0, 0.115752, 0, 1, 0, -0.115752, 0, 0.993278, 7.09827, 0.939393, 9.24707)
 collision_mask = 55
 
 [node name="World" parent="." instance=ExtResource("20_js7s8")]
@@ -528,7 +528,7 @@ mesh = SubResource("SphereMesh_c5s4o")
 
 [node name="PhysicsButton3" parent="." node_paths=PackedStringArray("door") instance=ExtResource("25_1n4q2")]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -19.5612, 2.60145, 46.3061)
-door = NodePath("../Doors/Door7")
+door = NodePath("../Doors/Door1")
 switch = true
 
 [node name="PushBox4" parent="." instance=ExtResource("27_vbiey")]
