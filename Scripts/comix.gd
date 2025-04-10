@@ -9,4 +9,6 @@ func headphone():
 
 func end():
 	AudioManager.current_music_player.pitch_scale = 1
+	if get_parent() != null:
+		get_parent().interactable = true
 	queue_free()

@@ -276,6 +276,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+visible = false
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 texture = ExtResource("7_oriui")

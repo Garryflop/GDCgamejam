@@ -1,7 +1,7 @@
-[gd_scene load_steps=76 format=4 uid="uid://c4awuf3f43axh"]
+[gd_scene load_steps=78 format=4 uid="uid://c4awuf3f43axh"]
 
 [ext_resource type="Texture2D" uid="uid://dvsg6c3svqtds" path="res://Assets/Textures/tu_forgrass.png" id="1_hgpy0"]
-[ext_resource type="Shader" uid="uid://b21bp6fi0x0mh" path="res://Assets/Materials&Shaders/fake_shading.gdshader" id="3_1cojt"]
+[ext_resource type="Shader" path="res://Assets/Materials&Shaders/fake_shading.gdshader" id="3_1cojt"]
 [ext_resource type="Material" uid="uid://djagcubxqf2ec" path="res://Assets/Materials&Shaders/carpet.tres" id="3_5ukr8"]
 [ext_resource type="Material" uid="uid://gmow81subox0" path="res://Assets/Materials&Shaders/wallsMainMat.tres" id="4_8j60k"]
 [ext_resource type="Material" uid="uid://up2pn56ystpm" path="res://Assets/Materials&Shaders/ceilingTile.tres" id="4_fo5ed"]
@@ -68,6 +68,12 @@ data = PackedVector3Array(-0.369, 4.55, 8.535, -0.369, 3.485, 8.335, -0.369, 3.4
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i4fjy"]
 size = Vector3(0.25, 5.63037, 7.53333)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ua1v"]
+size = Vector3(8.91296, 5.35339, 0.404297)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r0ikl"]
+size = Vector3(8.91296, 5.35339, 0.231445)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pyn1s"]
 render_priority = 0
@@ -610,8 +616,8 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.099
 size = Vector3(6.51761, 5, 0.4)
 
 [node name="CSGBox3D28" type="CSGBox3D" parent="Walls/NoClipWalls"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.225244, 2.05, 2.19803)
-size = Vector3(8.55263, 5, 0.4)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.265012, 2.05, 2.21052)
+size = Vector3(8.44142, 5, 0.4)
 
 [node name="CSGBox3D26" type="CSGBox3D" parent="Walls/NoClipWalls"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.53446, 2.05, 9.92628)
@@ -853,6 +859,14 @@ shape = SubResource("ConcavePolygonShape3D_hmc15")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Walls/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.03197, 4.95696, 30.7555)
 shape = SubResource("BoxShape3D_i4fjy")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Walls/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.231873, 2.1767, 2.22345)
+shape = SubResource("BoxShape3D_3ua1v")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Walls/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.86089, -2.54345, 11.2989)
+shape = SubResource("BoxShape3D_r0ikl")
 
 [node name="Clip" type="CSGCombiner3D" parent="Walls"]
 visible = false

@@ -1,7 +1,7 @@
-[gd_scene load_steps=71 format=4 uid="uid://dcisncsshf132"]
+[gd_scene load_steps=70 format=4 uid="uid://dcisncsshf132"]
 
 [ext_resource type="Script" uid="uid://bicewbaujgbrt" path="res://Scripts/level_3.gd" id="1_f80nq"]
-[ext_resource type="PackedScene" path="res://Scenes/Menu/pause_menu.tscn" id="2_35jnd"]
+[ext_resource type="PackedScene" uid="uid://c620yqni6f55i" path="res://Scenes/Menu/pause_menu.tscn" id="2_35jnd"]
 [ext_resource type="LightmapGIData" uid="uid://ctsgk76nsmlnm" path="res://GI_Baked/3d_Main.lmbake" id="3_ltrm1"]
 [ext_resource type="CompressedTexture3D" uid="uid://847s7j8rjoye" path="res://Assets/Textures/Lut.png" id="4_16bue"]
 [ext_resource type="Texture2D" uid="uid://cmoncv7ugodom" path="res://Assets/Textures/overcast_soil_puresky_1k.hdr" id="5_rfddm"]
@@ -10,8 +10,8 @@
 [ext_resource type="Script" uid="uid://by2k5050k8i7f" path="res://addons/virtual_joystick/virtual_joystick_instantiator.gd" id="8_yk4w0"]
 [ext_resource type="Texture2D" uid="uid://br2pw0pht2kfj" path="res://Assets/Sprites/UI/buttons.PNG" id="9_ummpp"]
 [ext_resource type="FontFile" uid="uid://pw7ufq020i4s" path="res://Assets/Fonts/EBGaramond-VariableFont_wght.ttf" id="10_2fc35"]
-[ext_resource type="Script" uid="uid://dhh85gn34b0ek" path="res://Scripts/Profiler.gd" id="11_sospo"]
-[ext_resource type="Shader" path="res://Assets/Materials&Shaders/vin.gdshader" id="12_35jnd"]
+[ext_resource type="Script" path="res://Scripts/Profiler.gd" id="11_sospo"]
+[ext_resource type="Shader" uid="uid://2g4d7h1yckbf" path="res://Assets/Materials&Shaders/vin.gdshader" id="12_35jnd"]
 [ext_resource type="PackedScene" uid="uid://bxhjvsquusjiv" path="res://Scenes/player.tscn" id="12_fl7h5"]
 [ext_resource type="ArrayMesh" uid="uid://ecrlw3inbrno" path="res://Assets/Meshes/couch.obj" id="13_kbn7v"]
 [ext_resource type="Script" uid="uid://ciqjqxm0n6irp" path="res://Scripts/END.gd" id="16_bon45"]
@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://6jruflh85uyn" path="res://Assets/Textures/bobx.png" id="19_mhkwd"]
 [ext_resource type="PackedScene" uid="uid://c4awuf3f43axh" path="res://Scenes/world.tscn" id="20_js7s8"]
 [ext_resource type="Script" uid="uid://bg4u1nbq1tkp3" path="res://Scripts/aaaatack.gd" id="20_ltrm1"]
-[ext_resource type="Script" path="res://Scenes/Levels/out_dialog_zone_8.gd" id="21_laeu0"]
+[ext_resource type="Script" uid="uid://bs8m2lm5yy73t" path="res://Scenes/Levels/out_dialog_zone_8.gd" id="21_laeu0"]
 [ext_resource type="PackedScene" uid="uid://byxpfxxv6r2bx" path="res://Scenes/Menu/console.tscn" id="21_p4j2g"]
 [ext_resource type="PackedScene" uid="uid://bpmnndfo5vild" path="res://Scenes/Menu/dialog_zone.tscn" id="23_3fjac"]
 [ext_resource type="ArrayMesh" uid="uid://6tfpnet8ov7p" path="res://Assets/Meshes/Stol1.obj" id="24_ltrm1"]
@@ -32,8 +32,8 @@
 [ext_resource type="PackedScene" uid="uid://b27mkdxaqkako" path="res://Scenes/push_box.tscn" id="27_vbiey"]
 [ext_resource type="Material" uid="uid://cvawvs5dfw6n3" path="res://Assets/Materials&Shaders/MainAtlas.tres" id="28_76ckf"]
 [ext_resource type="Texture2D" uid="uid://bmey8cimaeee2" path="res://Assets/Textures/Atlas.png" id="29_g0r1h"]
-[ext_resource type="Script" uid="uid://cd5o4sd3o2adk" path="res://Scripts/push_box.gd" id="30_kn52q"]
-[ext_resource type="PackedScene" path="res://Scenes/shar_xd.tscn" id="30_xbb0r"]
+[ext_resource type="Script" path="res://Scripts/push_box.gd" id="30_kn52q"]
+[ext_resource type="PackedScene" uid="uid://do6lgfjm8roa4" path="res://Scenes/shar_xd.tscn" id="30_xbb0r"]
 [ext_resource type="PackedScene" uid="uid://hks7pxviimea" path="res://Scenes/chairXD.tscn" id="31_if3t1"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6748a"]
@@ -233,9 +233,6 @@ size = Vector3(0.660926, 0.0965128, 1.58344)
 [sub_resource type="BoxShape3D" id="BoxShape3D_bd3rm"]
 size = Vector3(0.457954, 0.0683594, 0.074707)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_a3ouf"]
-size = Vector3(0.487262, 0.0642734, 0.469023)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_3km2d"]
 size = Vector3(0.423, 0.035, 0.035)
 
@@ -378,7 +375,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Player" parent="." instance=ExtResource("12_fl7h5")]
-transform = Transform3D(0.993278, 0, 0.115752, 0, 1, 0, -0.115752, 0, 0.993278, 7.09827, 0.939393, 9.24707)
+transform = Transform3D(0.993278, 0, 0.115752, 0, 1, 0, -0.115752, 0, 0.993278, 4.06663, 0.939393, 9.32805)
 collision_mask = 55
 
 [node name="World" parent="." instance=ExtResource("20_js7s8")]
@@ -435,7 +432,7 @@ material_override = SubResource("StandardMaterial3D_2fc35")
 mesh = SubResource("QuadMesh_7mxbq")
 
 [node name="SharXD" type="RigidBody3D" parent="." groups=["rigids"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.46348, 1.25999, 14.2189)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.84789, 2.65853, 17.1937)
 collision_layer = 2
 collision_mask = 62
 contact_monitor = true
@@ -673,18 +670,6 @@ shape = SubResource("BoxShape3D_bd3rm")
 transform = Transform3D(-0.125333, -0.992115, -9.33805e-10, 0.988489, -0.124875, -0.0854169, 0.0847434, -0.0107056, 0.996345, 0.205616, 0.217, -0.204)
 shape = SubResource("BoxShape3D_bd3rm")
 
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="StulXD10"]
-transform = Transform3D(-0.125333, -0.992115, -7.96843e-10, 0.99179, -0.125292, -0.0255663, 0.0253647, -0.0032043, 0.999673, -0.226844, 0.647936, 0.19528)
-shape = SubResource("BoxShape3D_bd3rm")
-
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="StulXD10"]
-transform = Transform3D(-0.125333, -0.992115, 0, 0.991775, -0.12529, 0.0261769, -0.0259705, 0.00328084, 0.999657, -0.227, 0.648, -0.195)
-shape = SubResource("BoxShape3D_bd3rm")
-
-[node name="CollisionShape3D8" type="CollisionShape3D" parent="StulXD10"]
-transform = Transform3D(-0.130976, -0.991386, 0, 0.991386, -0.130976, 0, 0, 0, 1, -0.268622, 0.781209, 0)
-shape = SubResource("BoxShape3D_a3ouf")
-
 [node name="CollisionShape3D9" type="CollisionShape3D" parent="StulXD10"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00946869, 0.226585, 0.207822)
 shape = SubResource("BoxShape3D_3km2d")
@@ -700,6 +685,8 @@ collision_mask = 255
 transform = Transform3D(0.560683, 0, -1.49012e-08, 0, 0.560683, 0, 1.49012e-08, 0, 0.560683, 0, 0.0491329, 0)
 mesh = ExtResource("24_ltrm1")
 skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("28_76ckf")
+surface_material_override/1 = ExtResource("28_76ckf")
 
 [connection signal="released" from="InputLayout/PauseButton" to="." method="_on_pause_button_released"]
 [connection signal="body_entered" from="World/Area3D" to="World/Area3D" method="_on_body_entered"]
