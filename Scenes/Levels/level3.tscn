@@ -379,7 +379,7 @@ transform = Transform3D(0.993278, 0, 0.115752, 0, 1, 0, -0.115752, 0, 0.993278, 
 collision_mask = 55
 
 [node name="World" parent="." instance=ExtResource("20_js7s8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.068, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0552541, 0.00913763, -0.00473022)
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="World"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.76492, 1.71083, 17.4972)

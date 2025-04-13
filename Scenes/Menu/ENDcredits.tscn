@@ -13,6 +13,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1yv53")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -48,6 +53,7 @@ text = "[center][b][color=#00acee]THANK YOU FOR PLAYING![/color][/b]
 fit_content = true
 
 [node name="Back" type="Button" parent="."]
+layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 theme_override_fonts/font = ExtResource("3_ttr8o")
