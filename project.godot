@@ -50,6 +50,8 @@ folder_colors={
 rigids=""
 Activators=""
 player=""
+shar=""
+obsticles=""
 
 [input]
 

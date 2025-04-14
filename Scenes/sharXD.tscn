@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dv85ymmmmqjq3"]
+
+[ext_resource type="Script" uid="uid://c0s0xvq13t3og" path="res://Scripts/shar_xd.gd" id="1_8cit6"]
+[ext_resource type="Texture2D" uid="uid://6jruflh85uyn" path="res://Assets/Textures/bobx.png" id="1_8ucwr"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_j3yal"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0lyn"]
+shading_mode = 2
+albedo_texture = ExtResource("1_8ucwr")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_c5s4o"]
+
+[node name="SharXD3" type="RigidBody3D" groups=["rigids", "shar"]]
+collision_layer = 2
+collision_mask = 62
+contact_monitor = true
+max_contacts_reported = 5
+linear_damp_mode = 1
+script = ExtResource("1_8cit6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_j3yal")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_r0lyn")
+mesh = SubResource("SphereMesh_c5s4o")
+
+[connection signal="body_entered" from="." to="." method="colided"]

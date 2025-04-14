@@ -1,6 +1,6 @@
 extends RigidBody3D
+var pushed : bool = false
 
-
-func _on_body_entered(body: Node) -> void:
-	if body is StaticBody3D:
-		AudioManager.play_sfx(load("res://Assets/Audio/SFX/drop.mp3"))
+func colided(body: Node) -> void:
+	if body.is_in_group("obsticles"):
+		pushed = false

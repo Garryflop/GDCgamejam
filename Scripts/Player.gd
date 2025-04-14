@@ -82,17 +82,25 @@ func _physics_process(delta):
 
 func animate(delta):
 	if is_on_floor():
-		animator.set("parameters/isAir/blend_amount", lerp(animator.get("parameters/isAir/blend_amount"), 0.0, delta * ANIMATION_BLEND))
-		if velocity.length() > 0:
-			animator.set("parameters/isWalking/blend_amount", lerp(animator.get("parameters/isWalking/blend_amount"), 1.0, delta * ANIMATION_BLEND))
-			animator.set("parameters/isBackward/blend_amount", lerp(animator.get("parameters/isBackward/blend_amount"), min(-(input_direction.z-1.0), 1.0), delta * ANIMATION_BLEND))
-			#print(animator.get("parameters/Strafe/blend_amount"))
-			animator.set("parameters/Strafe/blend_amount", lerp(animator.get("parameters/Strafe/blend_amount"), -input_direction.x, delta * ANIMATION_BLEND))
-		
+		animator.set("parameters/Air/blend_amount", lerp(float(animator.get("parameters/Air/blend_amount")), 0.0, delta * ANIMATION_BLEND))
+		if input_direction.length() > 0:
+			animator.set("parameters/PFBI/blend_amount", lerp(float(animator.get("parameters/PFBI/blend_amount")), input_direction.z, delta * ANIMATION_BLEND))
+			animator.set("parameters/NFBI/blend_amount", lerp(float(animator.get("parameters/NFBI/blend_amount")), input_direction.z, delta * ANIMATION_BLEND))
+			animator.set("parameters/NLR/blend_amount", lerp(float(animator.get("parameters/NLR/blend_amount")), input_direction.x, delta * ANIMATION_BLEND))
+			animator.set("parameters/PLR/blend_amount", lerp(float(animator.get("parameters/NLR/blend_amount")), input_direction.x, delta * ANIMATION_BLEND))
 		else:
-			animator.set("parameters/isWalking/blend_amount", lerp(animator.get("parameters/isWalking/blend_amount"), 0.0, delta * ANIMATION_BLEND))
+			animator.set("parameters/NLR/blend_amount", lerp(float(animator.get("parameters/NLR/blend_amount")), 0.0, delta * ANIMATION_BLEND))
+			animator.set("parameters/PLR/blend_amount", lerp(float(animator.get("parameters/NLR/blend_amount")), 0.0, delta * ANIMATION_BLEND))			
+			animator.set("parameters/PFBI/blend_amount", lerp(float(animator.get("parameters/PFBI/blend_amount")), 0.0, delta * ANIMATION_BLEND))			
+			animator.set("parameters/NFBI/blend_amount", lerp(float(animator.get("parameters/NFBI/blend_amount")), 0.0, delta * ANIMATION_BLEND))
+			
+		if spring_arm_pivot.picked:
+			animator.set("parameters/PN/blend_amount", lerp(float(animator.get("parameters/PN/blend_amount")), 1.0, delta * ANIMATION_BLEND))
+		else:
+			animator.set("parameters/PN/blend_amount", lerp(float(animator.get("parameters/PN/blend_amount")), 0.0, delta * ANIMATION_BLEND))
+
 	else:
-		animator.set("parameters/isAir/blend_amount", lerp(animator.get("parameters/isAir/blend_amount"), 1.0, delta * ANIMATION_BLEND))
+		animator.set("parameters/Air/blend_amount", lerp(float(animator.get("parameters/Air/blend_amount")), 1.0, delta * ANIMATION_BLEND))
 
 func hit(damage:int):
 	print(HP)

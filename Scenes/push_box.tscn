@@ -10,13 +10,13 @@ size = Vector3(0.7, 0.7, 0.7)
 [node name="Area3D" type="RigidBody3D"]
 collision_layer = 128
 collision_mask = 12
+script = ExtResource("1_g1quh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_5ld0s")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_mask = 34
-script = ExtResource("1_g1quh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_5ld0s")
@@ -26,4 +26,4 @@ transform = Transform3D(0.35, 0, 0, 0, -0.35, -5.28485e-08, 0, 5.28485e-08, -0.3
 material_override = ExtResource("1_hp6ph")
 mesh = ExtResource("2_hp6ph")
 
-[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]

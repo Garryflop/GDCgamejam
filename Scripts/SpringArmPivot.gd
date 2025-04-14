@@ -16,7 +16,7 @@ var oneclick = false
 var pickedObject : RigidBody3D
 var doubleTap = false
 var dropsound = preload("res://Assets/Audio/SFX/wpn_denyselect.mp3")
-
+var material : StandardMaterial3D
 func _ready():
 	pass
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -31,10 +31,15 @@ func _unhandled_input(event):
 	
 
 func _physics_process(_delta):
+	material = $"../Character/Armature/Skeleton3D/CharacterMesh_009".get_active_material(0)
 	if(picked && pickedObject):
+		material.emission_energy_multiplier = lerp(material.emission_energy_multiplier, 5.0, _delta*5)
 		pickedObject.set_linear_velocity(($SpringArm3D/Camera3D/Hand.global_position - pickedObject.global_position)*4)
 		if $SpringArm3D/Camera3D/Hand.global_position.distance_to(pickedObject.global_position) > 2.0:
 			picked = false
+	else:
+		material.emission_energy_multiplier = lerp(material.emission_energy_multiplier, 0.0, _delta*5)
+
 	
 	if change_fov_on_run:
 		if owner.is_on_floor():
