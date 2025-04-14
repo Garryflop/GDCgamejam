@@ -58,7 +58,7 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("pick"):
 		if spring_arm_pivot.picked:
-			spring_arm_pivot.picked = false
+			spring_arm_pivot.drop()
 			AudioManager.play_sfx(picksound)
 		else:
 			spring_arm_pivot.pick()

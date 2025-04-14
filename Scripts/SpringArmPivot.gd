@@ -5,7 +5,7 @@ extends Node3D
 @export var normal_fov : float = 75.0
 @export var run_fov : float = 90.0
 
-
+var prevLayer : bool = false
 const CAMERA_BLEND : float = 0.05
 var picked : bool = false
 @onready var spring_arm : SpringArm3D = $SpringArm3D
@@ -36,7 +36,7 @@ func _physics_process(_delta):
 		material.emission_energy_multiplier = lerp(material.emission_energy_multiplier, 5.0, _delta*5)
 		pickedObject.set_linear_velocity(($SpringArm3D/Camera3D/Hand.global_position - pickedObject.global_position)*4)
 		if $SpringArm3D/Camera3D/Hand.global_position.distance_to(pickedObject.global_position) > 2.0:
-			picked = false
+			drop()
 	else:
 		material.emission_energy_multiplier = lerp(material.emission_energy_multiplier, 0.0, _delta*5)
 
@@ -50,7 +50,8 @@ func _physics_process(_delta):
 		else:
 			camera.fov = lerp(camera.fov, normal_fov, CAMERA_BLEND)
 
-
+func drop():
+	picked = false
 
 func pick():
 	var ray_query = $SpringArm3D/Camera3D/RayCast3D.get_collider()
@@ -58,6 +59,8 @@ func pick():
 		AudioManager.play_sfx(dropsound)
 		picked = true
 		pickedObject = ray_query
+		prevLayer = pickedObject.get_collision_layer_value(2)
+		
 		#pickedObject.
 	
 func oneClickExpired() -> void:

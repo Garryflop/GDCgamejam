@@ -19,6 +19,7 @@ size = Vector3(0.423, 0.035, 0.035)
 [node name="StulXD7" type="RigidBody3D" groups=["rigids"]]
 collision_layer = 32
 collision_mask = 62
+contact_monitor = true
 script = ExtResource("1_bd3rm")
 
 [node name="Chair" type="MeshInstance3D" parent="."]
