@@ -32,7 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://b27mkdxaqkako" path="res://Scenes/push_box.tscn" id="27_vbiey"]
 [ext_resource type="Material" uid="uid://cvawvs5dfw6n3" path="res://Assets/Materials&Shaders/MainAtlas.tres" id="28_76ckf"]
 [ext_resource type="Texture2D" uid="uid://bmey8cimaeee2" path="res://Assets/Textures/Atlas.png" id="29_g0r1h"]
-[ext_resource type="Script" path="res://Scripts/push_box.gd" id="30_kn52q"]
+[ext_resource type="Script" uid="uid://cd5o4sd3o2adk" path="res://Scripts/push_box.gd" id="30_kn52q"]
 [ext_resource type="PackedScene" uid="uid://do6lgfjm8roa4" path="res://Scenes/shar_xd.tscn" id="30_xbb0r"]
 [ext_resource type="PackedScene" uid="uid://hks7pxviimea" path="res://Scenes/chairXD.tscn" id="31_if3t1"]
 

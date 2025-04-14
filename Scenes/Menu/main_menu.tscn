@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://celv2gypi3neg"]
 
 [ext_resource type="Script" uid="uid://cwjxyelyrvlwu" path="res://Scripts/Menu/main_menu.gd" id="1_bkwd7"]
-[ext_resource type="PackedScene" path="res://Scenes/Menu/options.tscn" id="2_tself"]
+[ext_resource type="PackedScene" uid="uid://br2dhf3v06sig" path="res://Scenes/Menu/options.tscn" id="2_tself"]
 [ext_resource type="PackedScene" uid="uid://dmckiyv2x6q8l" path="res://Scenes/Menu/credits.tscn" id="3_7jtkx"]
-[ext_resource type="Texture2D" uid="uid://ccghhjrra2kch" path="res://Assets/Sprites/Illustrations/menuBack.png" id="4_ab7fb"]
+[ext_resource type="Texture2D" uid="uid://ci2dtel7yq1gw" path="res://Assets/Sprites/Illustrations/menuBack.png" id="4_ab7fb"]
 [ext_resource type="FontFile" uid="uid://bkv7caftudka2" path="res://Assets/Fonts/neoletters.ttf" id="4_vmek6"]
 
 [node name="MainMenu" type="CanvasLayer"]
@@ -43,6 +43,9 @@ alignment = 1
 
 [node name="Label" type="Label" parent="MenuCont/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("4_vmek6")
 theme_override_font_sizes/font_size = 72
 text = "Project Hiba"
