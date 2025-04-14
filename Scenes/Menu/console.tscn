@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://byxpfxxv6r2bx"]
 
 [ext_resource type="Script" uid="uid://cki5p16gvs2o0" path="res://Scripts/Menu/console.gd" id="1_icll3"]
-[ext_resource type="AudioStream" uid="uid://if3mor2lqopx" path="res://Assets/Audio/SFX/notification.ogg" id="2_lt6md"]
+[ext_resource type="AudioStream" uid="uid://cirsookibnknf" path="res://Assets/Audio/SFX/notification.mp3" id="2_lt6md"]
 
 [sub_resource type="Animation" id="Animation_abh3t"]
 length = 0.001
@@ -111,6 +111,7 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -256.0
+offset_bottom = 151.999
 grow_horizontal = 0
 color = Color(0, 0, 0, 0.690196)
 
@@ -139,6 +140,17 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
 
+[node name="back_button" type="Button" parent="Control/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -204.0
+offset_right = -128.0
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "Консоль"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_lt6md")
 bus = &"Звуковые эффекты"
@@ -148,4 +160,5 @@ libraries = {
 &"": SubResource("AnimationLibrary_yxcca")
 }
 
+[connection signal="pressed" from="Control/ColorRect/back_button" to="." method="_on_back_button_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
