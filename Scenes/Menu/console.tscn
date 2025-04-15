@@ -111,7 +111,6 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -256.0
-offset_bottom = 151.999
 grow_horizontal = 0
 color = Color(0, 0, 0, 0.690196)
 
@@ -149,6 +148,7 @@ offset_left = -204.0
 offset_right = -128.0
 offset_bottom = 31.0
 grow_horizontal = 2
+focus_mode = 0
 text = "Консоль"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

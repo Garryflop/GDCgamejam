@@ -52,9 +52,8 @@ func _setup_credits():
 
 func _on_play_button_up():
 	AudioManager.play_sfx(button)
-	var loading_scene = LOADING_SCREEN.instantiate()
-	loading_scene.next_scene = game_scene
-	add_child(loading_scene)
+	$TextureRect.pivot_offset = Vector2(get_viewport().get_visible_rect().size[0]/2, 10)
+	$AnimationPlayer.play("start")
 	pass
 	#AudioManager.play_sound($AudioStreamPlayer.stream)
 	#AudioManager.change_music("Game")
@@ -84,3 +83,13 @@ func _ready():
 	AudioManager.play_music(music, 1.5)
 	_setup_options()
 	_setup_credits()
+	print(get_viewport().get_visible_rect().size)
+	$TextureRect.pivot_offset = Vector2(get_viewport().get_visible_rect().size[0]/2, 10)
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "start":
+		var loading_scene = LOADING_SCREEN.instantiate()
+		loading_scene.next_scene = game_scene
+		add_child(loading_scene)
+		

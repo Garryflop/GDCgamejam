@@ -196,10 +196,10 @@ texture = ExtResource("3_8r8ce")
 modulate = Color(1, 1, 1, 0.258824)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 40.0
-offset_top = 272.0
-offset_right = 76.0
-offset_bottom = 312.0
+offset_left = 53.0
+offset_top = 278.0
+offset_right = 89.0
+offset_bottom = 318.0
 scale = Vector2(0.375, 0.375)
 script = ExtResource("4_nqasx")
 metadata/_custom_type_script = "uid://by2k5050k8i7f"
@@ -211,6 +211,7 @@ scale = Vector2(0.130548, 0.129534)
 texture_normal = SubResource("AtlasTexture_ryjqc")
 
 [node name="Label" type="Label" parent="InputLayout"]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
