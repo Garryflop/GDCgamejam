@@ -24,7 +24,7 @@ var savedvelocity : Vector3
 var is_outside : bool = false
 var picksound = preload("res://Assets/Audio/SFX/wpn_select.mp3")
 var dropsound = preload("res://Assets/Audio/SFX/wpn_denyselect.mp3")
-
+var is_alive : bool = false
 
 func _physics_process(delta):
 	input_direction.x = -(Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"))
@@ -62,9 +62,9 @@ func _physics_process(delta):
 			AudioManager.play_sfx(picksound)
 		else:
 			spring_arm_pivot.pick()
-			
+	if global_position.y < -15:
+		dead()
 
-			
 	
 	#var just_landed := is_on_floor() and snap_vector == Vector3.ZERO
 	#var is_jumping := is_on_floor() and false
@@ -101,6 +101,11 @@ func animate(delta):
 
 	else:
 		animator.set("parameters/Air/blend_amount", lerp(float(animator.get("parameters/Air/blend_amount")), 1.0, delta * ANIMATION_BLEND))
+
+
+func dead():
+	get_tree().reload_current_scene()
+	
 
 func hit(damage:int):
 	print(HP)

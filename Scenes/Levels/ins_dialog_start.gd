@@ -7,6 +7,7 @@ extends Area3D
 func _on_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		get_parent().get_parent().get_node("Console").start(file)
+		monitoring = false
 		await get_tree().create_timer(5.2).timeout
 		if !door.is_open:
 			door.open()

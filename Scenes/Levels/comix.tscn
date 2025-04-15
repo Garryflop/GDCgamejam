@@ -257,10 +257,8 @@ color = Color(1, 1, 1, 0)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_k5fi7")
-offset_left = 648.0
-offset_top = -8.0
-offset_right = 1360.0
-offset_bottom = 1272.0
+offset_right = 1296.0
+offset_bottom = 2496.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_ffxea")

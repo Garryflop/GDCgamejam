@@ -3,4 +3,4 @@ extends Area3D
 
 func _on_body_entered(body: Node3D) -> void:
 	if(body.is_in_group("player")):
-		get_tree().change_scene_to_file("res://Scenes/Menu/ENDcredits.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Menu/the_end_title.tscn")

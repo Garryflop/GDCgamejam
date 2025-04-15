@@ -1,13 +1,13 @@
 [gd_scene load_steps=40 format=4 uid="uid://yn2rfngjstvh"]
 
 [ext_resource type="Script" uid="uid://cd6tjb2f03wms" path="res://Scripts/Menu/level.gd" id="1_ilsv2"]
-[ext_resource type="PackedScene" path="res://Scenes/Menu/pause_menu.tscn" id="2_4f2fw"]
+[ext_resource type="PackedScene" uid="uid://c620yqni6f55i" path="res://Scenes/Menu/pause_menu.tscn" id="2_4f2fw"]
 [ext_resource type="Texture2D" uid="uid://117buwehvn0l" path="res://Assets/Textures/Crosshair.png" id="3_8r8ce"]
 [ext_resource type="LightmapGIData" uid="uid://ctsgk76nsmlnm" path="res://GI_Baked/3d_Main.lmbake" id="3_ay16s"]
 [ext_resource type="Script" uid="uid://by2k5050k8i7f" path="res://addons/virtual_joystick/virtual_joystick_instantiator.gd" id="4_nqasx"]
 [ext_resource type="Texture2D" uid="uid://br2pw0pht2kfj" path="res://Assets/Sprites/UI/buttons.PNG" id="5_nqasx"]
 [ext_resource type="FontFile" uid="uid://pw7ufq020i4s" path="res://Assets/Fonts/EBGaramond-VariableFont_wght.ttf" id="5_ryjqc"]
-[ext_resource type="Script" uid="uid://dhh85gn34b0ek" path="res://Scripts/Profiler.gd" id="6_xe7un"]
+[ext_resource type="Script" path="res://Scripts/Profiler.gd" id="6_xe7un"]
 [ext_resource type="Texture2D" uid="uid://cmoncv7ugodom" path="res://Assets/Textures/overcast_soil_puresky_1k.hdr" id="7_v3vqe"]
 [ext_resource type="PackedScene" uid="uid://bxhjvsquusjiv" path="res://Scenes/player.tscn" id="8_bvs0b"]
 [ext_resource type="PackedScene" uid="uid://c4awuf3f43axh" path="res://Scenes/world.tscn" id="10_xe7un"]
@@ -90,7 +90,7 @@ region = Rect2(584, 95, 332, 342)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7e7vy"]
 size = Vector3(1, 8.49353, 11.1743)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tufu7"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ltrm1"]
 resource_name = "Material.001"
 albedo_texture = ExtResource("15_f8if4")
 metallic = 0.5
@@ -103,7 +103,7 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 1242,
 "index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwADAAUAEAAHAAYACwAKABEAEgAHABAAEQATABQAFQABAAAAFgAHABIABwAWABcAGAAZABoAGwANAAwACgATABEADQAbABwAHQABABUAHAAbAB4ACAAHAB8ABwAXACAAAgABACEADAAiABsAHgAbACIAIwAkACUAJgAnACgAKQAqACsALAAtAC4ABgAIAC8AMAAJAAsALwAIADEAMgAJADAADAAOADMAIwAtADQANQADAA8ANgA3ADgAOQA6ADsAPAA6ADkAPQAxAD4APwAFAAQAJQAtACMAQAAMADMAQQAuAC0AJQBBAC0AMQAIAB8AQABCAAwAQwBEAEUARgBHAEgASQBKAEsATABNAE4ATwBGAEgASwBKAFAAUQAhAFIAUwBUAFUAVgBXAFgAWQBaAFsAXABdAF4AXwBgAGEAYgBjAGQAHwAgAGUAQgAiAAwAHwAHACAAIAAXAGYAZwBkAGgAZABpAGgAWABXAGoAAQBrACEAJQAkAGwAHgAiAG0AUgAhAGsAbgBjAG8AcABxAHIAcwAiAEIAdAB1AHYAdwB4AEEAYwBuAGQAbgBpAGQAeQAgAGYAegB7AHAAPgAxAGUAfAA8ADkAOQB9AHwAfgB/AGIAPgBlAIAAgQCCADcAgwBCAEAAQQCEAC4AJQBsAEEAgABlAIUAhgB7AHoAfAB9AIcAMwAOAIgAQgCDAIkAdACKAHUAhABBAHgAiwCMAI0AjgCPAJAAfwBjAGIAbwBjAH8AIACRAGUAewBxAHAAkgCTAJQAUwCVAFQAWwBaAJYAlwCYAJkAmgCbAJwAnQCeAJ8AoAChAKIAogChAKMAOAA3AKQApQCZAKYApwCoAKkAmQCYAKoAKwAqAKsANwCCAKQAqACsAKkArQCpAKwArgCoAKcAfgBiAK8ArwBiALAAmACxAKoAMQAfAGUAsgCYAJcAYgCzALAAsgCxAJgAtAC1ALYAtwCoAK4AoQC4ALkAugCoALcAuwCdALwAvQC+AL8AwADBAL8AwgC/AMEAvQC/AMIAqwAqAMMAxADFAMYAxwDFAMQAOADIAMkAKgDKAMMAyQA2ADgAAwDHAMQAywCmAKoApADMADgAzQDOAM8ApgCZAKoAqgDOAMsAvACdANAAqgCxAM4ApwDRAK4A0gCfAJ4ArgDRANMA0gCeANQAowDVAKIAuQDVAKMAowChALkA1gC+AL0A1wDYANkA2gDbANwA3QDeAN8A3QDgAN4AoQDhALgA4gB0AOMAuADhANgA5ADlAOYA4ADnAN4A6ADpAOoA4ADrAOcA2QDYAOEA6QDsAOoA7QDuAM8A4ADvAOsA8ADgAN0A7wDgAPAA8QDYANcANgDJAPIAOwDzAPQAOgDzADsAPQAvADEAAwDEAAQAKQD1ACoALQAsAPYA9wD4APkA+gDnAPsAuwD8AJ0AzQD9AP4A/wD9AM0AngCdAAABnQD8AAABAQECAaAAoAACAaEAvgDWAAMBAAH8AAQBBQECAQEBBgEHAfoA+gAHAecAcQAIAXIAoQACAeEACQEKAQsBDAHoAOoA3gDnAAcBDQHpAOgA5wDrAA4BsQDPAM4AzwDuAM0A7gD/AM0A7QDPALEADwEQAREBEgETARQBFQEWARcBGAEZARoBFgEbARcBHAEkAB0BHgEbARYBHwEgASEBIgF3AB0BIwEkASUBJgEnAT8AKAEpASoBKwEsAS0BLgEvATABMQEyATMBNAEsASsBNQEpASgBLgEwATYBNwE4ATkBOgE7ATwBPQE+AT8BOwFAATwBQQFCAUMBQQFEAUIBRQE6ATwBRgFFATwBPwFHAT0BGAEaAUgBSQFKAUsBTAExAU0BSwFOAUkBTQExATMBTwFOAUsBUAEgAVEBJwFSAQUAPwAnAQUAUwEmAVQBSAFVAVYBTAEyATEBVwEeARYBPQFHAVgBTgFZAUkBWgEeAVcBWwEgAVwBUwEnASYBUgEnAV0BXgFfAWABYQFfAV4BXAEgAR8BHQFiASIBQAFNATMBUAFjASABIQEgAWMBZAFlAWYBdwAcAR0BZwEXARsBHwEhAWgBaQEXAWcBagF3ACIBawFsAW0BbgFvAXABawFkAWwBbAFkAWYBcQEhAXIBcwF0AXUBdgF0AXMBdwF4AXkBZgFlAXoBewF8AX0BfgF/AYABgQGCAYMBhAGFAYYBhwGIAYkBigGLAYwBjQGHAYkBhgGFAY4BjAGLAY8BkAGRAZIBkwGUAZUBlgFsAZcBQgGYAUMBPAGZAUYBmgGbAZwBnAFjAZoBcAGYAUIBQAGZATwBQgFuAXABbAAkABwBIQFjAZwBnQGWAZcBRAFuAUIBngFsAZYBJwAmAJ8BbQFsAZ4BlwFsAWYB5ADmAKABcgEhAZwBoQF4AHcAMwGiAUABcAGjAZgBQAGiAZkBpAGjAXABcAFvAaQBHAF3AGwApQGmAacBqAGpAaoBqwGsAa0BqwGtAaoBrgGvAbABqwGqAbEB6AAMAbIBswG0AbUBrQG2AaoBqgGpAbEBtwG4AbkBuAG6AbkBqgG2AagBuwG8Ab0BvgG/AcABwQG4AbcBwgEDAdYAvgADAcMBxAHFAb4BxQG/Ab4BxgHqAMcB6gDsAMcByAG/AcUByQHKAcsBugG4AcwBdgDjAHQAzQHAAc4BzwFUAdABcgAIAdEBbAB3AEEAnwEmANIB0wHUAdUB1gHXAdgB2QHXAdYB1AHTAdoB2QHWAdsB2QHbAdwB3QHZAdwBGAHeAd8B4AEkAeEBzgHAAb8B4gHjAeQB5QFWAeYB5wEkAegBUwHPAekBzwFTAVQBGAFWAeUBGAHlAd4BGAFIAVYB5wElASQB6gG+AesBvgHAAesBxAG+AeoB7AFPAe0BzAHuAe8B8AHxAfIB8wH0AfUBdgD2AeMA9wHzAfgB+QEZAfoB+wH8Af0B/gFNATsBOwH/Af4BPgH8AfsBAAKaAQECHQEjADQAuAHuAcwBmgFRAQEC7QFPAUsBSwFKAe0BUAFRAZoBBQBSAQ8AJAAjAB0BAgIDAgQCPwE+AfsBmgEAApsBOwFNAUABmgFjAVABPwAEACYB9AEFAgYCBwLNAc4B3AHbAcIB3wH6ARgBzgEIAgcC2wEDAcIBtgEJAqgBqAEKAqkBCwIJArYBqAEJAgoC7gHBAQwCuAHBAe4BDQIOAg8ClQGUARAC8gERAhIC4QETAuAB9QH0AQYC8AHyARICvwEUAs4ByAEUAr8BFAIIAs4B+gEZARgB+AH1ARUCIwHhASQB+AHzAfUB"),
-"material": SubResource("StandardMaterial3D_tufu7"),
+"material": SubResource("StandardMaterial3D_ltrm1"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 534,
@@ -412,6 +412,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.26314, 2.235, 32.4647)
 
 [node name="SharXD5" parent="." instance=ExtResource("29_lqrgo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.37387, 2.32475, 15.1423)
+collision_layer = 32
+
+[node name="SharXD7" parent="." instance=ExtResource("29_lqrgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.12811, 2.32475, 7.56038)
 collision_layer = 32
 
 [node name="SharXD6" parent="." instance=ExtResource("29_lqrgo")]
